@@ -1,0 +1,163 @@
+﻿// Callout elements
+// ------------------------------------------------------------
+
+.callouts {
+    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+        grid-column: 1 / span 3;
+        grid-row: 3;
+    }
+    //
+    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto; // 25rem;
+        grid-gap: 0;
+    }
+    //
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+//
+.callout {
+    &__about,
+    &__social {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        height: 16rem;
+    }
+    //
+    &__about {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 1 / span 2;
+            grid-row: 1;
+        }
+        //
+        position: relative;
+        z-index: 0;
+        overflow: hidden;
+        background: $blue;
+        box-shadow: inset -.0625rem 0 0 $white;
+        //
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            top: -50%;
+            left: -50%;
+            transform: rotate(13deg);
+            opacity: .5;
+            width: 200%;
+            height: 200%;
+            background-image: url(../images/ftr-heart-angle.svg);
+            background-size: 3%;
+            background-position: -2%;
+        }
+        //
+        &--text {
+            position: relative;
+            z-index: 1;
+            margin: 0;
+            padding: 2rem 4rem;
+            //font-weight: bold;
+            font-size: 1.5rem;
+            font-family: $nav-text; // $body-text, Georgia, serif;
+            color: $white;
+            line-height: 2rem;
+            //letter-spacing: -.125rem;
+            //text-align: center;
+            text-shadow: 0 0 1rem rgba(black, .3);
+            //
+            strong {
+                //font-size: 2.25rem;
+            }
+        }
+        //
+        &--link {
+            position: relative;
+            z-index: 1;
+            margin-right: 4rem;
+            padding: 1rem 1.5rem;
+            height: 4rem;
+            font-family: $nav-text;
+            font-size: 1.25rem;
+            line-height: 2rem;
+            text-align: right;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: white;
+            background: darken($blue, 20%);
+            border-radius: 2rem;
+            box-shadow: 0 0 0 .0625rem lighten($blue, 15%);
+        }
+    }
+    //
+    &__social {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 3;
+            grid-row: 1;
+        }
+        //
+        justify-content: center;
+        background: $green;
+        background-image: linear-gradient(135deg, lighten($green, 10%) 0%, darken($green, 30%) 100%);
+        //
+        .ig__brand {
+            display: inline-block;
+            //padding-top: 2rem;
+            width: 100%;
+            text-align: center;
+            text-decoration: none;
+            //
+            &--logo {
+                display: block;
+                margin-bottom: 1rem;
+                width: 100%;
+                //
+                svg {
+                    transform: scale(1.5);
+                }
+                //
+                path {
+                    fill: white !important;
+                    stroke: white;
+                }
+            }
+            //
+            &--text {
+                position: relative;
+                display: block;
+                padding-top: .25rem;
+                font-family: $nav-text;
+                font-size: 1.125rem;
+                font-weight: 700;
+                color: $white;
+            }
+            //
+            &--name {
+                position: relative;
+                display: block;
+                margin-bottom: 1rem;
+                font-size: 2rem;
+                //
+                &:after {
+                    content: "";
+                    position: absolute;
+                    bottom: -.5rem;
+                    left: calc(50% - 1rem);
+                    width: 2rem;
+                    height: .1875rem;
+                    background: darken($green, 40%);
+                }
+            }
+        }
+    }
+}

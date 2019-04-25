@@ -1,0 +1,19 @@
+﻿// Project wrapping elements
+// ------------------------------------------------------------
+
+
+.project {
+    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto; // 25rem;
+        grid-gap: 0;
+    }
+    //
+    margin: 0 auto;
+    padding: 0;
+    width: 80vw;
+    //background: $white;
+}

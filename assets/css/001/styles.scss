@@ -1,0 +1,591 @@
+﻿$orange: #ffa357;
+$red: #ff5a5a;
+$purple: #ff57e7;
+$blue: #5aadff;
+$green: #57eec7;
+$yellow: #dbfc35; // #d0ef32; // #dbff57;
+$black: #202020;
+$white: #fff; // #e8fcfb; // #fffef4;
+
+
+
+$nav-text: 'Comfortaa', sans-serif;
+$body-text: 'Frank Ruhl Libre', serif;
+
+
+
+html {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    -webkit-box-sizing: inherit;
+    -moz-box-sizing: inherit;
+    box-sizing: inherit;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    color: #fefefe;
+    background: $black;
+}
+
+.site__container {
+    overflow: hidden;
+}
+
+.project {
+    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto; // 25rem;
+        grid-gap: 0;
+    }
+    //
+    margin: 0 auto;
+    padding: 0;
+    width: 70vw;
+    //background: $white;
+}
+
+.feature {
+    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+        grid-column: 1;
+        grid-row: 1;
+    }
+    //
+    position: relative;
+    background: $white;
+    //background: linear-gradient(-45deg, lighten($black, 5%) 0%, darken($black, 10%) 100%);
+    //width: 30vw;
+    height: 60vh;
+    box-shadow: -1rem 1rem 2rem rgba(black, .2);
+    //
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        width: 50vw;
+        background: $black;
+        background: linear-gradient(135deg, lighten($black, 5%) 0%, darken($black, 5%) 100%);
+    }
+    //
+    /*&:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: -20rem;
+        right: calc(100% - 20rem);
+        bottom: -20rem;
+        transform: rotate(25deg);
+        opacity: .1;
+        width: 200%;
+        background-image: url(../images/RUN-pattern.svg);
+        background-repeat: repeat;
+        background-size: 7.5%;
+    }*/
+    //
+    &__logo {
+        //position: absolute;
+        //z-index: 1;
+        //top: 4rem;
+        //left: 4rem;
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        display: block;
+        margin: 0;
+        width: 18vw;
+    }
+    //
+    &__image {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url("../images/feature-background.jpg");
+        background-size: cover;
+        //
+        &:before {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background: rgba($black, .2);
+        }
+        //
+        &:after {
+            content: "";
+            position: absolute;
+            top: 4rem;
+            right: 4rem;
+            bottom: 4rem;
+            left: 20rem;
+            border-radius: .125rem;
+            box-shadow: 0 0 0 .0625rem rgba(white, .1), 0 0 0 50vw rgba($black, .75);
+        }
+    }
+}
+
+.ftr__logo {
+    fill: $white;
+    //
+    &--f {
+        fill: $orange;
+    }
+    &--o,
+    &--heart {
+        fill: $red;
+    }
+    &--r {
+        fill: $purple;
+    }
+    &--t,
+    &--h,
+    &--e,
+    &--ribbon {
+        fill: lighten($black, 15%);
+    }
+    &--r1 {
+        fill: $blue;
+    }
+    &--u {
+        fill: $green;
+    }
+    &--n {
+        fill: $yellow;
+    }
+}
+
+.navigation {
+    position: absolute;
+    z-index: 10;
+    right: 0;
+    bottom: -4rem;
+    left: 0;
+    height: 4rem;
+    background: $white;
+    box-shadow: 0 -.0625rem 0 rgba(black, .1), 0 .0625rem 0 rgba(black, .2);
+    //
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        width: 50vw;
+        background: $white;
+        box-shadow: 0 -.0625rem 0 rgba(black, .1), 0 .0625rem 0 rgba(black, .2);
+    }
+    //
+    &__list {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+        text-align: right;
+    }
+    //
+    &__list-item {
+        display: inline-block;
+        font-family: $nav-text;
+        font-size: 1.25rem;
+        font-weight: 700;
+        //
+        &:last-of-type {
+            //padding-right: 2rem;
+        }
+    }
+    //
+    &__link {
+        display: block;
+        padding: 0 1rem;
+        line-height: 4rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $blue;
+        //
+        .navigation__list-item:last-of-type & {
+            padding-right: 2rem;
+        }
+        //
+        &.shirts {
+            color: darken($red, 10%);
+        }
+        //
+        &.stickers {
+            color: darken($purple, 10%);
+        }
+    }
+}
+
+.mission {
+    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+        grid-column: 2;
+        grid-row: 1;
+    }
+    //
+    position: relative;
+    z-index: 0;
+    overflow: hidden;
+    //padding: 8rem 8rem 8rem 20rem;
+    //width: 30vw;
+    padding: 4rem 4rem 6rem 4rem;
+    //background: transparent;
+    //background: linear-gradient(135deg, lighten($blue, 10%) 0%, darken($blue, 10%) 100%);
+    background: linear-gradient(135deg, lighten($blue, 10%) 0%, darken($blue, 10%) 100%);
+    //background-repeat: repeat;
+    //background-size: 10%;
+    height: 60vh;
+    box-shadow: 1rem 1rem 2rem rgba(black, .2);
+    //
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: -25%;
+        left: -25%;
+        transform: rotate(10deg);
+        opacity: .5;
+        width: 150%;
+        height: 150%;
+        //background: linear-gradient(135deg, lighten($blue, 10%) 0%, darken($blue, 10%) 100%);
+        background-image: url(../images/ftr-heart-angle.svg);
+        background-size: 6%;
+        background-position: -3%;
+    }
+    //
+    &:after {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        left: 100%;
+        bottom: 0;
+        width: 50vw;
+        background: $blue;
+        background: linear-gradient(-45deg, lighten($black, 5%) 0%, darken($black, 5%) 100%);
+    }
+    //
+    &__wrapper {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+    }
+    //
+    &__text {
+        display: block;
+        margin: 0;
+        //font-weight: bold;
+        font-size: 2rem;
+        font-family: $nav-text; // $body-text, Georgia, serif;
+        color: $white;
+        line-height: 3rem;
+        //letter-spacing: -.125rem;
+        text-align: center;
+        text-shadow: 0 0 1rem rgba(black, .3);
+        //
+        strong {
+            font-size: 2.25rem;
+        }
+    }
+    //
+    &__link {
+        display: inline-block;
+        margin-top: 2rem;
+        padding: .75rem 1.5rem;
+        height: 4rem;
+        font-family: $nav-text;
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 2.5rem;
+        color: white;
+        text-transform: uppercase;
+        text-decoration: none;
+        background: darken($blue, 20%);
+        border-radius: 2rem;
+        box-shadow: 0 0 0 .0625rem rgba($white, .3);
+    }
+    //
+    &__hashtag {
+        display: block;
+        margin-top: 2rem;
+        font-family: $nav-text;
+        font-size: 1.25rem;
+        color: lighten($blue, 28%);
+    }
+}
+
+.module {
+    position: relative;
+    //
+    &-1 {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        //
+        position: relative;
+        z-index: 0;
+        //padding: 8rem 8rem 8rem 20rem;
+        //width: 30vw;
+        padding: 4rem;
+        overflow: hidden;
+        height: 60vh;
+        font-size: 1.75rem;
+        font-family: Georgia, serif;
+        color: $black;
+        //background: $green;
+        //background: linear-gradient(135deg, lighten($green, 10%) 0%, darken($green, 30%) 100%);
+        //border-radius: 0 0 0 30vh;
+        box-shadow: -1rem 1rem 2rem rgba(black, .2);
+        //
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -2;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            //background-image: url(../images/RUN-pattern.svg);
+            background-image: linear-gradient(135deg, lighten($green, 10%) 0%, darken($green, 30%) 100%);
+        }
+        //
+        &:after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: -25%;
+            left: -25%;
+            transform: rotate(13deg);
+            opacity: .05;
+            width: 175%;
+            height: 175%;
+            background-image: url(../images/RUN-pattern.svg);
+            background-size: 17%;
+        }
+        //
+        &__wrapper {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 100%;
+            text-align: center;
+        }
+    }
+    //
+    &-2 {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 2;
+            grid-row: 2;
+        }
+        //
+        position: relative;
+        margin-top: -2rem;
+        margin-bottom: -2rem;
+        padding: 4rem;
+        background: $yellow;
+        height: calc(60vh + 4rem);
+        font-size: 1.75rem;
+        font-family: Georgia, serif;
+        color: $black;
+        box-shadow: 1rem 1rem 2rem rgba(black, .2);
+        //
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 100%;
+            bottom: 0;
+            width: 50vw;
+            background: $black;
+            background: linear-gradient(135deg, lighten($black, 5%) 0%, darken($black, 5%) 100%);
+        }
+        //
+        /*&:after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            left: 100%;
+            bottom: 0;
+            opacity: .1;
+            width: 50vw;
+            background-image: url(../images/ftr-heart.svg);
+            background-repeat: repeat;
+            background-size: 4%;
+            background-position: -6%;
+        }*/
+    }
+    //
+    &__title {
+        font-size: 1.75rem;
+        font-weight: 400;
+        color: white;
+    }
+    //
+    &__shirt--wrapper {
+        position: absolute;
+        top: 50%;
+        right: 50%;
+        transform: translate(50%, -50%);
+        overflow: hidden;
+        width: 100%;
+        height: 100%;
+        //
+        &:after {
+            content: "";
+            position: absolute;
+            z-index: 2;
+            top: 1rem;
+            right: 1rem;
+            bottom: 1rem;
+            left: 1rem;
+            box-shadow: 0 0 0 .1875rem $yellow, 0 0 0 1rem rgba($yellow, .7);
+        }
+        //
+        img {
+            margin-left: -12.5%;
+            width: 125%;
+        }
+    }
+    //
+    &__shirt--info {
+        position: absolute;
+        right: 1.5rem;
+        bottom: 1.5rem;
+        left: 1.5rem;
+        height: 10rem;
+        background: white;
+    }
+    //
+    &__footer,
+    &__sub-footer {
+        position: relative;
+        height: 60vh;
+    }
+    //
+    &__footer {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 1;
+            grid-row: 4;
+        }
+        //
+        background: $orange;
+        background: linear-gradient(-135deg, lighten($orange, 5%) 0%, darken($orange, 15%) 100%);
+        //
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 100%;
+            bottom: 0;
+            width: 50vw;
+            background: $black;
+            background: linear-gradient(-135deg, lighten($black, 5%) 0%, darken($black, 5%) 100%);
+        }
+    }
+    //
+    &__sub-footer {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 2;
+            grid-row: 4;
+        }
+        //
+        margin-top: 2rem;
+        height: calc(60vh - 2rem);
+        background: $red;
+        background: linear-gradient(-45deg, lighten($red, 2%) 0%, darken($red, 10%) 100%);
+        //
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 100%;
+            bottom: 0;
+            width: 50vw;
+            background: $black;
+            background: linear-gradient(135deg, lighten($black, 5%) 0%, darken($black, 5%) 100%);
+        }
+    }
+}
+//
+.ig__brand {
+    display: inline-block;
+    //padding-top: 2rem;
+    width: 100%;
+    text-align: center;
+    text-decoration: none;
+    //
+    &--logo {
+        display: block;
+        margin-bottom: 1rem;
+        width: 100%;
+        //
+        svg {
+            transform: scale(1.5);
+        }
+        //
+        path {
+            fill: white !important;
+            stroke: white;
+        }
+    }
+    //
+    &--text {
+        position: relative;
+        display: block;
+        padding-top: .25rem;
+        font-family: $nav-text;
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: $white;
+    }
+    //
+    &--name {
+        position: relative;
+        display: block;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+        //
+        &:after {
+            content: "";
+            position: absolute;
+            bottom: -.5rem;
+            left: calc(50% - 1rem);
+            width: 2rem;
+            height: .1875rem;
+            background: darken($green, 40%);
+        }
+    }
+}
