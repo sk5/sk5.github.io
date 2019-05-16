@@ -232,11 +232,8 @@
         fill: $purple;
     }
     //
-    &--t,
-    &--h,
-    &--e,
-    &--ribbon {
-        fill: lighten($black, 15%);
+    &--the {
+        fill: $black;
     }
     //
     &--r1 {

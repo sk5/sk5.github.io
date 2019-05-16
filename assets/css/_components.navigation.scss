@@ -24,10 +24,12 @@
     //
     &__list-item {
         display: inline-block;
+        list-style: none;
     }
     //
     &__link {
         transition: box-shadow .3s ease;
+        display: inline-block;
         margin-right: .5rem;
         margin-left: .5rem;
         padding: .5rem 0;

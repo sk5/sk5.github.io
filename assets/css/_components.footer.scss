@@ -1,0 +1,70 @@
+﻿// Footer wrapping elements
+// ------------------------------------------------------------
+
+
+.module__footer {
+    //
+    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto; // 25rem;
+        grid-gap: 0;
+    }
+    //
+    background: $black;
+}
+
+.footer {
+    &__content {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 1 / span 3;
+            grid-row: 1;
+        }
+        //
+        margin: 0 auto;
+        padding: 4rem 0;
+        width: 80vw;
+    }
+    //
+    &__navigation {
+        margin: 0;
+        padding: 0;
+        //
+        &--list-item {
+            display: inline-block;
+            list-style: none;
+        }
+        //
+        &--link {
+            transition: box-shadow .3s ease;
+            display: inline-block;
+            margin-right: .5rem;
+            margin-left: .5rem;
+            padding: .5rem 0;
+            font-family: $nav-text;
+            font-size: 1rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-decoration: none;
+            color: $white;
+            box-shadow: 0 .125rem 0 transparent;
+            //
+            &:hover {
+                color: $red;
+                box-shadow: 0 .125rem 0 $blue;
+            }
+            //
+            .footer__navigation--list-item:first-of-type & {
+                margin-left: 0;
+            }
+            //
+            .footer__navigation--list-item:last-of-type & {
+                margin-right: 0;
+            }
+        }
+    }
+}
