@@ -4,7 +4,7 @@
     <title>For The Run</title>
     <link rel="stylesheet" href="assets/css/styles.css" />
     <link href="https://fonts.googleapis.com/css?family=Dosis:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Frank+Ruhl+Libre:400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Chivo:900|Frank+Ruhl+Libre:400,700" rel="stylesheet">
 </head>
 
 <body>
@@ -63,30 +63,38 @@
 
             <!---->
 
-            <div class="current__product">
-                <div class="current__product--image">
-                    <img src="assets/images/ftr-shirt-concept.JPG" />
+            <div class="module__product">
+                <div class="module__product--image-wrapper">
+                    <img class="module__product--image" src="assets/images/ftr-shirt-concept.JPG" />
                 </div>
-                <div class="current__product--description">
-                    <div class="current__product--price">$30</div>
-                    <div class="current__product--color">
-                        <select class="current__product--select-size">
-                            <option>Charcoal</option>
-                            <option>Antique Denim</option>
-                        </select>
+                <div class="module__product--description">
+                    <div class="module__product--content">
+                        <h2 class="module__product--title">Ready For the Run</h2>
+                        <div class="module__product--price">$30.00</div>
                     </div>
-                    <div class="current__product--sizing">
-                        <select class="current__product--select-size">
-                            <option>S</option>
-                            <option>M</option>
-                            <option>L</option>
-                            <option>XL</option>
-                        </select>
+                    <div class="module__product--select-options">
+                        <div class="module__product--color">
+                            <label class="form--label">Color</label>
+                            <select class="module__product--select-color">
+                                <option>Charcoal</option>
+                                <option>Antique Denim</option>
+                            </select>
+                        </div>
+                        <div class="module__product--sizing">
+                            <label class="form--label">Size</label>
+                            <select class="module__product--select-size">
+                                <option>S</option>
+                                <option>M</option>
+                                <option>L</option>
+                                <option>XL</option>
+                            </select>
+                        </div>
+                        <div class="module__product--quantity">
+                            <label class="form--label">Quantity</label>
+                            <input class="module__product--select-quantity" type="number" value="1" min="1" pattern="[0-9]" />
+                        </div>
                     </div>
-                    <div class="current__product--quantity">
-                        <input type="number" value="1" min="1" pattern="[0-9]" />
-                    </div>
-                    <div class="current__product--info">
+                    <div class="module__product--info">
                         <p>Are you Ready for your run?</p>
                         <p>This tee is soft, light, and breathable. It is pre-shrunk and ready to go before, during or after a run!</p>
                         <p>65% Polyester / 35% Cotton blend</p>
@@ -94,7 +102,7 @@
                 </div>
             </div>
 
-            <div class="current__product--action-shots">
+            <div class="module__product--action-shots">
                 Images of rad people go here
             </div>
 

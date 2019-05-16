@@ -1,0 +1,135 @@
+﻿// Footer wrapping elements
+// ------------------------------------------------------------
+
+
+.module__product {
+    //
+    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto; // 25rem;
+        grid-gap: 0;
+    }
+    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+        grid-column: 1 / span 3;
+        grid-row: 2;
+    }
+    //
+    position: relative;
+    margin-bottom: 2rem;
+    padding-top: 4rem;
+    //background: $black;
+    //
+    &:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: -20vw;
+        left: -20vw;
+        height: 10rem;
+        background: $black;
+        background-image: url(../images/polygon-background.svg), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
+        background-size: cover;
+    }
+    //
+    &--image-wrapper {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        //
+    }
+    //
+    &--image {
+        width: 100%;
+    }
+    //
+    &--description {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        //
+        padding-left: 2rem;
+    }
+    //
+    &--content {
+        height: 6rem;
+    }
+    //
+    &--title {
+        margin-top: 0;
+        margin-bottom: 0;
+        font-family: $nav-text;
+        font-size: 2rem;
+        text-transform: uppercase;
+        color: $white;
+    }
+    //
+    &--price {
+        font-family: $price-text;
+        font-size: 1.625rem;
+        font-weight: 700;
+        color: $yellow;
+    }
+    //
+    //
+    //
+    &--select-options {
+        margin-top: 2rem;
+    }
+    //
+    &--color {
+        float: left;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        width: 40%;
+    }
+    //
+    &--sizing {
+        float: left;
+        width: 40%;
+    }
+    //
+    &--quantity {
+        margin-bottom: 1rem;
+        width: 20%;
+    }
+    //
+    &--select-color,
+    &--select-size,
+    &--select-quantity {
+        padding: .25rem .5rem;
+        width: 100%;
+        color: $black;
+        font-size: 1rem;
+        border: .125rem solid $black;
+    }
+    //
+    .form--label {
+        display: block;
+        margin-bottom: .25rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
+        font-family: $nav-text;
+        font-size: .75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: $black;
+    }
+    //
+    //
+    //
+    &--info {
+        color: $black;
+    }
+}

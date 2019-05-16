@@ -796,6 +796,89 @@ body {
     padding-top: 1rem;
     padding-bottom: 1rem; }
 
+.module__product {
+  position: relative;
+  margin-bottom: 2rem;
+  padding-top: 4rem; }
+  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+    .module__product {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      grid-gap: 0; } }
+  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+    .module__product {
+      grid-column: 1 / span 3;
+      grid-row: 2; } }
+  .module__product:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -20vw;
+    left: -20vw;
+    height: 10rem;
+    background: #303030;
+    background-image: url(../images/polygon-background.svg), linear-gradient(30deg, #dbfc35 0%, #ffa357 33%, #ff5a5a 66%, #ff57e7 100%);
+    background-size: cover; }
+  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+    .module__product--image-wrapper {
+      grid-column: 1;
+      grid-row: 1; } }
+  .module__product--image {
+    width: 100%; }
+  .module__product--description {
+    padding-left: 2rem; }
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+      .module__product--description {
+        grid-column: 2;
+        grid-row: 1; } }
+  .module__product--content {
+    height: 6rem; }
+  .module__product--title {
+    margin-top: 0;
+    margin-bottom: 0;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 2rem;
+    text-transform: uppercase;
+    color: #fff; }
+  .module__product--price {
+    font-family: "Chivo", sans-serif;
+    font-size: 1.625rem;
+    font-weight: 700;
+    color: #dbfc35; }
+  .module__product--select-options {
+    margin-top: 2rem; }
+  .module__product--color {
+    float: left;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    width: 40%; }
+  .module__product--sizing {
+    float: left;
+    width: 40%; }
+  .module__product--quantity {
+    margin-bottom: 1rem;
+    width: 20%; }
+  .module__product--select-color, .module__product--select-size, .module__product--select-quantity {
+    padding: .25rem .5rem;
+    width: 100%;
+    color: #303030;
+    font-size: 1rem;
+    border: 0.125rem solid #303030; }
+  .module__product .form--label {
+    display: block;
+    margin-bottom: .25rem;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    font-family: "Comfortaa", sans-serif;
+    font-size: .75rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #303030; }
+  .module__product--info {
+    color: #303030; }
+
 .module__footer {
   background: #303030; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
