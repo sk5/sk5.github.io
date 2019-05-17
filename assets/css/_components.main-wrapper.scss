@@ -1,0 +1,13 @@
+﻿// Content main wrapper
+// ------------------------------------------------------------
+
+
+.main {
+    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+        grid-column: 1 / span 3;
+        grid-row: 2;
+    }
+    //
+}

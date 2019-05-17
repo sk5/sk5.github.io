@@ -11,36 +11,38 @@
 {% if theme.featured_items > 0 %}
   {% get products from products.all limit:theme.featured_items order:theme.featured_order %}
     {% if products != blank %}
-<div class="product-list">
-    {% for product in products %}
-    {% assign product_status = '' %}
-    {% case product.status %}
-    {% when 'active' %}
-    {% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
-    {% when 'sold-out' %}
-    {% assign product_status = 'Sold out' %}
-    {% when 'coming-soon' %}
-    {% assign product_status = 'Coming soon' %}
-    {% endcase %}
-    <a class="product-list-item {{ theme.show_overlay }}" href="{{ product.url }}" title="View {{ product.name | escape }}">
-        <div class="product-list-item-container">
-            <figure class="product-list-image-container">
-                <img alt="Image of {{ product.name | escape }}" class="fade-in product-list-image {% if product.image.height > product.image.width %}image-tall{% elsif product.image.height < product.image.width %}image-wide{% else %}image-square{% endif %}" src="{{ product.image | product_image_url | constrain: 1000, 1000 }}">
-            </figure>
-        </div>
-        <div class="product-list-item-info">
-            <div class="product-list-item-background"></div>
-            <div class="product-list-item-info-headers">
-                {% if product_status != blank %}<div class="product-list-item-status">{{ product_status }}</div>{% endif %}
-                <div class="product-list-item-name">{{ product.name }}</div>
-                <div class="product-list-item-price">{{ product.default_price | money: theme.money_format }}</div>
+<div class="feature__products">
+    <div class="feature__items">
+        {% for product in products %}
+        {% assign product_status = '' %}
+        {% case product.status %}
+        {% when 'active' %}
+        {% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
+        {% when 'sold-out' %}
+        {% assign product_status = 'Sold out' %}
+        {% when 'coming-soon' %}
+        {% assign product_status = 'Coming soon' %}
+        {% endcase %}
+        <a class="feature__item {{ theme.show_overlay }}" href="{{ product.url }}" title="View {{ product.name | escape }}">
+            <div class="product-list-item-container">
+                <figure class="product-list-image-container">
+                    <img alt="Image of {{ product.name | escape }}" class="fade-in product-list-image {% if product.image.height > product.image.width %}image-tall{% elsif product.image.height < product.image.width %}image-wide{% else %}image-square{% endif %}" src="{{ product.image | product_image_url | constrain: 1000, 1000 }}">
+                </figure>
             </div>
-        </div>
-    </a>
-    {% endfor %}
+            <div class="product-list-item-info">
+                <div class="product-list-item-background"></div>
+                <div class="product-list-item-info-headers">
+                    {% if product_status != blank %}<div class="product-list-item-status">{{ product_status }}</div>{% endif %}
+                    <div class="product-list-item-name">{{ product.name }}</div>
+                    <div class="product-list-item-price">{{ product.default_price | money: theme.money_format }}</div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
 </div>
-    {% else %}
+{% else %}
 <div class="empty-products centered-message">No products found.</div>
-    {% endif %}
-  {% endget %}
+{% endif %}
+{% endget %}
 {% endif %}
