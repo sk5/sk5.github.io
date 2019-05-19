@@ -527,7 +527,7 @@ body {
         position: absolute;
         top: 50%;
         left: 50%;
-        transform: translateY(-50%, -50%);
+        transform: translate(-50%, -50%);
         width: 125%; }
     .feature__item--info {
       display: flex;
@@ -537,13 +537,26 @@ body {
       height: 10vh;
       min-height: 7rem;
       text-align: center; }
-    .feature__item--title {
+    .feature__item--headers {
+      position: relative;
+      z-index: 1; }
+    .feature__item--status {
+      position: absolute;
+      top: -1rem;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: .25rem .5rem;
+      font-family: "Comfortaa", sans-serif;
+      font-size: 75%;
+      color: white;
+      background: #ff5a5a; }
+    .feature__item--name {
       margin: 0;
       font-family: "Comfortaa", sans-serif;
       font-size: 1.25rem;
       font-weight: 700;
       color: #565656; }
-    .feature__item--cost {
+    .feature__item--price {
       margin: .25rem 0 0 0;
       font-family: "Comfortaa", sans-serif;
       font-size: 1.125rem;
