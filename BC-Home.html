@@ -32,7 +32,7 @@
             <div class="feature__item--info">
                 <!-- product-list-item-info -->
                 <!--<div class="product-list-item-background"></div>-->
-                <div class="feature__item--headers product-list-item-info-headers">
+                <div class="feature__item--headers"> <!-- product-list-item-info-headers -->
                     {% if product_status != blank %}<div class="feature__item--status">{{ product_status }}</div>{% endif %} <!-- product-list-item-status -->
                     <h3 class="feature__item--name">{{ product.name }}</h3> <!-- product-list-item-name -->
                     <div class="feature__item--price">{{ product.default_price | money: theme.money_format }}</div> <!-- product-list-item-price -->

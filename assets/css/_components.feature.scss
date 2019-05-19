@@ -130,6 +130,7 @@
         &--headers {
             position: relative;
             z-index: 1;
+            width: 100%;
         }
         //
         &--status {
@@ -155,7 +156,7 @@
         //
         &--price {
             margin: .25rem 0 0 0;
-            font-family: $nav-text;
+            font-family: $price-text;
             font-size: 1.125rem;
             font-weight: 700;
             color: lighten($black, 20%);
