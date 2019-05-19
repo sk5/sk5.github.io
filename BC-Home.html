@@ -24,12 +24,12 @@
         {% assign product_status = 'Coming soon' %}
         {% endcase %}
         <a class="feature__item {{ theme.show_overlay }}" href="{{ product.url }}" title="View {{ product.name | escape }}">
-            <div class="product-list-item-container">
-                <figure class="product-list-image-container">
+            <!--<div class="feature__item--image"> class="product-list-item-container" -->
+                <figure class="feature__item--image"> <!-- product-list-image-container -->
                     <img alt="Image of {{ product.name | escape }}" class="fade-in product-list-image {% if product.image.height > product.image.width %}image-tall{% elsif product.image.height < product.image.width %}image-wide{% else %}image-square{% endif %}" src="{{ product.image | product_image_url | constrain: 1000, 1000 }}">
                 </figure>
-            </div>
-            <div class="product-list-item-info">
+            <!--</div>-->
+            <div class="feature__item--info"> <!-- product-list-item-info -->
                 <div class="product-list-item-background"></div>
                 <div class="product-list-item-info-headers">
                     {% if product_status != blank %}<div class="product-list-item-status">{{ product_status }}</div>{% endif %}
