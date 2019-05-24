@@ -4,7 +4,7 @@
     <title>{{ page.name }} | {{ store.name }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-    <link href="{{ theme | theme_css_url }}" media="screen" rel="stylesheet" type="text/css">
+    <!--<link href="{{ theme | theme_css_url }}" media="screen" rel="stylesheet" type="text/css">-->
     <link href="https://forthe.run/assets/css/styles.css" media="screen" rel="stylesheet" type="text/css" />
     <link href="https://fonts.googleapis.com/css?family=Comfortaa:400,700|Chivo:900|Frank+Ruhl+Libre:400,700|Titillium+Web:900&display=swap" rel="stylesheet">
     {{ head_content }}
@@ -52,25 +52,27 @@
                             </svg>
                         </a>
                     </div>
-                    <div class="navigation__left"
-                    <ul class="navigation__list">
-                        <li{% if page.full_url contains '/products' or page.full_url contains '/product/' or page.full_url contains '/category/' or page.full_url contains '/artist/' %} class="navigation__list-item selected" {% else %} class="navigation__list-item" {% endif %}>
-                            <a class="navigation__link" href="/products">{{ pages.products.name }}</a>
-                            </li>
-                            {% for page in pages.all limit:theme.nav_items %}
-                            <li{% if page.full_url contains page.url %} class="navigation__list-item selected" {% else %} class="navigation__list-item" {% endif %}>
-                                {{ page | link_to }}
+                    <div class="navigation__left">
+                        <ul class="navigation__list">
+                            <li{% if page.full_url contains '/products' or page.full_url contains '/product/' or page.full_url contains '/category/' or page.full_url contains '/artist/' %} class="navigation__list-item selected" {% else %} class="navigation__list-item" {% endif %}>
+                                <a class="navigation__link" href="/products">{{ pages.products.name }}</a>
                                 </li>
-                                {% endfor %}
-                                <li{% if page.full_url contains '/contact' %} class="navigation__list-item selected" {% else %} class="navigation__list-item" {% endif %}>
-                                    <a class="navigation__link" href="/contact">Contact</a>
-                                    </li>                                    
-                    </ul>
+                                {% for page in pages.all limit:theme.nav_items %}
+                                <li{% if page.full_url contains page.url %} class="navigation__list-item selected" {% else %} class="navigation__list-item" {% endif %}>
+                                    {{ page | link_to }}
+                                    </li>
+                                    {% endfor %}
+                                    <li{% if page.full_url contains '/contact' %} class="navigation__list-item selected" {% else %} class="navigation__list-item" {% endif %}>
+                                        <a class="navigation__link" href="/contact">Contact</a>
+                                        </li>                                    
+                        </ul>
                     </div>
                     <div class="navigation__right">
-                        <div{% if page.full_url contains '/cart' %} class="navigation__list-item selected" {% else %} class="navigation__list-item" {% endif %}>
-                            <a class="navigation__link" href="/cart">Cart</a>
-                            </div>
+                        <ul class="navigation__list">
+                            <li{% if page.full_url contains '/cart' %} class="navigation__list-item selected" {% else %} class="navigation__list-item" {% endif %}>
+                                <a class="navigation__link" href="/cart">Cart</a>
+                            </li>
+                        </ul>
                     </div>
                 </nav>
 

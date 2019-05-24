@@ -456,16 +456,17 @@ body {
       grid-gap: 0; } }
 
 .button {
-  padding: 1rem 1.5rem;
+  padding: .5rem 1rem;
   font-family: "Titillium Web", sans-serif;
   font-size: 1rem;
   color: white;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  border-radius: 1rem; }
   .button.large {
-    padding: 2rem 1.5rem;
-    font-size: 1.25rem; }
+    padding: 1.25rem 2rem;
+    font-size: 2rem; }
   .button.positive {
-    color: #57eec7; }
+    background: #57eec7; }
 
 .feature {
   /*&__design {
@@ -906,12 +907,15 @@ body {
       grid-column: 2;
       grid-row: 1; } }
   .product--title {
+    margin: 0 0 1rem 0;
     font-family: "Titillium Web", sans-serif;
     font-size: 2.25rem;
-    text-transform: none; }
+    text-transform: none;
+    color: #303030; }
   .product--price {
     font-family: "Comfortaa", sans-serif;
-    font-size: 3rem; }
+    font-size: 2rem;
+    color: #636363; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__details {
       grid-column: 2;
@@ -923,11 +927,7 @@ body {
   .product--image {
     width: 100%; }
   .product--description {
-    padding-left: 2rem; }
-    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-      .product--description {
-        grid-column: 2;
-        grid-row: 1; } }
+    color: #303030; }
   .product--content {
     height: 6rem; }
   .product--select-options {

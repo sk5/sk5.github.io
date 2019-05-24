@@ -3,18 +3,19 @@
 
 
 .button {
-    padding: 1rem 1.5rem;
+    padding: .5rem 1rem;
     font-family: $thick-text;
     font-size: 1rem;
     color: white;
     text-transform: uppercase;
+    border-radius: 1rem;
     //
     &.large {
-        padding: 2rem 1.5rem;
-        font-size: 1.25rem;
+        padding: 1.25rem 2rem;
+        font-size: 2rem;
     }
     //
     &.positive {
-        color: $green;
+        background: $green;
     }
 }

@@ -68,14 +68,17 @@
     }
     //
     &--title {
+        margin: 0 0 1rem 0;
         font-family: $thick-text;
         font-size: 2.25rem;
         text-transform: none;
+        color: $black;
     }
     //
     &--price {
         font-family: $brand-text;
-        font-size: 3rem;
+        font-size: 2rem;
+        color: lighten($black, 20%);
     }
     //
     &__details {
@@ -115,14 +118,7 @@
     }
     //
     &--description {
-        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
-        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-            grid-column: 2;
-            grid-row: 1;
-        }
-        //
-        padding-left: 2rem;
+        color: $black;
     }
     //
     &--content {
