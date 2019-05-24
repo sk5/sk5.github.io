@@ -20,16 +20,20 @@
         }
         //
         position: relative;
-        margin-bottom: 2rem;
+        //margin-bottom: 2rem;
         //padding-top: 4rem;
         //background: $fafafa;
         //
         &:before {
             content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
             right: -20vw;
+            bottom: 0;
             left: -20vw;
             width: calc(100% + 40vw);
-            background: #fafafa;
+            background: #f9fafb;
         }
     }
     //
