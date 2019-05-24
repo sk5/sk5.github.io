@@ -2,29 +2,58 @@
 // ------------------------------------------------------------
 
 
-.module__product {
-    //
-    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
-    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: auto; // 25rem;
-        grid-gap: 0;
+.product {
+    &__details {
+        //
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto; // 25rem;
+            grid-gap: 0;
+        }
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 1 / span 3;
+            grid-row: 2;
+        }
+        //
+        position: relative;
+        margin-bottom: 2rem;
+        padding-top: 4rem;
+        //background: $black;
     }
-    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
-    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-        grid-column: 1 / span 3;
-        grid-row: 2;
+    //
+    &__images {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 1;
+            grid-row: 1 / span 2;
+        }
     }
     //
-    position: relative;
-    margin-bottom: 2rem;
-    padding-top: 4rem;
-    //background: $black;
+    &__page--headings {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+    }
     //
-    &:before {
+    &__details {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 2;
+            grid-row: 2;
+        }
+    }
+    //
+    /*&:before {
         content: "";
         position: absolute;
         z-index: -1;
@@ -35,7 +64,7 @@
         background: $black;
         background-image: url(../images/polygon-background.svg), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
         background-size: cover;
-    }
+    }*/
     //
     &--image-wrapper {
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.

@@ -435,7 +435,8 @@ body {
     height: 18vh; }
 
 .main {
-  padding: 0; }
+  padding: 0;
+  background: transparent; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .main {
       grid-column: 1 / span 3;
@@ -826,77 +827,91 @@ body {
     padding-top: 1rem;
     padding-bottom: 1rem; }
 
-.module__product {
-  position: relative;
-  margin-bottom: 2rem;
-  padding-top: 4rem; }
+.product {
+  /*&:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        top: 0;
+        right: -20vw;
+        left: -20vw;
+        height: 10rem;
+        background: $black;
+        background-image: url(../images/polygon-background.svg), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
+        background-size: cover;
+    }*/ }
+  .product__details {
+    position: relative;
+    margin-bottom: 2rem;
+    padding-top: 4rem; }
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+      .product__details {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+        grid-gap: 0; } }
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+      .product__details {
+        grid-column: 1 / span 3;
+        grid-row: 2; } }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-    .module__product {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      grid-template-rows: auto;
-      grid-gap: 0; } }
+    .product__images {
+      grid-column: 1;
+      grid-row: 1 / span 2; } }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-    .module__product {
-      grid-column: 1 / span 3;
+    .product__page--headings {
+      grid-column: 2;
+      grid-row: 1; } }
+  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+    .product__details {
+      grid-column: 2;
       grid-row: 2; } }
-  .module__product:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    right: -20vw;
-    left: -20vw;
-    height: 10rem;
-    background: #303030;
-    background-image: url(../images/polygon-background.svg), linear-gradient(30deg, #dbfc35 0%, #ffa357 33%, #ff5a5a 66%, #ff57e7 100%);
-    background-size: cover; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-    .module__product--image-wrapper {
+    .product--image-wrapper {
       grid-column: 1;
       grid-row: 1; } }
-  .module__product--image {
+  .product--image {
     width: 100%; }
-  .module__product--description {
+  .product--description {
     padding-left: 2rem; }
     @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-      .module__product--description {
+      .product--description {
         grid-column: 2;
         grid-row: 1; } }
-  .module__product--content {
+  .product--content {
     height: 6rem; }
-  .module__product--title {
+  .product--title {
     margin-top: 0;
     margin-bottom: 0;
     font-family: "Comfortaa", sans-serif;
     font-size: 2rem;
     text-transform: uppercase;
     color: #fff; }
-  .module__product--price {
+  .product--price {
     font-family: "Chivo", sans-serif;
     font-size: 1.625rem;
     font-weight: 700;
     color: #dbfc35; }
-  .module__product--select-options {
+  .product--select-options {
     margin-top: 2rem; }
-  .module__product--color {
+  .product--color {
     float: left;
     margin-right: 1rem;
     margin-bottom: 1rem;
     width: 40%; }
-  .module__product--sizing {
+  .product--sizing {
     float: left;
     width: 40%; }
-  .module__product--quantity {
+  .product--quantity {
     margin-bottom: 1rem;
     width: 20%; }
-  .module__product--select-color, .module__product--select-size, .module__product--select-quantity {
+  .product--select-color, .product--select-size, .product--select-quantity {
     padding: .25rem .5rem;
     width: 100%;
     color: #303030;
     font-size: 1rem;
     border: 0.125rem solid #303030; }
-  .module__product .form--label {
+  .product .form--label {
     display: block;
     margin-bottom: .25rem;
     padding-right: 1rem;
@@ -906,7 +921,7 @@ body {
     font-weight: 700;
     text-transform: uppercase;
     color: #303030; }
-  .module__product--info {
+  .product--info {
     color: #303030; }
 
 .module__footer {
