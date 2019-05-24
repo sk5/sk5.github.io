@@ -455,6 +455,13 @@ body {
       grid-template-rows: auto;
       grid-gap: 0; } }
 
+button {
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+  background: transparent;
+  outline: 0; }
+
 .button {
   padding: .5rem 1rem;
   font-family: "Titillium Web", sans-serif;
@@ -462,11 +469,13 @@ body {
   line-height: 1em;
   color: white;
   text-transform: uppercase;
+  border: none;
   border-radius: 1rem; }
   .button.large {
     padding: 1.25rem 2rem;
     font-size: 1.5rem;
-    border-radius: 1.75rem; }
+    letter-spacing: .0625rem;
+    border-radius: 1.875rem; }
   .button.positive {
     background: #57eec7; }
 
