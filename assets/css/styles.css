@@ -1003,6 +1003,31 @@ button {
     font-size: 2rem;
     color: #636363; }
 
+.inventory__info {
+  padding: 2rem 0; }
+  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+    .inventory__info {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: auto;
+      grid-gap: .5rem; } }
+
+.inventory__box {
+  padding: 1rem;
+  box-shadow: 0 0 0 0.0625rem #dae1e7; }
+
+.inventory__name {
+  font-size: 1rem;
+  font-weight: bold; }
+
+.inventory__quantity {
+  display: inline-block;
+  font-size: 1.25rem; }
+
+.inventory__label {
+  display: inline-block;
+  font-size: 1rem; }
+
 .similar__products--wrapper {
   position: relative;
   padding: 4rem 0;

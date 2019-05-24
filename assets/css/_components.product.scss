@@ -187,6 +187,10 @@
     //
     //
     //
+    &__inventory {
+
+    }
+    //
     &--info {
         color: $black;
     }
@@ -218,5 +222,42 @@
         font-family: $brand-text;
         font-size: 2rem;
         color: lighten($black, 20%);
+    }
+}
+//
+//
+//
+.inventory {
+    &__info {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: auto; // 25rem;
+            grid-gap: .5rem;
+        }
+        //
+        padding: 2rem 0;
+    }
+    //
+    &__box {
+        padding: 1rem;
+        box-shadow: 0 0 0 .0625rem darken(#f9fafb, 10%);
+    }
+    //
+    &__name {
+        font-size: 1rem;
+        font-weight: bold;
+    }
+    //
+    &__quantity {
+        display: inline-block;
+        font-size: 1.25rem;
+    }
+    //
+    &__label {
+        display: inline-block;
+        font-size: 1rem;
     }
 }

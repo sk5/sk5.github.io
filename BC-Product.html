@@ -21,7 +21,7 @@
         <!-- Product Headings -->
         <div class="product__page--headings">
             {% if product_status != blank %}<span class="product-status">{{ product_status }}</span>{% endif %}
-            <h1 class="product--title has-dash">{{ product.name }}</h1>            
+            <h1 class="product--title has-dash">{{ product.name }}</h1>
         </div>
 
         <!-- Product Details -->
@@ -36,13 +36,15 @@
             {% if theme.show_inventory_bars %}
             <div class="product__inventory">
                 <div class="product-inventory-header">Availability</div>
-                <ul class="inventory-bars">
+                <ul class="inventory__info">
                     {% for option in product.options %}
-                    <li>
-                        {% unless product.has_default_option %}<div class="option-name">{{ option.name }}</div>{% endunless %}
-                        <div class="bar">
-                            <span style="width:{{ option.inventory }}%;"><em>{{ option.quantity }} in stock</em></span>
-                        </div>
+                    <li class="inventory__box">
+                        {% unless product.has_default_option %}<div class="inventory__name">{{ option.name }}</div>{% endunless %}
+                        <!--<div class="bar">-->
+                        <!-- style="width:{{ option.inventory }}%;" -->
+                        <div class="inventory__quantity">{{ option.quantity }}</div>
+                        <div class="inventory__label">in stock</div>
+                        <!--</div>-->
                     </li>
                     {% endfor %}
                 </ul>
