@@ -908,7 +908,8 @@ button {
       bottom: 0;
       left: -20vw;
       width: calc(100% + 40vw);
-      background: #f9fafb; }
+      background: #f9fafb;
+      border-top: 0.0625rem solid #cbd4dc; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__images {
       grid-column: 1;
@@ -1045,6 +1046,9 @@ button {
 .similar__products--title {
   margin: 0 0 1em 0;
   font-family: "Titillium Web", sans-serif;
+  font-size: 2rem;
+  line-height: 1em;
+  letter-spacing: .0625rem;
   color: #fff; }
 
 .similar__product--list {
