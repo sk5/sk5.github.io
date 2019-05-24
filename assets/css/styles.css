@@ -862,12 +862,23 @@ body {
     .product__images {
       grid-column: 1;
       grid-row: 1 / span 2; } }
+  .product__slides {
+    margin: 0;
+    padding: 0;
+    list-style: none; }
   .product--image {
     width: 100%; }
+  .product--page-headings, .product--details {
+    padding-left: 2rem; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__page--headings {
       grid-column: 2;
       grid-row: 1; } }
+  .product--title {
+    font-family: "Titillium Web", sans-serif; }
+  .product--price {
+    font-family: "Comfortaa", sans-serif;
+    font-size: 3rem; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__details {
       grid-column: 2;

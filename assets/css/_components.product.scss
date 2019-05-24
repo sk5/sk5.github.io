@@ -36,11 +36,18 @@
     }
     //
     &__slides {
-
+        margin: 0;
+        padding: 0;
+        list-style: none;
     }
     //
     &--image {
         width: 100%;
+    }
+    //
+    &--page-headings,
+    &--details {
+        padding-left: 2rem;
     }
     //
     &__page--headings {
@@ -50,6 +57,15 @@
             grid-column: 2;
             grid-row: 1;
         }
+    }
+    //
+    &--title {
+        font-family: $header-text;
+    }
+    //
+    &--price {
+        font-family: $nav-text;
+        font-size: 3rem;
     }
     //
     &__details {

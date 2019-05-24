@@ -20,8 +20,8 @@
     <!-- Product Headings -->
     <div class="product__page--headings">
         {% if product_status != blank %}<span class="product-status">{{ product_status }}</span>{% endif %}
-        <h1 class="product-title has-dash">{{ product.name }}</h1>
-        <h2 class="product-price">{{ product.default_price | money: theme.money_format }}</h2>
+        <h1 class="product--title has-dash">{{ product.name }}</h1>
+        <div class="product--price">{{ product.default_price | money: theme.money_format }}</div>
     </div>
 
     <!-- Product Details -->
