@@ -22,7 +22,15 @@
         position: relative;
         margin-bottom: 2rem;
         //padding-top: 4rem;
-        //background: $black;
+        //background: $fafafa;
+        //
+        &:before {
+            content: "";
+            right: -30vh;
+            left: -30vh;
+            width: calc(100% + 60vh);
+            background: #fafafa;
+        }
     }
     //
     &__images {

@@ -22,11 +22,28 @@
         }
         //
         .product-list-item-info {
+            padding: 1rem;
             background: $white;
         }
         //
         .product-list-item-info-headers {
-            color: white;
+            color: $black;
+        }
+        //
+        .product-list-item-status {
+            font-size: .75rem;
+            color: $red;
+        }
+        //
+        .product-list-item-name {
+            font-family: $thick-text;
+            font-size: 1rem;
+            color: $black;
+        }
+        //
+        .product-list-item-price {
+            display: none;
+            visibility: hidden;
         }
     }
     //

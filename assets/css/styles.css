@@ -897,6 +897,12 @@ button {
       .product__page {
         grid-column: 1 / span 3;
         grid-row: 2; } }
+    .product__page:before {
+      content: "";
+      right: -30vh;
+      left: -30vh;
+      width: calc(100% + 60vh);
+      background: #fafafa; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__images {
       grid-column: 1;
@@ -989,9 +995,20 @@ button {
     .similar__products--wrapper .product-list-item img {
       width: 100%; }
   .similar__products--wrapper .product-list-item-info {
+    padding: 1rem;
     background: #fff; }
   .similar__products--wrapper .product-list-item-info-headers {
-    color: white; }
+    color: #303030; }
+  .similar__products--wrapper .product-list-item-status {
+    font-size: .75rem;
+    color: #ff5a5a; }
+  .similar__products--wrapper .product-list-item-name {
+    font-family: "Titillium Web", sans-serif;
+    font-size: 1rem;
+    color: #303030; }
+  .similar__products--wrapper .product-list-item-price {
+    display: none;
+    visibility: hidden; }
 
 .similar__products--title {
   color: #fff; }

@@ -116,10 +116,13 @@
                     {% endif %}
                 </div>
             </main>
-            <!---->
+            <!--1-->
             {% if page.full_url contains '/product/' %}
+            <!--2-->
             {% if theme.show_similar_products %}
+            <!--3-->
             {% if product.categories != blank %}
+            <!--FOR-->
             {% for category in product.categories %}
             {% capture product_divs %}
             {% for category_product in category.products %}
@@ -132,6 +135,7 @@
             {% when 'coming-soon' %}
             {% assign product_status = 'Coming soon' %}
             {% endcase %}
+            <!--4-->
             {% if product.id != category_product.id %}
             <a class="product-list-item {{ theme.show_overlay }}" href="{{ category_product.url }}" title="View {{ category_product.name | escape }}">
                 <div class="product-list-item-container">
@@ -148,11 +152,15 @@
                     </div>
                 </div>
             </a>
+            <!--4-->
             {% endif %}
+            <!--END FOR-->
             {% endfor %}
             {% endcapture %}
             {% endfor %}
+            <!--3-->
             {% endif %}
+            <!--2-->
             {% endif %}
 
             <div class="similar__products--wrapper">
@@ -170,7 +178,8 @@
                         </ul>
                         {% endif %}-->
                     </div>
-                    <div class="product-list similar__product--list"></div>
+                    <!-- Needs "similar-product-list -->
+                    <div class="product-list similar-product-list similar__product--list"></div>
                 </div>
                 {% endif %}
                 <!--{% if product.previous_product != blank or product.next_product != blank %}
@@ -182,6 +191,7 @@
                 </ul>
                 {% endif %}-->
             </div>
+        <!--1-->
         {% endif %}
         </div>
         <!---->
