@@ -441,6 +441,11 @@ body {
     .main {
       grid-column: 1 / span 3;
       grid-row: 2; } }
+  #product-page .main,
+  #cart-page .main,
+  .main #maintenace-page {
+    padding-top: 0;
+    background: transparent; }
 
 .project {
   margin: 0 auto;
@@ -842,8 +847,7 @@ body {
     }*/ }
   .product__page {
     position: relative;
-    margin-bottom: 2rem;
-    padding-top: 4rem; }
+    margin-bottom: 2rem; }
     @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
       .product__page {
         display: grid;
@@ -858,6 +862,8 @@ body {
     .product__images {
       grid-column: 1;
       grid-row: 1 / span 2; } }
+  .product--image {
+    width: 100%; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__page--headings {
       grid-column: 2;

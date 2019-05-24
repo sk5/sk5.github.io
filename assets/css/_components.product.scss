@@ -22,7 +22,7 @@
         //
         position: relative;
         margin-bottom: 2rem;
-        padding-top: 4rem;
+        //padding-top: 4rem;
         //background: $black;
     }
     //
@@ -33,6 +33,14 @@
             grid-column: 1;
             grid-row: 1 / span 2;
         }
+    }
+    //
+    &__slides {
+
+    }
+    //
+    &--image {
+        width: 100%;
     }
     //
     &__page--headings {
