@@ -479,7 +479,7 @@ body {
     padding-top: 4rem;
     padding-bottom: 4rem;
     height: auto;
-    min-height: 32rem;
+    min-height: 32.125rem;
     background: #fff; }
     .feature__products:before {
       content: "";
