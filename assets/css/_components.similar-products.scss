@@ -5,7 +5,7 @@
 .similar__product {
     &s--wrapper {
         position: relative;
-        padding: 4rem;
+        padding: 4rem 0;
         width: 80vw;
         //
         &:before {
@@ -63,6 +63,8 @@
     }
     //
     &s--title {
+        margin: 0 0 1em 0;
+        font-family: $thick-text;
         color: $white;
     }
     //

@@ -471,7 +471,7 @@ button {
   color: white;
   text-transform: uppercase;
   border: none;
-  border-radius: 1rem; }
+  border-radius: 10rem; }
   .button.large {
     padding: 1.25rem 2rem;
     font-size: 1.5rem;
@@ -935,10 +935,6 @@ button {
     font-size: 2.25rem;
     text-transform: none;
     color: #303030; }
-  .product--price {
-    font-family: "Comfortaa", sans-serif;
-    font-size: 2rem;
-    color: #636363; }
   .productcurrency_sign {
     display: inline-block;
     vertical-align: top;
@@ -988,10 +984,19 @@ button {
     color: #303030; }
   .product--info {
     color: #303030; }
+  .product__purchase {
+    display: flex; }
+    .product__purchase .button {
+      flex-basis: 100%; }
+  .product--price {
+    padding-right: 2rem;
+    font-family: "Comfortaa", sans-serif;
+    font-size: 2rem;
+    color: #636363; }
 
 .similar__products--wrapper {
   position: relative;
-  padding: 4rem;
+  padding: 4rem 0;
   width: 80vw; }
   .similar__products--wrapper:before {
     content: "";
@@ -1030,6 +1035,8 @@ button {
     visibility: hidden; }
 
 .similar__products--title {
+  margin: 0 0 1em 0;
+  font-family: "Titillium Web", sans-serif;
   color: #fff; }
 
 .similar__product--list {

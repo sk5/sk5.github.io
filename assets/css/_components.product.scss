@@ -88,12 +88,6 @@
         color: $black;
     }
     //
-    &--price {
-        font-family: $brand-text;
-        font-size: 2rem;
-        color: lighten($black, 20%);
-    }
-    //
     &currency_sign {
         display: inline-block;
         vertical-align: top;
@@ -194,5 +188,20 @@
     //
     &--info {
         color: $black;
+    }
+    //
+    &__purchase {
+        display: flex;
+        //
+        .button {
+            flex-basis: 100%;
+        }
+    }
+    //
+    &--price {
+        padding-right: 2rem;
+        font-family: $brand-text;
+        font-size: 2rem;
+        color: lighten($black, 20%);
     }
 }
