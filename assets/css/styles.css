@@ -391,9 +391,8 @@ body {
 
 .header {
   position: relative;
-  background: #fff;
-  height: 30vh;
-  text-align: center; }
+  padding: 0;
+  background: #fff; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .header {
       grid-column: 1 / span 3;
@@ -419,7 +418,8 @@ body {
     justify-content: center;
     align-items: center;
     margin-top: 0;
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    height: 30vh; }
     @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
       .header__title {
         grid-column: 2;
@@ -435,11 +435,12 @@ body {
     .main {
       grid-column: 1 / span 3;
       grid-row: 2; } }
-  #product-page .main,
-  #cart-page .main,
-  .main #maintenace-page {
-    padding-top: 0;
-    background: transparent; }
+
+#product-page .main,
+#cart-page .main,
+#maintenace-page .main {
+  padding-top: 0;
+  background: transparent; }
 
 .project {
   margin: 0 auto;
@@ -451,6 +452,18 @@ body {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: auto;
       grid-gap: 0; } }
+
+.button {
+  padding: 1rem 1.5rem;
+  font-family: "Titillium Web", sans-serif;
+  font-size: 1rem;
+  color: white;
+  text-transform: uppercase; }
+  .button.large {
+    padding: 2rem 1.5rem;
+    font-size: 1.25rem; }
+  .button.positive {
+    color: #57eec7; }
 
 .feature {
   /*&__design {
@@ -591,6 +604,8 @@ body {
       grid-row: 1; } }
 
 .navigation__right {
+  display: flex;
+  align-items: center;
   text-align: right; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .navigation__right {
@@ -871,21 +886,27 @@ body {
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__images {
       grid-column: 1;
-      grid-row: 1 / span 2; } }
+      grid-row: 1; } }
+  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+    .product__info {
+      grid-column: 2;
+      grid-row: 1; } }
   .product__slides {
     margin: 0;
     padding: 0;
     list-style: none; }
   .product--image {
     width: 100%; }
-  .product--page-headings, .product--details {
+  .product__page--headings, .product__details {
     padding-left: 2rem; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__page--headings {
       grid-column: 2;
       grid-row: 1; } }
   .product--title {
-    font-family: "Titillium Web", sans-serif; }
+    font-family: "Titillium Web", sans-serif;
+    font-size: 2.25rem;
+    text-transform: none; }
   .product--price {
     font-family: "Comfortaa", sans-serif;
     font-size: 3rem; }

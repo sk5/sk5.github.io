@@ -12,12 +12,13 @@
     //
     padding: 0;
     background: transparent;
-    //
-    // Overrides for core Big Cartel styles
-    #product-page &,
-    #cart-page &,
-    #maintenace-page {
-        padding-top: 0;
-        background: transparent;
-    }
+    //    
+}
+//
+// Overrides for core Big Cartel styles
+#product-page .main,
+#cart-page .main,
+#maintenace-page .main {
+    padding-top: 0;
+    background: transparent;
 }

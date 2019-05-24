@@ -46,11 +46,10 @@
     }
     //
     position: relative;
+    padding: 0;
     background: $white;
     //background: linear-gradient(-45deg, lighten($black, 5%) 0%, darken($black, 10%) 100%);
     //width: 30vw;
-    height: 30vh;
-    text-align: center;
     //box-shadow: -1rem 1rem 2rem rgba(black, .2);
     //
     &:before {
@@ -86,6 +85,8 @@
         align-items: center;
         margin-top: 0;
         margin-bottom: 0;
+        height: 30vh;
+        //text-align: center;
         //margin: 0;
         //width: 100%;
         //text-align: center;
