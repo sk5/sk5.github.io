@@ -2,14 +2,10 @@
 // ------------------------------------------------------------
 
 
-.similar__products {
-    &--wrapper {
+.similar__product {
+    &s--wrapper {
         padding: 4rem;
         background: $red;
-        //
-        .product--list {
-            display: flex;
-        }
         //
         .product-list-item {
             overflow: hidden;
@@ -34,7 +30,11 @@
         }
     }
     //
-    &--title {
+    &s--title {
         color: $white;
+    }
+    //
+    &--list {
+        display: flex;
     }
 }

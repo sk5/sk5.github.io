@@ -980,8 +980,6 @@ button {
 .similar__products--wrapper {
   padding: 4rem;
   background: #ff5a5a; }
-  .similar__products--wrapper .product--list {
-    display: flex; }
   .similar__products--wrapper .product-list-item {
     overflow: hidden;
     width: 12rem;
@@ -997,6 +995,9 @@ button {
 
 .similar__products--title {
   color: #fff; }
+
+.similar__product--list {
+  display: flex; }
 
 .module__footer {
   background: #303030; }
