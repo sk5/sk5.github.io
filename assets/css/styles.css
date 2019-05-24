@@ -436,11 +436,13 @@ body {
       grid-column: 1 / span 3;
       grid-row: 2; } }
 
-#product-page .main,
-#cart-page .main,
-#maintenace-page .main {
+#cart_page .main,
+#contact_page .main,
+#maintenance_page .main,
+#product_page .main,
+.custom .main {
   padding-top: 0;
-  background: transparent; }
+  background: transparent !important; }
 
 .project {
   margin: 0 auto;
