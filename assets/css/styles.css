@@ -840,18 +840,18 @@ body {
         background-image: url(../images/polygon-background.svg), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
         background-size: cover;
     }*/ }
-  .product__details {
+  .product__page {
     position: relative;
     margin-bottom: 2rem;
     padding-top: 4rem; }
     @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-      .product__details {
+      .product__page {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: auto;
         grid-gap: 0; } }
     @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-      .product__details {
+      .product__page {
         grid-column: 1 / span 3;
         grid-row: 2; } }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
