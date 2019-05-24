@@ -81,6 +81,12 @@
         color: lighten($black, 20%);
     }
     //
+    &currency_sign {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 1.5rem;
+    }
+    //
     &__details {
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.

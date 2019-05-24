@@ -1,0 +1,40 @@
+﻿// Project wrapping elements
+// ------------------------------------------------------------
+
+
+.similar__products {
+    &--wrapper {
+        padding: 4rem;
+        background: $red;
+        //
+        .product--list {
+            display: flex;
+        }
+        //
+        .product-list-item {
+            overflow: hidden;
+            width: 12rem;
+            border-radius: .25rem;
+            //
+            figure {
+                margin: 0 0 -.25rem 0;
+            }
+            //
+            img {
+                width: 100%;
+            }
+        }
+        //
+        .product-list-item-info {
+            background: $white;
+        }
+        //
+        .product-list-item-info-headers {
+            color: white;
+        }
+    }
+    //
+    &--title {
+        color: $white;
+    }
+}
