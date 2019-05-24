@@ -4,7 +4,6 @@
 
 .product {
     &__page {
-        //
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
         @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
@@ -119,21 +118,6 @@
         height: 6rem;
     }
     //
-    &--title {
-        margin-top: 0;
-        margin-bottom: 0;
-        font-family: $nav-text;
-        font-size: 2rem;
-        text-transform: uppercase;
-        color: $white;
-    }
-    //
-    &--price {
-        font-family: $price-text;
-        font-size: 1.625rem;
-        font-weight: 700;
-        color: $yellow;
-    }
     //
     //
     //
