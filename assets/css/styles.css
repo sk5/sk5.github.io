@@ -886,7 +886,9 @@ button {
         background-size: cover;
     }*/ }
   .product__page {
-    position: relative; }
+    position: relative;
+    padding-top: 4rem;
+    padding-bottom: 4rem; }
     @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
       .product__page {
         display: grid;
