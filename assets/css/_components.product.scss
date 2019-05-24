@@ -249,15 +249,18 @@
     &__name {
         font-size: 1rem;
         font-weight: bold;
+        color: $black;
     }
     //
     &__quantity {
         display: inline-block;
         font-size: 1.25rem;
+        color: $black;
     }
     //
     &__label {
         display: inline-block;
         font-size: 1rem;
+        color: lighten($black, 15%);
     }
 }
