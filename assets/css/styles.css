@@ -909,7 +909,7 @@ button {
       left: -20vw;
       width: calc(100% + 40vw);
       background: #f9fafb;
-      border-top: 0.0625rem solid #cbd4dc; }
+      border-top: 0.0625rem solid #e1e6eb; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__images {
       grid-column: 1;
