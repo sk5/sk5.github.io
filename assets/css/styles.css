@@ -984,8 +984,16 @@ button {
     color: #303030; }
   .product--info {
     color: #303030; }
+  .product__form select {
+    padding: .25rem .5rem;
+    font-size: 1rem;
+    color: #303030;
+    border: 0.0625rem solid #303030; }
+  .product__form svg {
+    display: none; }
   .product__purchase {
-    display: flex; }
+    display: flex;
+    align-items: center; }
     .product__purchase .button {
       flex-basis: 100%; }
   .product--price {

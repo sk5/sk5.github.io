@@ -49,7 +49,7 @@
             </div>
             {% endif %}
 
-            <form method="post" class="product-form" action="/cart" accept-charset="utf8">
+            <form method="post" class="product__form" action="/cart" accept-charset="utf8">
                 <input type="hidden" name="utf8" value='✓'>
                 {% if product.has_default_option %}
                 {{ product.option | hidden_option_input }}

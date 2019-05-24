@@ -190,8 +190,22 @@
         color: $black;
     }
     //
+    &__form {
+        select {
+            padding: .25rem .5rem;
+            font-size: 1rem;
+            color: $black;
+            border: .0625rem solid $black;
+        }
+        //
+        svg {
+            display: none;
+        }
+    }
+    //
     &__purchase {
         display: flex;
+        align-items: center;
         //
         .button {
             flex-basis: 100%;
