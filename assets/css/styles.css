@@ -999,6 +999,7 @@ button {
       flex-basis: 100%; }
   .product--price {
     padding-right: 2rem;
+    width: 11rem;
     font-family: "Comfortaa", sans-serif;
     font-size: 2rem;
     color: #636363; }

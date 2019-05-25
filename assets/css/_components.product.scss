@@ -214,6 +214,7 @@
     //
     &--price {
         padding-right: 2rem;
+        width: 11rem; // This width is a temp fix
         font-family: $brand-text;
         font-size: 2rem;
         color: lighten($black, 20%);
