@@ -940,6 +940,7 @@ button {
     margin: 0 0 1rem 0;
     font-family: "Titillium Web", sans-serif;
     font-size: 2.25rem;
+    line-height: .875em;
     text-transform: none;
     color: #303030; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
@@ -1001,10 +1002,11 @@ button {
     font-family: "Comfortaa", sans-serif;
     font-size: 2rem;
     color: #636363; }
-  .product .currency_sign {
-    display: inline-block;
-    vertical-align: top;
-    font-size: 1.5rem; }
+
+.currency_sign {
+  display: inline-block;
+  vertical-align: top;
+  font-size: 1.5rem; }
 
 .inventory__info {
   margin: 0;
