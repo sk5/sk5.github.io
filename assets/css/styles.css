@@ -884,6 +884,12 @@ button {
         background: $black;
         background-image: url(../images/polygon-background.svg), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
         background-size: cover;
+    }*/
+  /*&--color {
+        float: left;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        width: 40%;
     }*/ }
   .product__page {
     position: relative;
@@ -936,10 +942,6 @@ button {
     font-size: 2.25rem;
     text-transform: none;
     color: #303030; }
-  .productcurrency_sign {
-    display: inline-block;
-    vertical-align: top;
-    font-size: 1.5rem; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__details {
       grid-column: 2;
@@ -954,13 +956,8 @@ button {
     color: #303030; }
   .product--content {
     height: 6rem; }
-  .product--select-options {
-    margin-top: 2rem; }
-  .product--color {
-    float: left;
-    margin-right: 1rem;
-    margin-bottom: 1rem;
-    width: 40%; }
+  .product__select {
+    margin-bottom: 2rem; }
   .product--sizing {
     float: left;
     width: 40%; }
@@ -983,6 +980,8 @@ button {
     font-weight: 700;
     text-transform: uppercase;
     color: #303030; }
+  .product__inventory {
+    padding: 2rem 0; }
   .product--info {
     color: #303030; }
   .product__form select {
@@ -1002,9 +1001,13 @@ button {
     font-family: "Comfortaa", sans-serif;
     font-size: 2rem;
     color: #636363; }
+  .product .currency_sign {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1.5rem; }
 
 .inventory__info {
-  padding: 2rem 0; }
+  padding-bottom: 2rem; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .inventory__info {
       display: grid;
@@ -1012,9 +1015,13 @@ button {
       grid-template-rows: auto;
       grid-gap: .5rem; } }
 
+.inventory__header {
+  color: #303030; }
+
 .inventory__box {
   padding: 1rem;
-  box-shadow: 0 0 0 0.0625rem #dae1e7; }
+  box-shadow: 0 0 0 0.0625rem #dae1e7;
+  border-radius: .125rem; }
 
 .inventory__name {
   font-size: 1rem;

@@ -89,12 +89,6 @@
         color: $black;
     }
     //
-    &currency_sign {
-        display: inline-block;
-        vertical-align: top;
-        font-size: 1.5rem;
-    }
-    //
     &__details {
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
@@ -142,16 +136,16 @@
     //
     //
     //
-    &--select-options {
-        margin-top: 2rem;
+    &__select {
+        margin-bottom: 2rem;
     }
     //
-    &--color {
+    /*&--color {
         float: left;
         margin-right: 1rem;
         margin-bottom: 1rem;
         width: 40%;
-    }
+    }*/
     //
     &--sizing {
         float: left;
@@ -188,7 +182,7 @@
     //
     //
     &__inventory {
-
+        padding: 2rem 0;
     }
     //
     &--info {
@@ -223,6 +217,13 @@
         font-size: 2rem;
         color: lighten($black, 20%);
     }
+    //
+    //
+    .currency_sign {
+        display: inline-block;
+        vertical-align: top;
+        font-size: 1.5rem;
+    }
 }
 //
 //
@@ -238,12 +239,17 @@
             grid-gap: .5rem;
         }
         //
-        padding: 2rem 0;
+        padding-bottom: 2rem;
+    }
+    //
+    &__header {
+        color: $black;
     }
     //
     &__box {
         padding: 1rem;
         box-shadow: 0 0 0 .0625rem darken(#f9fafb, 10%);
+        border-radius: .125rem;
     }
     //
     &__name {
