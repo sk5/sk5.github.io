@@ -1007,7 +1007,8 @@ button {
     font-size: 1.5rem; }
 
 .inventory__info {
-  margin: 0; }
+  margin: 0;
+  padding: 0; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .inventory__info {
       display: grid;
