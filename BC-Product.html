@@ -37,8 +37,11 @@
             <div class="product__inventory">
                 <div class="inventory__header">Availability</div>
                 <ul class="inventory__info">
-                    {% for option in product.options %}
-                    <li class="inventory__box">
+                    {% for option in product.options %}                    
+                    <li class="inventory__box{% if option.quantity < 2 %} sold-out{% endif %}">
+                        <!--{% if option.quantity < 2 %}
+                        <div>Only 1 left</div>
+                        {% endif %}-->
                         {% unless product.has_default_option %}<div class="inventory__name">{{ option.name }}</div>{% endunless %}
                         <!--<div class="bar">-->
                         <!-- style="width:{{ option.inventory }}%;" -->

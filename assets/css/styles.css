@@ -937,12 +937,14 @@ button {
       grid-column: 2;
       grid-row: 1; } }
   .product--title {
-    margin: 0 0 1rem 0;
+    margin: 0 0 2rem 0;
+    padding-bottom: 2rem;
     font-family: "Titillium Web", sans-serif;
-    font-size: 2.25rem;
+    font-size: 2.75rem;
     line-height: .875em;
     text-transform: none;
-    color: #303030; }
+    color: #303030;
+    border-bottom: 0.0625rem solid #bcc7d2; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__details {
       grid-column: 2;
@@ -954,6 +956,8 @@ button {
   .product--image {
     width: 100%; }
   .product--description {
+    font-size: 1.25rem;
+    line-height: 125%;
     color: #303030; }
   .product--content {
     height: 6rem; }
@@ -1020,10 +1024,14 @@ button {
       grid-gap: .5rem; } }
 
 .inventory__header {
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+  font-weight: bold;
   color: #303030; }
 
 .inventory__box {
-  padding: 1rem;
+  position: relative;
+  padding: .5rem 1rem;
   box-shadow: 0 0 0 0.0625rem #dae1e7;
   border-radius: .125rem; }
 

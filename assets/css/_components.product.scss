@@ -82,12 +82,14 @@
     }
     //
     &--title {
-        margin: 0 0 1rem 0;
+        margin: 0 0 2rem 0;
+        padding-bottom: 2rem;
         font-family: $thick-text;
-        font-size: 2.25rem;
+        font-size: 2.75rem;
         line-height: .875em;
         text-transform: none;
         color: $black;
+        border-bottom: .0625rem solid darken(#f9fafb, 20%);
     }
     //
     &__details {
@@ -127,6 +129,8 @@
     }
     //
     &--description {
+        font-size: 1.25rem;
+        line-height: 125%;
         color: $black;
     }
     //
@@ -248,11 +252,15 @@
     }
     //
     &__header {
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: bold;
         color: $black;
     }
     //
     &__box {
-        padding: 1rem;
+        position: relative;
+        padding: .5rem 1rem;
         box-shadow: 0 0 0 .0625rem darken(#f9fafb, 10%);
         border-radius: .125rem;
     }
