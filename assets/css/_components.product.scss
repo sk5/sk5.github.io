@@ -1,4 +1,4 @@
-﻿// Footer wrapping elements
+﻿// Product elements
 // ------------------------------------------------------------
 
 
@@ -8,7 +8,7 @@
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
         @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: 60% 40%;
             grid-template-rows: auto; // 25rem;
             grid-gap: 0;
         }
@@ -58,9 +58,12 @@
     }
     //
     &__slides {
+        overflow: hidden;
         margin: 0;
         padding: 0;
         list-style: none;
+        min-height: 50rem;
+        max-height: 100vh;
     }
     //
     &--image {
@@ -81,11 +84,24 @@
         }
     }
     //
+    &-status {
+        display: inline-block;
+        margin-bottom: .5rem;
+        padding: .3125rem .75rem;
+        font-family: $brand-text;
+        font-weight: 700;
+        font-size: 95%;
+        color: $white;
+        background: $red;
+        border-radius: .125rem;
+    }
+    //
     &--title {
         margin: 0 0 2rem 0;
         padding-bottom: 2rem;
         font-family: $thick-text;
         font-size: 2.75rem;
+        font-weight: 900;
         line-height: .875em;
         text-transform: none;
         color: $black;
@@ -194,12 +210,19 @@
         color: $black;
     }
     //
+    &__select-label {
+        display: block;
+        margin-bottom: .25rem;
+        font-size: 85%;
+    }
+    //
     &__form {
         select {
-            padding: .25rem .5rem;
-            font-size: 1rem;
+            padding: .5rem;
+            font-size: 1.125rem;
             color: $black;
             border: .0625rem solid $black;
+            border-radius: .25rem;
         }
         //
         svg {
@@ -219,9 +242,10 @@
     &--price {
         padding-right: 2rem;
         width: 11rem; // This width is a temp fix
-        font-family: $brand-text;
+        font-family: $thick-text;
         font-size: 2rem;
-        color: lighten($black, 20%);
+        line-height: 1.75em;
+        color: lighten($black, 10%);
     }
 }
 //

@@ -60,6 +60,11 @@
                 {{ product.option | hidden_option_input }}
                 {% else %}
                 <div class="product__select">
+                    {% for category in categories.active %}
+                    {% if category.name == 'Shirts' %}
+                    <label class="product__select-label" for="option">Choose a shirt size and color</label>
+                    {% endif %}
+                    {% endfor %}
                     <select id="option" name="[cart][add][id]" aria-label="Select option">
                         {% for option in product.options %}
                         <option value="{{ option.id }}" data-option-price="{{ option.price }}" {% if option.sold_out %} disabled="disabled" {% endif %}>{{ option.name }}{% if option.price != product.default_price %} - {{ option.price | money: theme.money_format }}{% endif %} {% if option.sold_out %}(Sold out){% endif %}</option>

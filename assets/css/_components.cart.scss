@@ -1,0 +1,76 @@
+﻿// Cart elements
+// ------------------------------------------------------------
+
+
+.cart {
+    &__page {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto; // 25rem;
+            grid-gap: 0;
+        }
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 1 / span 3;
+            grid-row: 2;
+        }
+        //
+        position: relative;
+        //margin-bottom: 2rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        min-height: 60vh;
+        //background: $fafafa;
+        //
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: -20vw;
+            bottom: 0;
+            left: -20vw;
+            width: calc(100% + 40vw);
+            background: #f9fafb;
+            border-top: .0625rem solid darken(#f9fafb, 8%);
+        }
+    }
+    //
+    &--title {
+        margin: 0 0 .5em 0;
+        font-family: $thick-text;
+        font-size: 2.75rem;
+        font-weight: 900;
+        line-height: .875em;
+        text-transform: none;
+        color: $black;
+        //border-bottom: .0625rem solid darken(#f9fafb, 20%);
+    }
+    //
+    &--empty-message {
+        font-size: 1.25rem;
+        line-height: 125%;
+        color: $black;
+    }
+    //
+    //
+    //
+    &__items {
+    }
+    //
+    //
+    //
+    &__footer {
+        padding: 2rem;
+        background: white;
+        box-shadow: 0 0 0 .0625rem darken(#f9fafb, 20%);
+    }
+    //
+    &__summary {
+        box-shadow: 0 .0625rem 0 #f9fafb;
+    }
+}

@@ -1,8 +1,127 @@
-﻿// Feature elements
+﻿// Feature(home & Products page elements
 // ------------------------------------------------------------
 
 
 .feature {
+    &__list--wrapper {
+        //
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: -20vw;
+            left: -20vw;
+            height: 50vh;
+            min-height: 36rem;
+            background: $black;
+            background-image: url(../images/polygon-background.svg), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
+            background-size: cover;
+        }
+    }
+}
+//
+//
+//
+//
+//
+.products {
+    &__page {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 1 / span 3;
+            grid-row: 2;
+        }
+        //
+        position: relative;
+        //margin-bottom: 2rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        //background: $fafafa;
+        //
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: -20vw;
+            bottom: 0;
+            left: -20vw;
+            width: calc(100% + 40vw);
+            background: #f9fafb;
+            border-top: .0625rem solid darken(#f9fafb, 8%);
+        }
+    }
+    //
+    &__category--nav {
+        padding: 0 0 2rem 0;
+        //background: $white;
+        //border-radius: .125rem;
+        //box-shadow: 0 0 0 .0625rem darken(#f9fafb, 20%);
+    }
+    //
+    &__categories--title {
+        display: inline-block;
+        margin-right: .5rem;
+    }
+    //
+    &__categories--list {
+        display: inline-block;
+        margin: 0 0 .5rem 0;
+        padding: 0;
+        list-style: none;
+        //
+        li {
+            display: inline-block;
+            margin-right: .25rem;
+            //
+            a {
+                display: block;
+                padding: .5rem 1rem;
+                font-family: $brand-text;
+                font-size: 1.125rem;
+                font-weight: 500;
+                letter-spacing: .0625rem;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: $black;
+                background: $white;
+                border-radius: 10rem;
+                box-shadow: 0 0 0 .0625rem darken(#f9fafb, 20%);
+            }
+            //
+            &.selected a {
+                color: white;
+                background: $red;
+                box-shadow: 0 0 0 .0625rem darken($red, 20%);
+            }
+        }
+    }
+    //
+    //
+    //
+    &__list {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto; // 25rem;
+            grid-gap: 0;
+        }
+    }
+    //
+    &__item {
+    }
+}
+//
+//
+//
+//
+//
+.feature,
+.products {
     /*&__design {
         position: relative;
         z-index: 1;
@@ -24,31 +143,17 @@
         //}
     }*/
     //
-    &__products {
+    &__list--wrapper {
         position: relative;
         z-index: 0;
         padding-top: 4rem;
         padding-bottom: 4rem;
         height: auto;
         min-height: 44rem;
-        background: $white;
-        //
-        &:before {
-            content: "";
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            right: -20vw;
-            left: -20vw;
-            height: 50vh;
-            min-height: 36rem;
-            background: $black;
-            background-image: url(../images/polygon-background.svg), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
-            background-size: cover;
-        }
+        background: $white;        
     }
     //
-    &__items {
+    &__list {
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
         @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
@@ -158,7 +263,6 @@
             left: 50%;
             transform: translateX(-50%);
             padding: .3125rem .75rem;
-            //height: 1.5rem;
             font-family: $brand-text;
             font-weight: 700;
             font-size: 95%;
