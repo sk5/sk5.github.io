@@ -4,8 +4,8 @@
     <title>{{ page.name }} | {{ store.name }}</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
-    <!--<link href="{{ theme | theme_css_url }}" media="screen" rel="stylesheet" type="text/css">-->
-    <link href="https://forthe.run/assets/css/styles.css" media="screen" rel="stylesheet" type="text/css" />
+    <link href="{{ theme | theme_css_url }}" media="screen" rel="stylesheet" type="text/css">
+    <!--<link href="https://forthe.run/assets/css/styles.css" media="screen" rel="stylesheet" type="text/css" />-->
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,500,700,900|Frank+Ruhl+Libre:400,700|Titillium+Web:700,900&display=swap" rel="stylesheet">
     {{ head_content }}
 </head>
@@ -32,7 +32,7 @@
     <div class="site__container">
         <div class="project">
             <!---->
-            <header class="header">                
+            <header class="header">
                 <nav class="navigation">
                     <div class="header__title">
                         <a class="header__link" href="index.html">
@@ -64,36 +64,36 @@
                                     {% endfor %}
                                     <li{% if page.full_url contains '/contact' %} class="navigation__list-item selected" {% else %} class="navigation__list-item" {% endif %}>
                                         <a class="navigation__link" href="/contact">Contact</a>
-                                        </li>                                    
+                                        </li>
                         </ul>
                     </div>
                     <div class="navigation__right">
                         <ul class="navigation__list">
                             <li{% if page.full_url contains '/cart' %} class="navigation__list-item selected" {% else %} class="navigation__list-item" {% endif %}>
                                 <a class="navigation__link" href="/cart">Cart</a>
-                            </li>
+                                </li>
                         </ul>
                     </div>
                 </nav>
 
                 <!--<div class="branding">
-                <a href="/" title="Home">
-                    {% if theme.images.header != blank %}
-                    <img class="store-logo" src="{{ theme.images.header.url | constrain: 1800, 500 }}" alt="{{ store.name }}">
-                    {% else %}
-                    <div class="store-header">{{ store.name }}</div>
-                    {% endif %}
-                </a>
-            </div>-->
+                    <a href="/" title="Home">
+                        {% if theme.images.header != blank %}
+                        <img class="store-logo" src="{{ theme.images.header.url | constrain: 1800, 500 }}" alt="{{ store.name }}">
+                        {% else %}
+                        <div class="store-header">{{ store.name }}</div>
+                        {% endif %}
+                    </a>
+                </div>-->
                 <!--<nav class="header-nav mobile-nav">
-                <ul>
-                    <li{% if page.full_url contains '/products' or page.full_url contains '/product/' or page.full_url contains '/category/' or page.full_url contains '/artist/' %} class="selected" {% endif %}>
-                        <a href="/products">{{ pages.products.name }}</a></li>
-                        <li{% if page.full_url contains '/cart' %} class="selected" {% endif %}>
-                            <a href="/cart">Cart</a></li>
-                            <li class="more-link"><a href="#footer" title="See more">More</a></li>
-                </ul>
-            </nav>-->
+                    <ul>
+                        <li{% if page.full_url contains '/products' or page.full_url contains '/product/' or page.full_url contains '/category/' or page.full_url contains '/artist/' %} class="selected" {% endif %}>
+                            <a href="/products">{{ pages.products.name }}</a></li>
+                            <li{% if page.full_url contains '/cart' %} class="selected" {% endif %}>
+                                <a href="/cart">Cart</a></li>
+                                <li class="more-link"><a href="#footer" title="See more">More</a></li>
+                    </ul>
+                </nav>-->
             </header>
             <!-- What is this? -->
             <main class="main">
@@ -191,8 +191,8 @@
                 </ul>
                 {% endif %}-->
             </div>
-        <!--1-->
-        {% endif %}
+            <!--1-->
+            {% endif %}
         </div>
         <!---->
         <footer class="module__footer">
@@ -245,7 +245,9 @@
         <!---->
     </div>
     <!---->
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
+    <script src="//cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/gh/sk5/sk5.github.io/assets/css/styles.css" rel="stylesheet" type="text/css" />
     <script src="{{ 'api' | theme_js_url }}"></script>
     <script src="{{ theme | theme_js_url }}"></script>
 </body>

@@ -66,8 +66,34 @@
         max-height: 100vh;
     }
     //
+    &__slide {
+        display: none;
+        //
+        &:first-of-type {
+            display: block;
+        }
+    }
+    //
     &--image {
         width: 100%;
+    }
+    //
+    &__thumbnails {
+        display: block;
+        margin: 1rem 0 0 0;
+        padding: 0;
+        list-style: none;
+    }
+    //
+    &__thumbnail {
+        display: inline-block;
+        padding: .125rem;
+        width: 4.25rem;
+        border-radius: 0 0 0 .0625rem $white;
+        //
+        &:hover {
+            box-shadow: 0 0 0 .0625rem darken(#f9fafb, 20%);
+        }
     }
     //
     &__page--headings,

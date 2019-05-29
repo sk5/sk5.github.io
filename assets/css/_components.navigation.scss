@@ -51,7 +51,8 @@
         list-style: none;
     }
     //
-    &__link {
+    &__link,
+    &__list-item a {
         transition: box-shadow .3s ease;
         display: inline-block;
         margin-right: .5rem;

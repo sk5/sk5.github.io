@@ -739,7 +739,8 @@ button {
   display: inline-block;
   list-style: none; }
 
-.navigation__link {
+.navigation__link,
+.navigation__list-item a {
   transition: box-shadow .3s ease;
   display: inline-block;
   margin-right: .5rem;
@@ -752,12 +753,15 @@ button {
   text-decoration: none;
   color: #303030;
   box-shadow: 0 .125rem 0 transparent; }
-  .navigation__link:hover {
+  .navigation__link:hover,
+  .navigation__list-item a:hover {
     color: #ff5a5a;
     box-shadow: 0 0.125rem 0 #5aadff; }
-  .navigation__list-item:first-of-type .navigation__link {
+  .navigation__list-item:first-of-type .navigation__link, .navigation__list-item:first-of-type
+  .navigation__list-item a {
     margin-left: 0; }
-  .navigation__list-item:last-of-type .navigation__link {
+  .navigation__list-item:last-of-type .navigation__link, .navigation__list-item:last-of-type
+  .navigation__list-item a {
     margin-right: 0; }
 
 .cart {
@@ -1039,8 +1043,24 @@ button {
     list-style: none;
     min-height: 50rem;
     max-height: 100vh; }
+  .product__slide {
+    display: none; }
+    .product__slide:first-of-type {
+      display: block; }
   .product--image {
     width: 100%; }
+  .product__thumbnails {
+    display: block;
+    margin: 1rem 0 0 0;
+    padding: 0;
+    list-style: none; }
+  .product__thumbnail {
+    display: inline-block;
+    padding: .125rem;
+    width: 4.25rem;
+    border-radius: 0 0 0 0.0625rem #fff; }
+    .product__thumbnail:hover {
+      box-shadow: 0 0 0 0.0625rem #bcc7d2; }
   .product__page--headings, .product__details {
     padding-left: 2rem; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
