@@ -217,6 +217,10 @@
     }
     //
     &__form {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        box-shadow: 0 -.0625rem 0 darken(#f9fafb, 10%);
+        //
         select {
             padding: .5rem;
             font-size: 1.125rem;
@@ -241,10 +245,11 @@
     //
     &--price {
         padding-right: 2rem;
-        width: 11rem; // This width is a temp fix
+        width: 19rem; // This width is a temp fix
         font-family: $thick-text;
-        font-size: 2rem;
-        line-height: 1.75em;
+        font-size: 3rem;
+        line-height: 1.25em;
+        letter-spacing: -.0625rem;
         color: lighten($black, 10%);
     }
 }
@@ -256,6 +261,7 @@
     display: inline-block;
     vertical-align: top;
     font-size: 1.5rem;
+    letter-spacing: -.125rem;
 }
 //
 //

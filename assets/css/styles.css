@@ -655,7 +655,7 @@ button {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 125%; }
+        height: 100%; }
     .feature__item--info,
     .products__item--info {
       position: relative;
@@ -689,19 +689,20 @@ button {
     .products__item--name {
       margin: 0;
       font-family: "Titillium Web", sans-serif;
-      font-size: 1.25rem;
+      font-size: 1.375rem;
       font-weight: 700;
       color: #3d3d3d; }
     .feature__item--price,
     .products__item--price {
       margin: .25rem 0 0 0;
-      font-family: "Raleway", sans-serif;
-      font-size: 1.125rem;
+      font-family: "Titillium Web", sans-serif;
+      font-size: 1rem;
       font-weight: 700;
       color: #636363; }
       .feature__item--price .currency_sign,
       .products__item--price .currency_sign {
-        font-size: 1rem; }
+        font-size: 1rem;
+        letter-spacing: 0; }
 
 .navigation__list,
 .cart__list {
@@ -1114,14 +1115,18 @@ button {
     display: block;
     margin-bottom: .25rem;
     font-size: 85%; }
-  .product__form select {
-    padding: .5rem;
-    font-size: 1.125rem;
-    color: #303030;
-    border: 0.0625rem solid #303030;
-    border-radius: .25rem; }
-  .product__form svg {
-    display: none; }
+  .product__form {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    box-shadow: 0 -0.0625rem 0 #dae1e7; }
+    .product__form select {
+      padding: .5rem;
+      font-size: 1.125rem;
+      color: #303030;
+      border: 0.0625rem solid #303030;
+      border-radius: .25rem; }
+    .product__form svg {
+      display: none; }
   .product__purchase {
     display: flex;
     align-items: center; }
@@ -1129,16 +1134,18 @@ button {
       flex-basis: 100%; }
   .product--price {
     padding-right: 2rem;
-    width: 11rem;
+    width: 19rem;
     font-family: "Titillium Web", sans-serif;
-    font-size: 2rem;
-    line-height: 1.75em;
+    font-size: 3rem;
+    line-height: 1.25em;
+    letter-spacing: -.0625rem;
     color: #4a4a4a; }
 
 .currency_sign {
   display: inline-block;
   vertical-align: top;
-  font-size: 1.5rem; }
+  font-size: 1.5rem;
+  letter-spacing: -.125rem; }
 
 .inventory__info {
   margin: 0;
@@ -1269,6 +1276,42 @@ button {
   font-size: 1.25rem;
   line-height: 125%;
   color: #303030; }
+
+.cart__items {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+@supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+  .cart__item {
+    display: grid;
+    grid-template-columns: 16rem auto;
+    grid-template-rows: auto;
+    grid-gap: 0; } }
+
+.cart__item--image {
+  width: 14rem; }
+  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+    .cart__item--image {
+      grid-column: 1;
+      grid-row: 1; } }
+  .cart__item--image img {
+    width: 100%; }
+
+@supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+  .cart__item--details {
+    grid-column: 2;
+    grid-row: 1; } }
+
+.cart__item--adjustments {
+  padding-top: 1rem;
+  padding-bottom: 1rem; }
+
+.cart__item--quantity-holder {
+  display: inline-block; }
+
+.cart__item--remove {
+  display: inline-block; }
 
 .cart__footer {
   padding: 2rem;
