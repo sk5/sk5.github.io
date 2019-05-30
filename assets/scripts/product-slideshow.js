@@ -8,7 +8,7 @@
     // Auto increment thumbnails
     var thumbnailList = document.getElementsByClassName("product__thumbnail--link");
     for (var j = 0; j < thumbnailList.length; j++) {
-        list[j].setAttribute("onclick", "show" + j);
+        thumbnailList[j].setAttribute("onclick", "show" + j);
     }
 };
 
