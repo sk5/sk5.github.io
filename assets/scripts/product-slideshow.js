@@ -1,7 +1,14 @@
 ﻿window.onload = function () {
+    // Auto increment main images
     var list = document.getElementsByClassName("product__slide");
     for (var i = 0; i < list.length; i++) {
         list[i].setAttribute("data-slide", "image" + i);
+    }
+    //
+    // Auto increment thumbnails
+    var thumbnailList = document.getElementsByClassName("product__thumbnail--link");
+    for (var j = 0; j < thumbnailList.length; j++) {
+        list[j].setAttribute("onclick", "show" + j);
     }
 };
 

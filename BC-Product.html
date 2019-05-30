@@ -21,7 +21,7 @@
                 <!-- 1. Add unique class names to onclick and the images above -->
                 <!-- 2. When clicking a unique thumbnail, show the corresponding image -->
                 <!-- 3. Hide all other child images parent <li>'s -->
-                <a href="#" onclick="show(1)">
+                <a href="#" class="product__thumbnail--link" onclick="show(1)">
                     <img class="product--image" src="{{ image | product_image_url | constrain: 300 }}" alt="Image of {{ product.name | escape }}">
                 </a>
             </li>
