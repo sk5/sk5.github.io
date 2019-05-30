@@ -69,7 +69,7 @@
     &__slide {
         display: none;
         //
-        &:first-of-type {
+        &.active {
             display: block;
         }
     }

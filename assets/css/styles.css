@@ -1045,7 +1045,7 @@ button {
     max-height: 100vh; }
   .product__slide {
     display: none; }
-    .product__slide:first-of-type {
+    .product__slide.active {
       display: block; }
   .product--image {
     width: 100%; }

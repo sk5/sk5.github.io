@@ -12,18 +12,21 @@
     <div class="product__images{% if product.images.size > 1 %} product-images-slideshow{% endif %}">
         <ul class="product__slides slides">
             {% for image in product.images %}
-            <li class="product__slide js--product-image"><img class="product--image" src="{{ image | product_image_url | constrain: 1200 }}" alt="Image of {{ product.name | escape }}"></li>
+            <!--{% if forloop.index == 1 %}
+            <li style="color:black;">First image</li>
+            {% endif %}-->
+            <li class="product__slide js--product-image{% if forloop.index == 1 %} active{% endif %}"><img class="product--image" src="{{ image | product_image_url | constrain: 1200 }}" alt="Image of {{ product.name | escape }}"></li>
             {% endfor %}
         </ul>
         <ul class="product__thumbnails">
-            {% for image in product.images %}
+            {% for image in product.images %}            
             <li class="product__thumbnail js--product-thumbnail">
                 <!-- 1. Add unique class names to onclick and the images above -->
                 <!-- 2. When clicking a unique thumbnail, show the corresponding image -->
                 <!-- 3. Hide all other child images parent <li>'s -->
-                <a href="#" class="product__thumbnail--link">
+                <button class="product__thumbnail--link">
                     <img class="product--image" src="{{ image | product_image_url | constrain: 300 }}" alt="Image of {{ product.name | escape }}">
-                </a>
+                </button>
             </li>
             {% endfor %}
         </ul>
@@ -72,6 +75,13 @@
                 {{ product.option | hidden_option_input }}
                 {% else %}
                 <div class="product__select">
+                    <!--
+                        {% for category in product.categories %}
+                          {% if category.name == 'Shirts' %}
+                            <div>Your content</div>
+                          {% endif %}
+                        {% endfor %}
+                    -->
                     {% for category in categories.active %}
                     {% if category.name == 'Shirts' %}
                     <label class="product__select-label" for="option">Choose a shirt size and color</label>

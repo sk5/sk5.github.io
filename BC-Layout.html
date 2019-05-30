@@ -248,7 +248,95 @@
     <!--<script src="//ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>-->
     <script src="//cdn.jsdelivr.net/gh/jquery/jquery@3/dist/jquery.min.js"></script>
     <!--<link href="https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.0/assets/css/styles.css" rel="stylesheet" type="text/css" />-->
-    <script src="//cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.0/assets/scripts/product-slideshow.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.1/assets/scripts/product-slideshow.js"></script>
+    <!--<script>
+        window.onload = function () {
+            // Auto increment main images
+            var list = document.getElementsByClassName("product__slide");
+            for (var i = 0; i < list.length; i++) {
+                list[i].setAttribute("data-slide", "image-" + i);
+            }
+            //
+            // Auto increment thumbnails
+            var thumbnailList = document.getElementsByClassName("product__thumbnail--link");
+            for (var j = 0; j < thumbnailList.length; j++) {
+                thumbnailList[j].setAttribute("data-thumb", + j);
+            }
+        };
+
+        //document.getElementsByClassName("product__thumbnail--link").click(
+            //this.className += " active";
+            //alert("Clicked");
+        //);
+
+        //function changeProductImage() {
+            //console.log("Hello");
+            ////var slides = document.getElementsByClassName("product__slide");
+            //console.log(slides.length);
+            ////var currentButton = this.getAttribute("data-thumb");
+            ////console.log(currentButton);
+            ////slides.forEach(function (el) {
+                ////el.classList.add("hidden")
+            ////});
+            //
+            //console.log(slides.length);
+            //---for (var i = 0; i < slides.length; i++) {
+                //---var slide = slides[i];
+                //---slide.classList.remove("active");
+            //---}
+            //
+            //
+            // New way???
+            var buttons = document.getElementsByClassName("product__thumbnail--link"); // target all buttons into a element array/collection
+            var buttonsCount = buttons.length; // cache the length
+            for (var h = 0; h < buttonsCount; h++) { // reset the counter; check if its smaller than the array length; add itself
+                console.log("before button");
+                buttons[h].onclick = function (e) { // assign a function to the onclick event
+                    console.log("here");
+                    var imageName = this.getAttribute("data-thumb"); // alert the id attribute of the element clicked
+                    //var element = document.querySelector("[data-slide='image-" + imageName "']");
+                    var element = document.querySelector("[data-slide='image-" + imageName + "']");
+                    console.log(element);
+                    //
+                    //
+                    var slides = document.getElementsByClassName("product__slide");
+                    for (var i = 0; i < slides.length; i++) {
+                        var slide = slides[i];
+                        slide.classList.remove("active");
+                    }
+                    //
+                    element.classList.add("active");
+                };
+            }
+            //
+            // -- Old way that worked but not dynamically
+            // -- var element = document.querySelector("[data-slide='image-1'");
+            // -- console.log(element.length);
+            // -- element.classList.add("active");
+            //slides.classList.add("hidden");
+            //this.className += " active";
+            //console.log("Still here");
+        //}
+
+
+        //function show(nr) {
+            //document.getElementById("table1").style.display = "none";
+            //document.getElementById("table2").style.display = "none";
+            //document.getElementById("table3").style.display = "none";
+            //document.getElementById("table4").style.display = "none";
+            //document.getElementById("table" + nr).style.display = "block";
+            //
+            //var slides = document.getElementsByClassName("product__slide");
+            //slides.className += "hidden";
+            //slides.classList.add("hidden");
+            //-document.querySelectorAll("[data-slide='image'" + nr).className.remove("hidden");
+            //
+            //-var thumbnails = document.getElementsByClassName("product__thumbnail--link");
+            //-thumbnails.className.remove("active");
+            //var currentSlide = slides.getAttribute('data-fruit');
+            //-this.className += "active";
+        //}
+    </script>-->
     <script src="{{ 'api' | theme_js_url }}"></script>
     <script src="{{ theme | theme_js_url }}"></script>
 </body>
