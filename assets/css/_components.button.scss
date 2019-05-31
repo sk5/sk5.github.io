@@ -7,10 +7,12 @@ button {
     padding: 0;
     cursor: pointer;
     background: transparent;
+    border: none;
     outline: 0;
 }
 
 .button {
+    transition: background .2s ease;
     display: inline-block;
     padding: .5rem 1rem;
     font-family: $thick-text;
@@ -30,8 +32,20 @@ button {
         letter-spacing: .0625rem;
     }
     //
+    &.negative {
+        background: darken($red, 10%);
+        //
+        &:hover {
+            background: darken($red, 20%);
+        }
+    }
+    //
     &.positive {
         background: darken($green, 10%);
+        //
+        &:hover {
+            background: darken($green, 20%);
+        }
     }
     //
     &.flat {
@@ -40,10 +54,18 @@ button {
         //
         &.negative {
             color: darken($red, 10%);
+            //
+            &:hover {
+                color: darken($red, 20%);
+            }
         }
         //
         &.positive {
             color: darken($green, 10%);
+            //
+            &:hover {
+                color: darken($green, 20%);
+            }
         }
     }
 }

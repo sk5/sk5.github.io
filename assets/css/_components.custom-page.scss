@@ -1,0 +1,41 @@
+﻿// Custom page elements
+// ------------------------------------------------------------
+
+
+.custom {
+    &-page {
+        position: relative;
+        //margin-bottom: 2rem;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        //
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: -20vw;
+            bottom: 0;
+            left: -20vw;
+            width: calc(100% + 40vw);
+            background: #f9fafb;
+            border-top: .0625rem solid darken(#f9fafb, 8%);
+        }
+        //
+        &-header {
+            margin: 0 0 .5em 0;
+            font-family: $thick-text;
+            font-size: 2.75rem;
+            font-weight: 900;
+            line-height: .875em;
+            text-transform: none;
+            color: $black;
+        }
+        //
+        &-content {
+            font-size: 1.25rem;
+            line-height: 125%;
+            color: $black;
+        }
+    }
+}

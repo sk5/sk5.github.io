@@ -2,6 +2,186 @@
 // ------------------------------------------------------------
 
 
+.feature,
+.products {
+    /*&__design {
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        width: calc(30vh + 20rem);
+        height: 30vh;
+        //background: linear-gradient(to right, rgba($black, 0) 0%, rgba($black, 1) 30%, rgba($black, 1) 70%, rgba($black, 0) 100%);
+        //
+        //&:before {
+            //content: "";
+            //position: absolute;
+            //z-index: -2;
+            //top: 0;
+            //right: 50%;
+            //bottom: 0;
+            //width: 100vw;
+            //background-image: url(../images/ftr-heart-angle.svg);
+            //background-size: 4%;
+        //}
+    }*/
+    //
+    &__list--wrapper {
+        position: relative;
+        z-index: 0;
+        padding-top: 4rem;
+        padding-bottom: 4rem;
+        height: auto;
+        min-height: 44rem;
+        background: $white;        
+    }
+    //
+    &__list {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: auto; // 25rem;
+            grid-gap: 0;
+        }
+        //
+        //margin-top: 4rem;
+    }
+    //
+    &__item {
+        position: relative;
+        height: 50vh;
+        min-height: 34rem;
+        text-decoration: none;
+        background: $white;
+        box-shadow: inset .0625rem -.0625rem 0 rgba($black, .1);
+        //
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            width: .0625rem;
+            height: 100%;
+            background: white;
+        }
+        //
+        &:nth-child(1) {
+            // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+            // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+            @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+                grid-column: 1;
+                grid-row: 1;
+            }
+            //
+            //background: $yellow;
+            box-shadow: inset 0 -.0625rem 0 rgba($black, .1);
+        }
+        //
+        &:nth-child(2) {
+            // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+            // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+            @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+                grid-column: 2;
+                grid-row: 1;
+            }
+            //
+            //background: $orange;
+        }
+        //
+        &:nth-child(3n) {
+            // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+            // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+            @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+                grid-column: 3;
+                grid-row: 1;
+            }
+            //
+            //background: $red;
+            &:after {
+                display: none;
+            }
+        }
+        //
+        &--image {
+            position: relative;
+            margin: 0;
+            overflow: hidden;
+            width: 100%;
+            height: 40vh;
+            min-height: 26rem;
+            //
+            img {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                height: 100%;
+            }
+        }
+        //
+        &--info {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            height: 10vh;
+            min-height: 8rem;
+            text-align: center;
+            background: #f9fafb;
+        }
+        //
+        &--headers {
+            //position: relative; -- Removed this to move the status up to its parent item
+            z-index: 1;
+            width: 100%;
+        }
+        //
+        &--status {
+            position: absolute;
+            top: -.75rem;
+            left: 50%;
+            transform: translateX(-50%);
+            padding: .3125rem .75rem;
+            font-family: $brand-text;
+            font-weight: 700;
+            font-size: 95%;
+            line-height: 1rem;
+            color: white;
+            background: $red;
+            border-radius: .125rem;
+        }
+        //
+        &--name {
+            margin: 0;
+            font-family: $thick-text;
+            font-size: 1.375rem;
+            font-weight: 700;
+            //text-transform: uppercase;
+            color: lighten($black, 5%);
+        }
+        //
+        &--price {
+            margin: .25rem 0 0 0;
+            font-family: $thick-text;
+            font-size: 1rem;
+            font-weight: 700;
+            color: lighten($black, 20%);
+            //
+            .currency_sign {
+                font-size: 1rem;
+                letter-spacing: 0;
+            }
+        }
+    }
+}
+//
+//
+//
+//
+//
 .feature {
     &__list--wrapper {
         //
@@ -13,7 +193,7 @@
             right: -20vw;
             left: -20vw;
             height: 50vh;
-            min-height: 36rem;
+            min-height: 32rem;
             background: $black;
             background-image: url(../images/polygon-background.svg), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
             background-size: cover;
@@ -82,7 +262,6 @@
                 font-family: $brand-text;
                 font-size: 1.125rem;
                 font-weight: 500;
-                letter-spacing: .0625rem;
                 text-transform: uppercase;
                 text-decoration: none;
                 color: $black;
@@ -113,66 +292,6 @@
     }
     //
     &__item {
-    }
-}
-//
-//
-//
-//
-//
-.feature,
-.products {
-    /*&__design {
-        position: relative;
-        z-index: 1;
-        display: inline-block;
-        width: calc(30vh + 20rem);
-        height: 30vh;
-        //background: linear-gradient(to right, rgba($black, 0) 0%, rgba($black, 1) 30%, rgba($black, 1) 70%, rgba($black, 0) 100%);
-        //
-        //&:before {
-            //content: "";
-            //position: absolute;
-            //z-index: -2;
-            //top: 0;
-            //right: 50%;
-            //bottom: 0;
-            //width: 100vw;
-            //background-image: url(../images/ftr-heart-angle.svg);
-            //background-size: 4%;
-        //}
-    }*/
-    //
-    &__list--wrapper {
-        position: relative;
-        z-index: 0;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
-        height: auto;
-        min-height: 44rem;
-        background: $white;        
-    }
-    //
-    &__list {
-        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
-        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            grid-template-rows: auto; // 25rem;
-            grid-gap: 0;
-        }
-        //
-        //margin-top: 4rem;
-    }
-    //
-    &__item {
-        position: relative;
-        height: 50vh;
-        min-height: 44rem;
-        text-decoration: none;
-        background: $white;
-        box-shadow: inset .0625rem -.0625rem 0 rgba($black, .1);
         //
         &:after {
             content: "";
@@ -182,116 +301,11 @@
             bottom: 0;
             width: .0625rem;
             height: 100%;
-            background: white;
-        }
-        //
-        &:nth-child(1) {
-            // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
-            // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-            @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-                grid-column: 1;
-                grid-row: 1;
-            }
-            //
-            //background: $yellow;
-            box-shadow: inset 0 -.0625rem 0 rgba($black, .1);
-        }
-        //
-        &:nth-child(2) {
-            // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
-            // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-            @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-                grid-column: 2;
-                grid-row: 1;
-            }
-            //
-            //background: $orange;
-        }
-        //
-        &:nth-child(3) {
-            // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
-            // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-            @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-                grid-column: 3;
-                grid-row: 1;
-            }
-            //
-            //background: $red;
-            &:after {
-                display: none;
-            }
-        }
-        //
-        &--image {
-            position: relative;
-            margin: 0;
-            overflow: hidden;
-            width: 100%;
-            height: 40vh;
-            min-height: 36rem;
-            //
-            img {
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                height: 100%;
-            }
-        }
-        //
-        &--info {
-            position: relative;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            width: 100%;
-            height: 10vh;
-            min-height: 8rem;
-            text-align: center;
             background: #f9fafb;
         }
         //
-        &--headers {
-            //position: relative; -- Removed this to move the status up to its parent item
-            z-index: 1;
-            width: 100%;
-        }
-        //
-        &--status {
-            position: absolute;
-            top: -.75rem;
-            left: 50%;
-            transform: translateX(-50%);
-            padding: .3125rem .75rem;
-            font-family: $brand-text;
-            font-weight: 700;
-            font-size: 95%;
-            line-height: 1rem;
-            color: white;
-            background: $red;
-            border-radius: .125rem;
-        }
-        //
-        &--name {
-            margin: 0;
-            font-family: $thick-text;
-            font-size: 1.375rem;
-            font-weight: 700;
-            //text-transform: uppercase;
-            color: lighten($black, 5%);
-        }
-        //
-        &--price {
-            margin: .25rem 0 0 0;
-            font-family: $thick-text;
-            font-size: 1rem;
-            font-weight: 700;
-            color: lighten($black, 20%);
-            //
-            .currency_sign {
-                font-size: 1rem;
-                letter-spacing: 0;
-            }
+        &--info {
+            background: $white;
         }
     }
 }

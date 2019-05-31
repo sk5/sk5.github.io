@@ -462,9 +462,11 @@ button {
   padding: 0;
   cursor: pointer;
   background: transparent;
+  border: none;
   outline: 0; }
 
 .button {
+  transition: background .2s ease;
   display: inline-block;
   padding: .5rem 1rem;
   font-family: "Titillium Web", sans-serif;
@@ -481,88 +483,25 @@ button {
     font-size: 1.5rem;
     font-weight: 900;
     letter-spacing: .0625rem; }
+  .button.negative {
+    background: #ff2727; }
+    .button.negative:hover {
+      background: #f30000; }
   .button.positive {
     background: #29e9b8; }
+    .button.positive:hover {
+      background: #14cb9b; }
   .button.flat {
     color: #636363;
     background: transparent; }
     .button.flat.negative {
       color: #ff2727; }
+      .button.flat.negative:hover {
+        color: #f30000; }
     .button.flat.positive {
       color: #29e9b8; }
-
-.feature__list--wrapper:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  right: -20vw;
-  left: -20vw;
-  height: 50vh;
-  min-height: 36rem;
-  background: #303030;
-  background-image: url(../images/polygon-background.svg), linear-gradient(30deg, #dbfc35 0%, #ffa357 33%, #ff5a5a 66%, #ff57e7 100%);
-  background-size: cover; }
-
-.products__page {
-  position: relative;
-  padding-top: 4rem;
-  padding-bottom: 4rem; }
-  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-    .products__page {
-      grid-column: 1 / span 3;
-      grid-row: 2; } }
-  .products__page:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    right: -20vw;
-    bottom: 0;
-    left: -20vw;
-    width: calc(100% + 40vw);
-    background: #f9fafb;
-    border-top: 0.0625rem solid #e1e6eb; }
-
-.products__category--nav {
-  padding: 0 0 2rem 0; }
-
-.products__categories--title {
-  display: inline-block;
-  margin-right: .5rem; }
-
-.products__categories--list {
-  display: inline-block;
-  margin: 0 0 .5rem 0;
-  padding: 0;
-  list-style: none; }
-  .products__categories--list li {
-    display: inline-block;
-    margin-right: .25rem; }
-    .products__categories--list li a {
-      display: block;
-      padding: .5rem 1rem;
-      font-family: "Raleway", sans-serif;
-      font-size: 1.125rem;
-      font-weight: 500;
-      letter-spacing: .0625rem;
-      text-transform: uppercase;
-      text-decoration: none;
-      color: #303030;
-      background: #fff;
-      border-radius: 10rem;
-      box-shadow: 0 0 0 0.0625rem #bcc7d2; }
-    .products__categories--list li.selected a {
-      color: white;
-      background: #ff5a5a;
-      box-shadow: 0 0 0 0.0625rem #f30000; }
-
-@supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-  .products__list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: auto;
-    grid-gap: 0; } }
+      .button.flat.positive:hover {
+        color: #14cb9b; }
 
 .feature,
 .products {
@@ -606,7 +545,7 @@ button {
   .products__item {
     position: relative;
     height: 50vh;
-    min-height: 44rem;
+    min-height: 34rem;
     text-decoration: none;
     background: #fff;
     box-shadow: inset 0.0625rem -0.0625rem 0 rgba(48, 48, 48, 0.1); }
@@ -634,12 +573,12 @@ button {
         grid-column: 2;
         grid-row: 1; } }
     @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-      .feature__item:nth-child(3),
-      .products__item:nth-child(3) {
+      .feature__item:nth-child(3n),
+      .products__item:nth-child(3n) {
         grid-column: 3;
         grid-row: 1; } }
-    .feature__item:nth-child(3):after,
-    .products__item:nth-child(3):after {
+    .feature__item:nth-child(3n):after,
+    .products__item:nth-child(3n):after {
       display: none; }
     .feature__item--image,
     .products__item--image {
@@ -648,7 +587,7 @@ button {
       overflow: hidden;
       width: 100%;
       height: 40vh;
-      min-height: 36rem; }
+      min-height: 26rem; }
       .feature__item--image img,
       .products__item--image img {
         position: absolute;
@@ -703,6 +642,91 @@ button {
       .products__item--price .currency_sign {
         font-size: 1rem;
         letter-spacing: 0; }
+
+.feature__list--wrapper:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  right: -20vw;
+  left: -20vw;
+  height: 50vh;
+  min-height: 32rem;
+  background: #303030;
+  background-image: url(../images/polygon-background.svg), linear-gradient(30deg, #dbfc35 0%, #ffa357 33%, #ff5a5a 66%, #ff57e7 100%);
+  background-size: cover; }
+
+.products__page {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 4rem; }
+  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+    .products__page {
+      grid-column: 1 / span 3;
+      grid-row: 2; } }
+  .products__page:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -20vw;
+    bottom: 0;
+    left: -20vw;
+    width: calc(100% + 40vw);
+    background: #f9fafb;
+    border-top: 0.0625rem solid #e1e6eb; }
+
+.products__category--nav {
+  padding: 0 0 2rem 0; }
+
+.products__categories--title {
+  display: inline-block;
+  margin-right: .5rem; }
+
+.products__categories--list {
+  display: inline-block;
+  margin: 0 0 .5rem 0;
+  padding: 0;
+  list-style: none; }
+  .products__categories--list li {
+    display: inline-block;
+    margin-right: .25rem; }
+    .products__categories--list li a {
+      display: block;
+      padding: .5rem 1rem;
+      font-family: "Raleway", sans-serif;
+      font-size: 1.125rem;
+      font-weight: 500;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #303030;
+      background: #fff;
+      border-radius: 10rem;
+      box-shadow: 0 0 0 0.0625rem #bcc7d2; }
+    .products__categories--list li.selected a {
+      color: white;
+      background: #ff5a5a;
+      box-shadow: 0 0 0 0.0625rem #f30000; }
+
+@supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+  .products__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+    grid-gap: 0; } }
+
+.products__item:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: .0625rem;
+  height: 100%;
+  background: #f9fafb; }
+
+.products__item--info {
+  background: #fff; }
 
 .navigation__list,
 .cart__list {
@@ -1051,16 +1075,38 @@ button {
     width: 100%; }
   .product__thumbnails {
     display: block;
-    margin: 1rem 0 0 0;
+    margin: 2rem 0 0 0;
     padding: 0;
-    list-style: none; }
+    list-style: none;
+    text-align: center; }
   .product__thumbnail {
+    position: relative;
     display: inline-block;
     padding: .125rem;
-    width: 4.25rem;
-    border-radius: 0 0 0 0.0625rem #fff; }
+    width: 5rem;
+    box-shadow: 0 0 0 0.0625rem #fff; }
+    .product__thumbnail:before {
+      content: "";
+      position: absolute;
+      top: -1rem;
+      right: -1.5rem;
+      left: -1.5rem;
+      width: calc(100% + 3rem);
+      height: .0625rem;
+      background: #cbd4dc; }
+    .product__thumbnail:after {
+      content: "";
+      position: absolute;
+      top: -.9375rem;
+      left: calc(50% - 1.25rem);
+      width: 2.5rem;
+      height: .1875rem;
+      background: #ff5a5a;
+      border-radius: 0 0 1rem 1rem; }
     .product__thumbnail:hover {
       box-shadow: 0 0 0 0.0625rem #bcc7d2; }
+  .product__thumbnail--link {
+    display: block; }
   .product__page--headings, .product__details {
     padding-left: 2rem; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
@@ -1340,6 +1386,34 @@ button {
 
 .cart__summary {
   box-shadow: 0 .0625rem 0 #f9fafb; }
+
+.custom-page {
+  position: relative;
+  padding-top: 4rem;
+  padding-bottom: 4rem; }
+  .custom-page:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -20vw;
+    bottom: 0;
+    left: -20vw;
+    width: calc(100% + 40vw);
+    background: #f9fafb;
+    border-top: 0.0625rem solid #e1e6eb; }
+  .custom-page-header {
+    margin: 0 0 .5em 0;
+    font-family: "Titillium Web", sans-serif;
+    font-size: 2.75rem;
+    font-weight: 900;
+    line-height: .875em;
+    text-transform: none;
+    color: #303030; }
+  .custom-page-content {
+    font-size: 1.25rem;
+    line-height: 125%;
+    color: #303030; }
 
 .module__footer {
   background: #303030; }
