@@ -18,10 +18,20 @@ for (var h = 0; h < buttonsCount; h++) { // reset the counter; check if its smal
     //console.log("before button");
     buttons[h].onclick = function (e) { // assign a function to the onclick event
         //console.log("here");
-        var imageName = this.getAttribute("data-thumb"); // alert the id attribute of the element clicked 
+        var imageName = this.getAttribute("data-thumb"); // alert the id attribute of the element clicked
+        var currentButton = document.querySelector("[data-thumb='" + imageName + "']");
+        //var element = document.querySelector("[data-slide='image-" + imageName "']");
         var element = document.querySelector("[data-slide='image-" + imageName + "']");
         //console.log(element);
+        //console.log(currentButton);
         //
+        var buttons = document.getElementsByClassName("product__thumbnail--link");
+        for (var j = 0; j < buttons.length; j++) {
+            var button = buttons[j];
+            button.classList.remove("active");
+        }
+        //
+        currentButton.className += (" active");
         //
         var slides = document.getElementsByClassName("product__slide");
         for (var i = 0; i < slides.length; i++) {

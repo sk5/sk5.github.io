@@ -24,7 +24,7 @@
                 <!-- 1. Add unique class names to onclick and the images above -->
                 <!-- 2. When clicking a unique thumbnail, show the corresponding image -->
                 <!-- 3. Hide all other child images parent <li>'s -->
-                <button class="product__thumbnail--link">
+                <button class="product__thumbnail--link{% if forloop.index == 1 %} active{% endif %}">
                     <img class="product--image" src="{{ image | product_image_url | constrain: 300 }}" alt="Image of {{ product.name | escape }}">
                 </button>
             </li>
