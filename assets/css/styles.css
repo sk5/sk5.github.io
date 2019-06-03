@@ -419,15 +419,14 @@ body {
     align-items: center;
     margin-top: 0;
     margin-bottom: 0;
-    padding-top: 4rem;
-    padding-bottom: 4rem; }
+    padding-top: 3rem;
+    padding-bottom: 3rem; }
     @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
       .header__title {
         grid-column: 2;
         grid-row: 1; } }
   .header__link {
-    width: 9.375rem;
-    height: 9.375rem; }
+    width: 20rem; }
 
 .main {
   padding: 0;
@@ -469,7 +468,7 @@ button {
   transition: background .2s ease;
   display: inline-block;
   padding: .5rem 1rem;
-  font-family: "Titillium Web", sans-serif;
+  font-family: "Raleway", sans-serif;
   font-size: 1rem;
   line-height: 1em;
   color: white;
@@ -481,8 +480,7 @@ button {
   .button.large {
     padding: 1.25rem 2rem;
     font-size: 1.5rem;
-    font-weight: 900;
-    letter-spacing: .0625rem; }
+    font-weight: 900; }
   .button.negative {
     background: #ff2727; }
     .button.negative:hover {
@@ -529,23 +527,21 @@ button {
   .products__list--wrapper {
     position: relative;
     z-index: 0;
-    padding-top: 4rem;
-    padding-bottom: 4rem;
+    padding-top: 3rem;
+    padding-bottom: 3rem;
     height: auto;
-    min-height: 44rem;
     background: #fff; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .feature__list,
     .products__list {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(4, 1fr);
       grid-template-rows: auto;
       grid-gap: 0; } }
   .feature__item,
   .products__item {
     position: relative;
-    height: 50vh;
-    min-height: 34rem;
+    height: 27rem;
     text-decoration: none;
     background: #fff;
     box-shadow: inset 0.0625rem -0.0625rem 0 rgba(48, 48, 48, 0.1); }
@@ -559,26 +555,8 @@ button {
       width: .0625rem;
       height: 100%;
       background: white; }
-    .feature__item:nth-child(1),
-    .products__item:nth-child(1) {
-      box-shadow: inset 0 -0.0625rem 0 rgba(48, 48, 48, 0.1); }
-      @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-        .feature__item:nth-child(1),
-        .products__item:nth-child(1) {
-          grid-column: 1;
-          grid-row: 1; } }
-    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-      .feature__item:nth-child(2),
-      .products__item:nth-child(2) {
-        grid-column: 2;
-        grid-row: 1; } }
-    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-      .feature__item:nth-child(3n),
-      .products__item:nth-child(3n) {
-        grid-column: 3;
-        grid-row: 1; } }
-    .feature__item:nth-child(3n):after,
-    .products__item:nth-child(3n):after {
+    .feature__item:nth-child(4n):after,
+    .products__item:nth-child(4n):after {
       display: none; }
     .feature__item--image,
     .products__item--image {
@@ -586,8 +564,7 @@ button {
       margin: 0;
       overflow: hidden;
       width: 100%;
-      height: 40vh;
-      min-height: 26rem; }
+      height: 20rem; }
       .feature__item--image img,
       .products__item--image img {
         position: absolute;
@@ -602,10 +579,9 @@ button {
       justify-content: center;
       align-items: center;
       width: 100%;
-      height: 10vh;
-      min-height: 8rem;
+      height: 7rem;
       text-align: center;
-      background: #f9fafb; }
+      background: #fff; }
     .feature__item--headers,
     .products__item--headers {
       z-index: 1;
@@ -627,15 +603,16 @@ button {
     .feature__item--name,
     .products__item--name {
       margin: 0;
-      font-family: "Titillium Web", sans-serif;
-      font-size: 1.375rem;
-      font-weight: 700;
-      color: #3d3d3d; }
+      font-family: "Raleway", sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: #303030; }
     .feature__item--price,
     .products__item--price {
       margin: .25rem 0 0 0;
       font-family: "Titillium Web", sans-serif;
-      font-size: 1rem;
+      font-size: .875rem;
       font-weight: 700;
       color: #636363; }
       .feature__item--price .currency_sign,
@@ -650,16 +627,25 @@ button {
   top: 0;
   right: -20vw;
   left: -20vw;
-  height: 50vh;
-  min-height: 32rem;
+  height: 27rem;
   background: #303030;
   background-image: url(../images/polygon-background.svg), linear-gradient(30deg, #dbfc35 0%, #ffa357 33%, #ff5a5a 66%, #ff57e7 100%);
   background-size: cover; }
 
+.feature__list--wrapper:after {
+  content: "";
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  right: -20vw;
+  bottom: 0;
+  left: -20vw;
+  background: #f9fafb; }
+
 .products__page {
   position: relative;
-  padding-top: 4rem;
-  padding-bottom: 4rem; }
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .products__page {
       grid-column: 1 / span 3;
@@ -711,7 +697,7 @@ button {
 @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
   .products__list {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     grid-template-rows: auto;
     grid-gap: 0; } }
 
@@ -771,8 +757,8 @@ button {
   margin-left: .5rem;
   padding: .5rem 0;
   font-family: "Raleway", sans-serif;
-  font-size: 1.125rem;
-  font-weight: 500;
+  font-size: 1rem;
+  font-weight: 900;
   text-transform: uppercase;
   text-decoration: none;
   color: #303030;
@@ -806,8 +792,8 @@ button {
     color: #303030; }
 
 .callouts {
-  margin-top: 2rem;
-  margin-bottom: 4rem; }
+  position: relative;
+  padding-bottom: 4rem; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .callouts {
       grid-column: 1 / span 3;
@@ -818,12 +804,21 @@ button {
       grid-template-columns: repeat(3, 1fr);
       grid-template-rows: auto;
       grid-gap: 0; } }
+  .callouts:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -20vw;
+    bottom: 0;
+    left: -20vw;
+    background: #f9fafb; }
 
 .callout__about, .callout__social {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 16rem; }
+  height: 12rem; }
 
 .callout__about {
   position: relative;
@@ -858,22 +853,11 @@ button {
     color: #fff;
     line-height: 2rem;
     text-shadow: 0 0 1rem rgba(0, 0, 0, 0.3); }
-  .callout__about--link {
+  .callout__about .button {
     position: relative;
     z-index: 1;
     margin-right: 4rem;
-    padding: 1rem 1.5rem;
-    height: 4rem;
-    font-family: "Raleway", sans-serif;
-    font-size: 1.25rem;
-    line-height: 2rem;
-    text-align: right;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: white;
-    background: #007af3;
-    border-radius: 2rem;
-    box-shadow: 0 0 0 0.0625rem #a7d3ff; }
+    background: #2794ff; }
 
 .callout__social {
   justify-content: center;
@@ -1029,8 +1013,8 @@ button {
     }*/ }
   .product__page {
     position: relative;
-    padding-top: 4rem;
-    padding-bottom: 4rem; }
+    padding-top: 0;
+    padding-bottom: 3rem; }
     @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
       .product__page {
         display: grid;
@@ -1052,14 +1036,51 @@ button {
       width: calc(100% + 40vw);
       background: #f9fafb;
       border-top: 0.0625rem solid #e1e6eb; }
+  .product__page--headings {
+    position: relative;
+    margin-bottom: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem; }
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+      .product__page--headings {
+        grid-column: 1 / span 2;
+        grid-row: 1; } }
+    .product__page--headings:before {
+      content: "";
+      position: absolute;
+      right: -20vw;
+      bottom: 0;
+      left: -20vw;
+      height: .0625rem;
+      box-shadow: 0 0.0625rem 0 #dae1e7; }
+  .product-status {
+    display: inline-block;
+    margin-bottom: .5rem;
+    padding: .3125rem .75rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 95%;
+    color: #fff;
+    background: #ff5a5a;
+    border-radius: .125rem; }
+  .product--title {
+    margin: 0;
+    font-family: "Raleway", sans-serif;
+    font-size: 2rem;
+    font-weight: 900;
+    line-height: .875em;
+    text-transform: uppercase;
+    color: #303030; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__images {
       grid-column: 1;
-      grid-row: 1; } }
-  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-    .product__info {
-      grid-column: 2;
-      grid-row: 1; } }
+      grid-row: 2; } }
+  .product__info {
+    padding-left: 2rem; }
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+      .product__info {
+        grid-column: 2;
+        grid-row: 2; } }
   .product__slides {
     overflow: hidden;
     margin: 0;
@@ -1107,32 +1128,6 @@ button {
       height: .1875rem;
       background: #ff5a5a;
       border-radius: 0 0 1rem 1rem; }
-  .product__page--headings, .product__details {
-    padding-left: 2rem; }
-  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-    .product__page--headings {
-      grid-column: 2;
-      grid-row: 1; } }
-  .product-status {
-    display: inline-block;
-    margin-bottom: .5rem;
-    padding: .3125rem .75rem;
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-    font-size: 95%;
-    color: #fff;
-    background: #ff5a5a;
-    border-radius: .125rem; }
-  .product--title {
-    margin: 0 0 2rem 0;
-    padding-bottom: 2rem;
-    font-family: "Titillium Web", sans-serif;
-    font-size: 2.75rem;
-    font-weight: 900;
-    line-height: .875em;
-    text-transform: none;
-    color: #303030;
-    border-bottom: 0.0625rem solid #bcc7d2; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__details {
       grid-column: 2;
@@ -1144,6 +1139,8 @@ button {
   .product--image {
     width: 100%; }
   .product--description {
+    margin-bottom: 3rem;
+    font-family: "Raleway", sans-serif;
     font-size: 1.25rem;
     line-height: 125%;
     color: #303030; }
@@ -1180,19 +1177,19 @@ button {
   .product__select-label {
     display: block;
     margin-bottom: .25rem;
-    font-size: 85%; }
-  .product__form {
-    margin-top: 2rem;
-    padding-top: 2rem;
-    box-shadow: 0 -0.0625rem 0 #dae1e7; }
-    .product__form select {
-      padding: .5rem;
-      font-size: 1.125rem;
-      color: #303030;
-      border: 0.0625rem solid #303030;
-      border-radius: .25rem; }
-    .product__form svg {
-      display: none; }
+    font-family: "Raleway", sans-serif;
+    font-size: 85%;
+    font-weight: 900;
+    text-transform: uppercase; }
+  .product__form select {
+    padding: .5rem;
+    width: 100%;
+    font-size: 1.125rem;
+    color: #303030;
+    border: 0.0625rem solid #303030;
+    border-radius: .25rem; }
+  .product__form svg {
+    display: none; }
   .product__purchase {
     display: flex;
     align-items: center; }
@@ -1252,7 +1249,7 @@ button {
 
 .similar__products--wrapper {
   position: relative;
-  padding: 4rem 0;
+  padding: 3rem 0;
   width: 80vw;
   max-width: 100rem; }
   .similar__products--wrapper:before {
@@ -1270,22 +1267,30 @@ button {
   .similar__products--wrapper .product-list-item {
     overflow: hidden;
     width: 12rem;
-    border-radius: .25rem; }
+    text-decoration: none;
+    border-radius: .25rem;
+    box-shadow: 0 0 0 0.125rem #fff; }
     .similar__products--wrapper .product-list-item figure {
       margin: 0 0 -.25rem 0; }
     .similar__products--wrapper .product-list-item img {
-      width: 100%; }
+      width: 105%; }
+  .similar__products--wrapper .product-list-item-container {
+    overflow: hidden;
+    height: 12rem; }
   .similar__products--wrapper .product-list-item-info {
     padding: 1rem;
     background: #fff; }
   .similar__products--wrapper .product-list-item-info-headers {
+    height: 3.5rem;
     color: #303030; }
   .similar__products--wrapper .product-list-item-status {
     font-size: .75rem;
     color: #ff5a5a; }
   .similar__products--wrapper .product-list-item-name {
-    font-family: "Titillium Web", sans-serif;
+    font-family: "Raleway", sans-serif;
     font-size: 1rem;
+    font-weight: 900;
+    text-transform: uppercase;
     color: #303030; }
   .similar__products--wrapper .product-list-item-price {
     display: none;
@@ -1293,19 +1298,24 @@ button {
 
 .similar__products--title {
   margin: 0 0 1em 0;
-  font-family: "Titillium Web", sans-serif;
-  font-size: 2.25rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
   line-height: 1em;
-  letter-spacing: .0625rem;
+  text-transform: uppercase;
   color: #fff; }
 
-.similar__product--list {
-  display: flex; }
+@supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+  .similar__product--list {
+    display: grid;
+    grid-template-columns: 12rem 12rem 12rem 12rem auto;
+    grid-template-rows: auto;
+    grid-gap: 1rem; } }
 
 .cart__page {
   position: relative;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
   min-height: 60vh; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .cart__page {
@@ -1389,8 +1399,8 @@ button {
 
 .custom-page {
   position: relative;
-  padding-top: 4rem;
-  padding-bottom: 4rem; }
+  padding-top: 3rem;
+  padding-bottom: 3rem; }
   .custom-page:before {
     content: "";
     position: absolute;
@@ -1439,23 +1449,53 @@ button {
   .footer__navigation--list-item {
     display: inline-block;
     list-style: none; }
-  .footer__navigation--link {
+  .footer__navigation--link,
+  .footer__navigation a {
     transition: box-shadow .3s ease;
     display: inline-block;
     margin-right: .5rem;
     margin-left: .5rem;
     padding: .5rem 0;
     font-family: "Raleway", sans-serif;
-    font-size: 1.125rem;
-    font-weight: 500;
+    font-size: 1rem;
+    font-weight: 900;
     text-transform: uppercase;
     text-decoration: none;
     color: #fff;
     box-shadow: 0 .125rem 0 transparent; }
-    .footer__navigation--link:hover {
+    .footer__navigation--link:hover,
+    .footer__navigation a:hover {
       color: #ff5a5a;
       box-shadow: 0 0.125rem 0 #5aadff; }
-    .footer__navigation--list-item:first-of-type .footer__navigation--link {
+    .footer__navigation--list-item:first-of-type .footer__navigation--link, .footer__navigation--list-item:first-of-type
+    .footer__navigation a {
       margin-left: 0; }
-    .footer__navigation--list-item:last-of-type .footer__navigation--link {
+    .footer__navigation--list-item:last-of-type .footer__navigation--link, .footer__navigation--list-item:last-of-type
+    .footer__navigation a {
       margin-right: 0; }
+
+.footer__credit {
+  position: relative;
+  margin: 0 auto;
+  padding: .25rem 0;
+  width: 80vw;
+  background: black; }
+  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+    .footer__credit {
+      grid-column: 1 / span 3;
+      grid-row: 2; } }
+  .footer__credit:before, .footer__credit:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20vw;
+    background: black; }
+  .footer__credit:before {
+    right: 100%; }
+  .footer__credit:after {
+    left: 100%; }
+
+.credit__badge a {
+  font-size: .75rem;
+  color: #fff; }

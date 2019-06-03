@@ -21,8 +21,8 @@
         //
         position: relative;
         //margin-bottom: 2rem;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+        padding-top: 0; // Removed padding to accomodate header moving
+        padding-bottom: 3rem;
         //background: $fafafa;
         //
         &:before {
@@ -39,12 +39,59 @@
         }
     }
     //
+    //
+    &__page--headings {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 1 / span 2;
+            grid-row: 1;
+        }
+        //
+        position: relative;
+        margin-bottom: 3rem;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        //
+        &:before {
+            content: "";
+            position: absolute;
+            right: -20vw;
+            bottom: 0;
+            left: -20vw;
+            height: .0625rem;
+            box-shadow: 0 .0625rem 0 darken(#f9fafb, 10%);
+        }
+    }
+    //
+    &-status {
+        display: inline-block;
+        margin-bottom: .5rem;
+        padding: .3125rem .75rem;
+        font-family: $brand-text;
+        font-weight: 700;
+        font-size: 95%;
+        color: $white;
+        background: $red;
+        border-radius: .125rem;
+    }
+    //
+    &--title {
+        margin: 0;
+        font-family: $brand-text;
+        font-size: 2rem;
+        font-weight: 900;
+        line-height: .875em;
+        text-transform: uppercase;
+        color: $black;
+    }
+    //
     &__images {
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
         @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
             grid-column: 1;
-            grid-row: 1;
+            grid-row: 2;
         }
     }
     //
@@ -53,8 +100,10 @@
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
         @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
             grid-column: 2;
-            grid-row: 1;
+            grid-row: 2;
         }
+        //
+        padding-left: 2rem;
     }
     //
     &__slides {
@@ -127,42 +176,8 @@
         }
     }
     //
-    &__page--headings,
     &__details {
-        padding-left: 2rem;
-    }
-    //
-    &__page--headings {
-        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
-        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-            grid-column: 2;
-            grid-row: 1;
-        }
-    }
-    //
-    &-status {
-        display: inline-block;
-        margin-bottom: .5rem;
-        padding: .3125rem .75rem;
-        font-family: $brand-text;
-        font-weight: 700;
-        font-size: 95%;
-        color: $white;
-        background: $red;
-        border-radius: .125rem;
-    }
-    //
-    &--title {
-        margin: 0 0 2rem 0;
-        padding-bottom: 2rem;
-        font-family: $thick-text;
-        font-size: 2.75rem;
-        font-weight: 900;
-        line-height: .875em;
-        text-transform: none;
-        color: $black;
-        border-bottom: .0625rem solid darken(#f9fafb, 20%);
+        //padding-left: 2rem;
     }
     //
     &__details {
@@ -202,6 +217,8 @@
     }
     //
     &--description {
+        margin-bottom: 3rem;
+        font-family: $brand-text;
         font-size: 1.25rem;
         line-height: 125%;
         color: $black;
@@ -270,16 +287,20 @@
     &__select-label {
         display: block;
         margin-bottom: .25rem;
+        font-family: $brand-text;
         font-size: 85%;
+        font-weight: 900;
+        text-transform: uppercase;
     }
     //
     &__form {
-        margin-top: 2rem;
-        padding-top: 2rem;
-        box-shadow: 0 -.0625rem 0 darken(#f9fafb, 10%);
+        //margin-top: 2rem;
+        //padding-top: 2rem;
+        //box-shadow: 0 -.0625rem 0 darken(#f9fafb, 5%);
         //
         select {
             padding: .5rem;
+            width: 100%;
             font-size: 1.125rem;
             color: $black;
             border: .0625rem solid $black;

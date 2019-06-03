@@ -15,7 +15,7 @@ button {
     transition: background .2s ease;
     display: inline-block;
     padding: .5rem 1rem;
-    font-family: $thick-text;
+    font-family: $brand-text;
     font-size: 1rem;
     line-height: 1em;
     color: white;
@@ -29,7 +29,7 @@ button {
         padding: 1.25rem 2rem;
         font-size: 1.5rem;
         font-weight: 900;
-        letter-spacing: .0625rem;
+        //letter-spacing: .0625rem;
     }
     //
     &.negative {

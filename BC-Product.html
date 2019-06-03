@@ -8,6 +8,12 @@
 		{% assign product_status = 'Coming soon' %}
 {% endcase %}
 <div class="product__page">
+    <!-- Product Headings -->
+    <div class="product__page--headings">
+        {% if product_status != blank %}<span class="product-status">{{ product_status }}</span>{% endif %}
+        <h1 class="product--title has-dash">{{ product.name }}</h1>
+    </div>
+
     <!-- Product Images -->
     <div class="product__images{% if product.images.size > 1 %} product-images-slideshow{% endif %}">
         <ul class="product__slides slides">
@@ -19,7 +25,7 @@
             {% endfor %}
         </ul>
         <ul class="product__thumbnails">
-            {% for image in product.images %}            
+            {% for image in product.images %}
             <li class="product__thumbnail js--product-thumbnail">
                 <!-- 1. Add unique class names to onclick and the images above -->
                 <!-- 2. When clicking a unique thumbnail, show the corresponding image -->
@@ -33,30 +39,24 @@
     </div>
 
     <div class="product__info">
-        <!-- Product Headings -->
-        <div class="product__page--headings">
-            {% if product_status != blank %}<span class="product-status">{{ product_status }}</span>{% endif %}
-            <h1 class="product--title has-dash">{{ product.name }}</h1>
+        {% if product.description != blank %}
+        <div class="product--description">
+            {{ product.description | paragraphs }}
         </div>
+        {% endif %}
 
         <!-- Product Details -->
         <div class="product__details">
-            {% if product.description != blank %}
-            <div class="product--description">
-                {{ product.description | paragraphs }}
-            </div>
-            {% endif %}
-
             {% if product.status == 'active' %}
             {% if theme.show_inventory_bars %}
             <div class="product__inventory">
                 <div class="inventory__header">Availability</div>
                 <ul class="inventory__info">
-                    {% for option in product.options %}                    
+                    {% for option in product.options %}
                     <li class="inventory__box{% if option.quantity < 2 %} sold-out{% endif %}">
                         <!--{% if option.quantity < 2 %}
-                        <div>Only 1 left</div>
-                        {% endif %}-->
+                    <div>Only 1 left</div>
+                    {% endif %}-->
                         {% unless product.has_default_option %}<div class="inventory__name">{{ option.name }}</div>{% endunless %}
                         <!--<div class="bar">-->
                         <!-- style="width:{{ option.inventory }}%;" -->
@@ -76,12 +76,12 @@
                 {% else %}
                 <div class="product__select">
                     <!--
-                        {% for category in product.categories %}
-                          {% if category.name == 'Shirts' %}
-                            <div>Your content</div>
-                          {% endif %}
-                        {% endfor %}
-                    -->
+                    {% for category in product.categories %}
+                      {% if category.name == 'Shirts' %}
+                        <div>Your content</div>
+                      {% endif %}
+                    {% endfor %}
+                -->
                     {% for category in categories.active %}
                     {% if category.name == 'Shirts' %}
                     <label class="product__select-label" for="option">Choose a shirt size and color</label>

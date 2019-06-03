@@ -28,10 +28,10 @@
     &__list--wrapper {
         position: relative;
         z-index: 0;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
         height: auto;
-        min-height: 44rem;
+        //min-height: 44rem;
         background: $white;        
     }
     //
@@ -40,7 +40,7 @@
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
         @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             grid-template-rows: auto; // 25rem;
             grid-gap: 0;
         }
@@ -50,8 +50,8 @@
     //
     &__item {
         position: relative;
-        height: 50vh;
-        min-height: 34rem;
+        height: 27rem;
+        //min-height: 34rem;
         text-decoration: none;
         background: $white;
         box-shadow: inset .0625rem -.0625rem 0 rgba($black, .1);
@@ -67,38 +67,7 @@
             background: white;
         }
         //
-        &:nth-child(1) {
-            // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
-            // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-            @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-                grid-column: 1;
-                grid-row: 1;
-            }
-            //
-            //background: $yellow;
-            box-shadow: inset 0 -.0625rem 0 rgba($black, .1);
-        }
-        //
-        &:nth-child(2) {
-            // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
-            // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-            @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-                grid-column: 2;
-                grid-row: 1;
-            }
-            //
-            //background: $orange;
-        }
-        //
-        &:nth-child(3n) {
-            // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
-            // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-            @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-                grid-column: 3;
-                grid-row: 1;
-            }
-            //
-            //background: $red;
+        &:nth-child(4n) {
             &:after {
                 display: none;
             }
@@ -109,8 +78,8 @@
             margin: 0;
             overflow: hidden;
             width: 100%;
-            height: 40vh;
-            min-height: 26rem;
+            height: 20rem;
+            //min-height: 26rem;
             //
             img {
                 position: absolute;
@@ -127,10 +96,10 @@
             justify-content: center;
             align-items: center;
             width: 100%;
-            height: 10vh;
-            min-height: 8rem;
+            height: 7rem;
+            //min-height: 8rem;
             text-align: center;
-            background: #f9fafb;
+            background: $white; // #f9fafb;
         }
         //
         &--headers {
@@ -156,17 +125,17 @@
         //
         &--name {
             margin: 0;
-            font-family: $thick-text;
-            font-size: 1.375rem;
-            font-weight: 700;
-            //text-transform: uppercase;
-            color: lighten($black, 5%);
+            font-family: $brand-text;
+            font-size: 1rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            color: $black;
         }
         //
         &--price {
             margin: .25rem 0 0 0;
             font-family: $thick-text;
-            font-size: 1rem;
+            font-size: .875rem;
             font-weight: 700;
             color: lighten($black, 20%);
             //
@@ -192,11 +161,23 @@
             top: 0;
             right: -20vw;
             left: -20vw;
-            height: 50vh;
-            min-height: 32rem;
+            height: 27rem;
             background: $black;
             background-image: url(../images/polygon-background.svg), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
             background-size: cover;
+        }
+        //
+        &:after {
+            content: "";
+            position: absolute;
+            z-index: -2;
+            top: 0;
+            right: -20vw;
+            bottom: 0;
+            left: -20vw;
+            //height: 50vh;
+            //min-height: 32rem;
+            background: #f9fafb;
         }
     }
 }
@@ -216,8 +197,8 @@
         //
         position: relative;
         //margin-bottom: 2rem;
-        padding-top: 4rem;
-        padding-bottom: 4rem;
+        padding-top: 3rem;
+        padding-bottom: 3rem;
         //background: $fafafa;
         //
         &:before {
@@ -285,7 +266,7 @@
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
         @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: repeat(4, 1fr);
             grid-template-rows: auto; // 25rem;
             grid-gap: 0;
         }

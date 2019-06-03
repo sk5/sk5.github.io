@@ -39,15 +39,16 @@
             list-style: none;
         }
         //
-        &--link {
+        &--link,
+        a {
             transition: box-shadow .3s ease;
             display: inline-block;
             margin-right: .5rem;
             margin-left: .5rem;
             padding: .5rem 0;
             font-family: $brand-text;
-            font-size: 1.125rem;
-            font-weight: 500;
+            font-size: 1rem;
+            font-weight: 900;
             text-transform: uppercase;
             text-decoration: none;
             color: $white;
@@ -67,4 +68,44 @@
             }
         }
     }
+}
+//
+//
+//
+.footer__credit {
+    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+        grid-column: 1 / span 3;
+        grid-row: 2;
+    }
+    //
+    position: relative;
+    margin: 0 auto;
+    padding: .25rem 0;
+    width: 80vw;
+    background: darken($black, 20%);
+    //
+    &:before,
+    &:after {
+        content: "";
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 20vw;
+        background: darken($black, 20%);
+    }
+    //
+    &:before {
+        right: 100%;
+    }
+    //
+    &:after {
+        left: 100%;
+    }
+}
+//
+.credit__badge a {
+    font-size: .75rem;
+    color: $white;
 }

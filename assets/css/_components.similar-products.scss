@@ -5,7 +5,7 @@
 .similar__product {
     &s--wrapper {
         position: relative;
-        padding: 4rem 0;
+        padding: 3rem 0;
         width: 80vw;
         max-width: 100rem;
         //
@@ -26,15 +26,22 @@
         .product-list-item {
             overflow: hidden;
             width: 12rem;
+            text-decoration: none;
             border-radius: .25rem;
+            box-shadow: 0 0 0 .125rem $white;
             //
             figure {
                 margin: 0 0 -.25rem 0;
             }
             //
             img {
-                width: 100%;
+                width: 105%;
             }
+        }
+        //
+        .product-list-item-container {
+            overflow: hidden;
+            height: 12rem;
         }
         //
         .product-list-item-info {
@@ -43,6 +50,7 @@
         }
         //
         .product-list-item-info-headers {
+            height: 3.5rem;
             color: $black;
         }
         //
@@ -52,8 +60,10 @@
         }
         //
         .product-list-item-name {
-            font-family: $thick-text;
+            font-family: $brand-text;
             font-size: 1rem;
+            font-weight: 900;
+            text-transform: uppercase;
             color: $black;
         }
         //
@@ -65,14 +75,23 @@
     //
     &s--title {
         margin: 0 0 1em 0;
-        font-family: $thick-text;
-        font-size: 2.25rem;
+        font-family: $brand-text;
+        font-size: 2rem;
+        font-weight: 900;
         line-height: 1em;
-        letter-spacing: .0625rem;
+        text-transform: uppercase;
         color: $white;
     }
     //
     &--list {
-        display: flex;
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            display: grid;
+            grid-template-columns: 12rem 12rem 12rem 12rem auto;
+            grid-template-rows: auto; // 25rem;
+            grid-gap: 1rem;
+        }
+        //
     }
 }
