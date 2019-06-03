@@ -66,9 +66,9 @@
             transform: rotate(13deg);
             opacity: .5;
             width: 200%;
-            height: 200%;
-            background-image: url(../images/ftr-heart-angle.svg);
-            background-size: 3%;
+            height: 300%;
+            background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.3/assets/images/ftr-heart-angle.svg");
+            background-size: 2%;
             background-position: -2%;
         }
         //
@@ -120,11 +120,11 @@
             //
             &--logo {
                 display: block;
-                margin-bottom: 1rem;
+                margin-bottom: .5rem;
                 width: 100%;
                 //
                 svg {
-                    transform: scale(1.5);
+                    transform: scale(1.2);
                 }
                 //
                 path {
@@ -139,7 +139,7 @@
                 padding-top: .25rem;
                 font-family: $brand-text;
                 font-size: 1.125rem;
-                font-weight: 700;
+                font-weight: 500;
                 color: $white;
             }
             //
@@ -148,6 +148,8 @@
                 display: block;
                 margin-bottom: 1rem;
                 font-size: 2rem;
+                font-weight: 900;
+                text-transform: uppercase;
                 //
                 &:after {
                     content: "";
