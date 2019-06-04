@@ -32,7 +32,7 @@
         padding-bottom: 3rem;
         height: auto;
         //min-height: 44rem;
-        background: $white;        
+        background: $white;
     }
     //
     &__list {
@@ -67,6 +67,11 @@
             background: white;
         }
         //
+        &:nth-child(1),
+        &:nth-child(5n) {
+            box-shadow: inset 0 -.0625rem 0 rgba($black, .1);
+        }
+        //
         &:nth-child(4n) {
             &:after {
                 display: none;
@@ -99,7 +104,7 @@
             height: 7rem;
             //min-height: 8rem;
             text-align: center;
-            background: $white; // #f9fafb;
+            //background: $white; // #f9fafb;
         }
         //
         &--headers {
@@ -286,7 +291,7 @@
         }
         //
         &--info {
-            background: $white;
+            //background: $white;
         }
     }
 }

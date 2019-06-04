@@ -6,7 +6,7 @@
     &-page {
         position: relative;
         //margin-bottom: 2rem;
-        padding-top: 3rem;
+        padding-top: 0;
         padding-bottom: 3rem;
         //
         &:before {
@@ -23,16 +23,34 @@
         }
         //
         &-header {
-            margin: 0 0 .5em 0;
-            font-family: $thick-text;
-            font-size: 2.75rem;
+            position: relative;
+            margin: 0 0 3rem 0;
+            padding-top: 2rem;
+            padding-bottom: 2rem;
+            font-family: $brand-text;
+            font-size: 2.5rem;
             font-weight: 900;
             line-height: .875em;
-            text-transform: none;
-            color: $black;
+            text-transform: uppercase;
+            color: $white;
+            //
+            &:before {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                right: -20vw;
+                bottom: 0;
+                left: -20vw;
+                background: $black;
+                background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.2/assets/images/polygon-background.svg"), linear-gradient(30deg, $purple 0%, $blue 33%, $green 66%, $yellow 100%);
+                background-size: cover;
+                box-shadow: 0 0.0625rem 0 #dae1e7;
+            }
         }
         //
         &-content {
+            font-family: $body-text;
             font-size: 1.25rem;
             line-height: 125%;
             color: $black;

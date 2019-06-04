@@ -68,4 +68,98 @@ button {
             }
         }
     }
+    //
+    //
+    //
+    &.choose--product {
+        margin: .3125rem;
+        padding: .5rem;
+        width: 8.5rem;
+        height: 6rem;
+        font-weight: 900;
+        color: $black;
+        //text-align: center;
+        text-shadow: none;
+        border-radius: .25rem;
+        box-shadow: 0 0 0 .0625rem darken(#f9fafb, 20%);
+        //
+        &:hover {
+            background: white;
+            box-shadow: 0 0 0 .0625rem darken(#f9fafb, 40%);
+        }
+        //
+        &.selected {
+            background: white;
+            box-shadow: 0 0 0 .125rem darken(#f9fafb, 40%);
+        }
+    }
+}
+//
+//
+// Inner pieces of the buttons for selecting a size/color
+.product__size--label {
+    transition: box-shadow .2s ease;
+    display: block;
+    margin: 0 auto .5rem auto;
+    padding: .75rem 0;
+    width: 2.5rem;
+    height: 2.5rem;
+    font-size: 1rem;
+    line-height: 1.125em;
+    text-align: center;
+    color: white;
+    background: black; // If no color, default to this
+    border-radius: 2rem;
+    box-shadow: 0 0 0 0 black;
+    //
+    .button.choose--product:hover & {
+        box-shadow: 0 0 0 .25rem black;
+    }
+    //
+    //
+    &.black {
+        background: black;
+        //
+        .button.choose--product:hover &,
+        .button.choose--product.selected & {
+            box-shadow: 0 0 0 .25rem black;
+        }
+    }
+    //
+    &.charcoal {
+        background: #424443;
+        box-shadow: 0 0 0 0 #424443;
+        //
+        .button.choose--product:hover &,
+        .button.choose--product.selected & {
+            box-shadow: 0 0 0 .25rem #424443;
+        }
+    }
+
+    &.denim {
+        background: #404C57;
+        box-shadow: 0 0 0 0 #404C57;
+        //
+        .button.choose--product:hover &,
+        .button.choose--product.selected & {
+            box-shadow: 0 0 0 .25rem #404C57;
+        }
+    }
+    //
+    &.indigo {
+        background: #576873;
+        box-shadow: 0 0 0 0 #576873;
+        //
+        .button.choose--product:hover &,
+        .button.choose--product.selected & {
+            box-shadow: 0 0 0 .25rem #576873;
+        }
+    }
+}
+//
+.product__color--label {
+    display: inline-block;
+    font-size: .75rem;
+    font-weight: 700;
+    text-align: center;
 }

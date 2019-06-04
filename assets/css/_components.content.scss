@@ -3,18 +3,30 @@
 
 
 .content {
-    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
-    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-        grid-column: 1 / span 3;
-        grid-row: 2;
+    &__page {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            display: grid;
+            grid-template-columns: 60% 40%;
+            grid-template-rows: auto; // 25rem;
+            grid-gap: 0;
+        }
+        //
+        font-family: $body-text;
+        color: $black;
     }
     //
-    font-family: $body-text;
-    color: $black;
-    //
     &__header {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 1 / span 2;
+            grid-row: 1;
+        }
+        //
         position: relative;
+        margin-bottom: 3rem;
         padding: 2rem 0;
         //
         &:before {
@@ -25,8 +37,19 @@
             right: -20vw;
             bottom: 0;
             left: -20vw;
-            background: $black;
-            background-image: url(../images/polygon-background.svg), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
+            background: linear-gradient(30deg, $purple 0%, $blue 33%, $green 66%, $yellow 100%);
+        }
+        //
+        &:after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: -20vw;
+            bottom: 0;
+            left: -20vw;
+            background: transparent;
+            background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.3/assets/images/polygon-background.svg");
             background-size: cover;
         }
     }
@@ -34,9 +57,11 @@
     &__title {
         margin: 0;
         font-family: $brand-text;
-        font-size: 3rem;
-        font-weight: 700;
-        color: white;
+        font-size: 2.5rem;
+        font-weight: 900;
+        line-height: .875em;
+        text-transform: uppercase;
+        color: $white;
         //
         .sub-title {
             display: block;
@@ -65,6 +90,8 @@
     p {
         font-size: 1.4125rem;
     }
+    //
+    //
     //
     &__charity-breakdown {
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.

@@ -97,6 +97,7 @@
                 </div>
                 {% endif %}
                 <div class="product__purchase">
+                    <div class="product__selected--info" id="selected-product-info"></div>
                     <div class="product--price">{{ product.default_price | money: theme.money_format }}</div>
                     <button class="button large positive" name="submit" type="submit" title="Add to Cart">Add to Cart</button>
                 </div>
@@ -142,9 +143,41 @@
     var listvalue = new Array();
     var select = document.getElementById('product-options');
     var div = document.getElementById('product-button-options');
+    //
+    //
     for (var i = 0; i < select.options.length; i++) {
         listarray.push(select.options[i].text);
         listvalue.push(select.options[i].value);
-        div.innerHTML += '<button class="product__options--wrapper" id="' + listvalue[i] + '">' + listarray[i] + '</button>';
+        //
+        var fields = select.options[i].text.split('/');
+        var size = fields[0];
+        var color = fields[1];
+        //
+        //div.innerHTML += '<button class="button choose--product product__options--wrapper" id="' + listvalue[i] + '">' + listarray[i] + ' and ' + color + '</button>';
+        div.innerHTML += '<button type="button" name="choose" class="button choose--product product__options--wrapper" id="' + listvalue[i] + '"><span class="product__size--label ' + color.toLowerCase() + '">' + size + '</span><span class="product__color--label">' + color + '</span></button>';
+        console.log("" + size + "and color" + color.toLowerCase() + "");
+    }
+    //
+    //
+    //
+    var productButtons = document.getElementsByClassName("choose--product"); // target all buttons into a element array/collection
+    var productButtonsCount = productButtons.length; // cache the length
+    console.log(productButtonsCount);
+    for (var k = 0; k < productButtonsCount; k++) { // reset the counter; check if its smaller than the array length; add itself
+        productButtons[k].onclick = function (e) { // assign a function to the onclick event
+            //
+            var productValue = this.getAttribute("id"); // alert the id attribute of the element clicked
+            var currentButton = document.getElementById(productValue);
+            document.getElementById('product-options').value = productValue;            
+            //
+            var productButtons = document.getElementsByClassName("choose--product");
+            //
+            for (var l = 0; l < productButtons.length; l++) {
+                var button = productButtons[l];
+                button.classList.remove("selected");
+            }
+            //
+            currentButton.className += (" selected");
+        };
     }
 </script>
