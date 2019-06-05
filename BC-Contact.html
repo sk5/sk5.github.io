@@ -1,4 +1,4 @@
-﻿<div class="content__page">
+﻿<div class="content__page contact">
     <div class="content__header">
         <h1 class="content__title">{{ page.name }}</h1>
     </div>
@@ -37,9 +37,9 @@
             </div>
             <div class="form--field contact-form-block contact-captcha">
                 <!--<label class="contact-label" for="captcha-input">Spam check</label>-->
-                <div class="input-holder captcha-holder">
+                <div class="form--input captcha input-holder captcha-holder">
+                    <label class="form--label captcha__instructions captcha-instructions" for="captcha-input">Enter the characters from the image</label>
                     {{ contact | contact_input: 'captcha', tabindex: 5 }} {{ contact.captcha }}
-                    <div class="captcha__instructions captcha-instructions">Enter the characters from the image</div>
                 </div>
             </div>
             <div class="submission--field contact-form-block contact-send">

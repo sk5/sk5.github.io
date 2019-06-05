@@ -50,6 +50,7 @@
         }
         //
         &-content {
+            min-height: 50vh;
             font-family: $body-text;
             font-size: 1.25rem;
             line-height: 125%;

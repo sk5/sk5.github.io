@@ -586,14 +586,6 @@ button {
             //background-size: 4%;
         //}
     }*/ }
-  .feature__list--wrapper,
-  .products__list--wrapper {
-    position: relative;
-    z-index: 0;
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    height: auto;
-    background: #fff; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .feature__list,
     .products__list {
@@ -677,40 +669,80 @@ button {
     .feature__item--price,
     .products__item--price {
       margin: .25rem 0 0 0;
-      font-family: "Titillium Web", sans-serif;
-      font-size: .875rem;
-      font-weight: 700;
-      color: #636363; }
+      font-family: "Roboto", sans-serif;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #4a4a4a; }
       .feature__item--price .currency_sign,
       .products__item--price .currency_sign {
         font-size: 1rem;
         letter-spacing: 0; }
 
-.feature__list--wrapper:before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  top: 0;
-  right: -20vw;
-  left: -20vw;
-  height: 27rem;
-  background: #303030;
-  background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.2/assets/images/polygon-background.svg"), linear-gradient(30deg, #dbfc35 0%, #ffa357 33%, #ff5a5a 66%, #ff57e7 100%);
-  background-size: cover; }
+.feature__highlight {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  height: 40rem;
+  background: #303030; }
+  .feature__highlight:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -20vw;
+    bottom: 0;
+    left: -20vw;
+    background: #303030; }
 
-.feature__list--wrapper:after {
-  content: "";
-  position: absolute;
-  z-index: -2;
-  top: 0;
-  right: -20vw;
-  bottom: 0;
-  left: -20vw;
-  background: #f9fafb; }
+.feature__welcome {
+  position: relative;
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 5rem;
+  line-height: .9375em;
+  font-weight: 900;
+  text-transform: uppercase;
+  color: #fff; }
+
+.feature__title {
+  margin: 0 0 2rem 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: .875em;
+  text-transform: uppercase;
+  color: #fff; }
+
+.feature__list--wrapper {
+  position: relative;
+  z-index: 0;
+  padding-top: 2rem;
+  padding-bottom: 3rem;
+  height: auto;
+  background: #fff; }
+  .feature__list--wrapper:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -20vw;
+    left: -20vw;
+    height: 27rem;
+    background: #303030;
+    background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.2/assets/images/polygon-background.svg"), linear-gradient(30deg, #dbfc35 0%, #ffa357 33%, #ff5a5a 66%, #ff57e7 100%);
+    background-size: cover; }
+  .feature__list--wrapper:after {
+    content: "";
+    position: absolute;
+    z-index: -2;
+    top: 0;
+    right: -20vw;
+    bottom: 0;
+    left: -20vw;
+    background: #f9fafb; }
 
 .products__page {
   position: relative;
-  padding-top: 3rem;
   padding-bottom: 3rem; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .products__page {
@@ -728,8 +760,43 @@ button {
     background: #f9fafb;
     border-top: 0.0625rem solid #e1e6eb; }
 
+.products__header {
+  position: relative;
+  padding: 2rem 0;
+  /*&:after {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: -20vw;
+            bottom: 0;
+            left: -20vw;
+            background: transparent;
+            background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.3/assets/images/polygon-background.svg");
+            background-size: cover;
+        }*/ }
+  .products__header:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: -20vw;
+    bottom: -3rem;
+    left: -20vw;
+    background: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.3/assets/images/polygon-background.svg"), linear-gradient(30deg, #dbfc35 0%, #ffa357 33%, #ff5a5a 66%, #ff57e7 100%);
+    background-size: cover; }
+
+.products__title {
+  margin: 0 0 1rem 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: .875em;
+  text-transform: uppercase;
+  color: #fff; }
+
 .products__category--nav {
-  padding: 0 0 2rem 0; }
+  padding: 0; }
 
 .products__categories--title {
   display: inline-block;
@@ -737,7 +804,7 @@ button {
 
 .products__categories--list {
   display: inline-block;
-  margin: 0 0 .5rem 0;
+  margin: 0;
   padding: 0;
   list-style: none; }
   .products__categories--list li {
@@ -747,18 +814,26 @@ button {
       display: block;
       padding: .5rem 1rem;
       font-family: "Raleway", sans-serif;
-      font-size: 1.125rem;
-      font-weight: 500;
+      font-size: .875rem;
+      font-weight: 700;
       text-transform: uppercase;
       text-decoration: none;
       color: #303030;
       background: #fff;
       border-radius: 10rem;
-      box-shadow: 0 0 0 0.0625rem #bcc7d2; }
+      box-shadow: 0 0 0 0.0625rem rgba(0, 0, 0, 0.2); }
     .products__categories--list li.selected a {
       color: white;
       background: #ff5a5a;
       box-shadow: 0 0 0 0.0625rem #f30000; }
+
+.products__list--wrapper {
+  position: relative;
+  z-index: 0;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  height: auto;
+  background: #fff; }
 
 @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
   .products__list {
@@ -977,6 +1052,21 @@ button {
       grid-template-columns: 60% 40%;
       grid-template-rows: auto;
       grid-gap: 0; } }
+  .content__page.contact {
+    position: relative; }
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+      .content__page.contact {
+        grid-template-columns: 40% 60%; } }
+    .content__page.contact:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      right: -20vw;
+      bottom: 0;
+      left: -20vw;
+      background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.3/assets/images/polygon-background.svg"), linear-gradient(30deg, #ff57e7 0%, #5aadff 33%, #57eec7 66%, #dbfc35 100%);
+      background-size: cover; }
 
 .content__header {
   position: relative;
@@ -1006,6 +1096,10 @@ button {
     background: transparent;
     background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.3/assets/images/polygon-background.svg");
     background-size: cover; }
+  .content__page.contact .content__header {
+    margin-bottom: 0; }
+    .content__page.contact .content__header:before, .content__page.contact .content__header:after {
+      display: none; }
 
 .content__title {
   margin: 0;
@@ -1047,7 +1141,11 @@ button {
   font-size: 1.4125rem; }
 
 .content__form--wrapper {
-  padding-bottom: 3rem; }
+  margin-bottom: 3rem;
+  padding: 2rem;
+  background: #fff;
+  border-radius: .5rem;
+  box-shadow: 0 0 0 0.0625rem rgba(0, 0, 0, 0.3); }
 
 .content__charity-breakdown {
   margin: 0;
@@ -1481,18 +1579,11 @@ button {
     background: #f9fafb;
     border-top: 0.0625rem solid #e1e6eb; }
 
-.cart--title {
+.cart__header {
   position: relative;
-  margin: 0 0 3rem 0;
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-  font-family: "Raleway", sans-serif;
-  font-size: 2.5rem;
-  font-weight: 900;
-  line-height: .875em;
-  text-transform: uppercase;
-  color: #fff; }
-  .cart--title:before {
+  margin-bottom: 3rem;
+  padding: 2rem 0; }
+  .cart__header:before {
     content: "";
     position: absolute;
     z-index: -1;
@@ -1500,10 +1591,17 @@ button {
     right: -20vw;
     bottom: 0;
     left: -20vw;
-    background: #303030;
-    background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.2/assets/images/polygon-background.svg"), linear-gradient(30deg, #ff57e7 0%, #5aadff 33%, #57eec7 66%, #dbfc35 100%);
-    background-size: cover;
-    box-shadow: 0 0.0625rem 0 #dae1e7; }
+    background: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.3/assets/images/polygon-background.svg"), linear-gradient(30deg, #dbfc35 0%, #ffa357 33%, #ff5a5a 66%, #ff57e7 100%);
+    background-size: cover; }
+
+.cart__title {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: .875em;
+  text-transform: uppercase;
+  color: #fff; }
 
 .cart--empty-message {
   font-family: "Roboto", sans-serif;
@@ -1568,17 +1666,26 @@ button {
   text-transform: uppercase; }
 
 .form--input input {
+  vertical-align: top;
   padding: .5rem;
-  width: 30rem;
+  width: 100%;
   font-family: "Roboto", sans-serif;
   font-size: 1.25rem;
   color: black;
   border: 0.0625rem solid #bcc7d2;
   border-radius: .25rem; }
 
+.form--input.captcha input {
+  width: calc(100% - 9.375rem); }
+
+.form--input.captcha img {
+  display: block;
+  width: 9.375rem;
+  height: 4.6875rem; }
+
 .form--textarea textarea {
   padding: .5rem;
-  width: 30rem;
+  width: 100%;
   height: 15rem;
   font-family: "Roboto", sans-serif;
   font-size: 1.25rem;
@@ -1626,6 +1733,7 @@ button {
       background-size: cover;
       box-shadow: 0 0.0625rem 0 #dae1e7; }
   .custom-page-content {
+    min-height: 50vh;
     font-family: "Roboto", sans-serif;
     font-size: 1.25rem;
     line-height: 125%;

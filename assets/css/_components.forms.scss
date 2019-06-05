@@ -19,20 +19,33 @@
     //
     &--input {
         input {
+            vertical-align: top;
             padding: .5rem;
-            width: 30rem;
+            width: 100%;
             font-family: $body-text;
             font-size: 1.25rem;
             color: black;
             border: .0625rem solid darken(#f9fafb, 20%);
             border-radius: .25rem;
         }
+        //
+        &.captcha {
+            input {
+                width: calc(100% - 9.375rem);
+            }
+            //
+            img {
+                display: block;
+                width: 9.375rem;
+                height: 4.6875rem;
+            }
+        }
     }
     //
     &--textarea {
         textarea {
             padding: .5rem;
-            width: 30rem;
+            width: 100%;
             height: 15rem;
             font-family: $body-text;
             font-size: 1.25rem;

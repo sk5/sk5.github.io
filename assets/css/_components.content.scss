@@ -15,6 +15,28 @@
         //
         font-family: $body-text;
         color: $black;
+        //
+        &.contact {
+            // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+            // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+            @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+                grid-template-columns: 40% 60%;
+            }
+            //
+            position: relative;
+            //
+            &:before {
+                content: "";
+                position: absolute;
+                z-index: -1;
+                top: 0;
+                right: -20vw;
+                bottom: 0;
+                left: -20vw;
+                background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.3/assets/images/polygon-background.svg"), linear-gradient(30deg, $purple 0%, $blue 33%, $green 66%, $yellow 100%);
+                background-size: cover;
+            }
+        }
     }
     //
     &__header {
@@ -51,6 +73,15 @@
             background: transparent;
             background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.3/assets/images/polygon-background.svg");
             background-size: cover;
+        }
+        //
+        .content__page.contact & {
+            margin-bottom: 0;
+            //
+            &:before,
+            &:after {
+                display: none;
+            }
         }
     }
     //
@@ -104,13 +135,16 @@
     //
     //
     &__submission--message {
-
     }
     //
     //
     //
     &__form--wrapper {
-        padding-bottom: 3rem;
+        margin-bottom: 3rem;
+        padding: 2rem;
+        background: $white;
+        border-radius: .5rem;
+        box-shadow: 0 0 0 .0625rem rgba(black, .3);
     }
     //
     //

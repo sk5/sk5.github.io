@@ -39,17 +39,10 @@
         }
     }
     //
-    &--title {
+    &__header {
         position: relative;
-        margin: 0 0 3rem 0;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
-        font-family: $brand-text;
-        font-size: 2.5rem;
-        font-weight: 900;
-        line-height: .875em;
-        text-transform: uppercase;
-        color: $white;
+        margin-bottom: 3rem;
+        padding: 2rem 0;
         //
         &:before {
             content: "";
@@ -59,11 +52,19 @@
             right: -20vw;
             bottom: 0;
             left: -20vw;
-            background: $black;
-            background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.2/assets/images/polygon-background.svg"), linear-gradient(30deg, $purple 0%, $blue 33%, $green 66%, $yellow 100%);
+            background: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.3/assets/images/polygon-background.svg"), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
             background-size: cover;
-            box-shadow: 0 0.0625rem 0 #dae1e7;
         }
+    }
+    //
+    &__title {
+        margin: 0;
+        font-family: $brand-text;
+        font-size: 2.5rem;
+        font-weight: 900;
+        line-height: .875em;
+        text-transform: uppercase;
+        color: $white;
     }
     //
     &--empty-message {
