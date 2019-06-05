@@ -470,6 +470,7 @@ button {
   padding: .5rem 1rem;
   font-family: "Raleway", sans-serif;
   font-size: 1rem;
+  font-weight: 900;
   line-height: 1em;
   color: white;
   text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.2);
@@ -560,7 +561,7 @@ button {
 .product__color--label {
   display: inline-block;
   font-size: .75rem;
-  font-weight: 700;
+  font-weight: 900;
   text-align: center; }
 
 .feature,
@@ -1019,6 +1020,15 @@ button {
     margin-top: .5rem;
     font-size: 1rem; }
 
+.content__sub-title {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 2.5rem;
+  font-weight: 900;
+  line-height: .875em;
+  text-transform: uppercase;
+  color: #fff; }
+
 .content h3,
 .content h4,
 .content h5 {
@@ -1035,6 +1045,9 @@ button {
 
 .content p {
   font-size: 1.4125rem; }
+
+.content__form--wrapper {
+  padding-bottom: 3rem; }
 
 .content__charity-breakdown {
   margin: 0;
@@ -1272,12 +1285,23 @@ button {
   .product--info {
     color: #303030; }
   .product__select-label {
+    position: relative;
     display: block;
     margin-bottom: .5rem;
+    padding-bottom: .5rem;
     font-family: "Raleway", sans-serif;
-    font-size: 85%;
-    font-weight: 900;
+    font-size: .875rem;
+    font-weight: 700;
     text-transform: uppercase; }
+    .product__select-label:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      height: .0625rem;
+      background: linear-gradient(30deg, #ff57e7 0%, #5aadff 33%, #57eec7 66%, #dbfc35 100%); }
   .product__form select {
     display: none;
     visibility: hidden;
@@ -1530,6 +1554,38 @@ button {
 
 .cart__summary {
   box-shadow: 0 .0625rem 0 #f9fafb; }
+
+.form--field {
+  margin-bottom: 1rem; }
+
+.form--label {
+  display: block;
+  margin-bottom: .25rem;
+  font-family: "Raleway", sans-serif;
+  font-size: .875rem;
+  font-weight: 500;
+  color: #303030;
+  text-transform: uppercase; }
+
+.form--input input {
+  padding: .5rem;
+  width: 30rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  color: black;
+  border: 0.0625rem solid #bcc7d2;
+  border-radius: .25rem; }
+
+.form--textarea textarea {
+  padding: .5rem;
+  width: 30rem;
+  height: 15rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1.25rem;
+  line-height: 1.25em;
+  color: black;
+  border: 0.0625rem solid #bcc7d2;
+  border-radius: .25rem; }
 
 .custom-page {
   position: relative;

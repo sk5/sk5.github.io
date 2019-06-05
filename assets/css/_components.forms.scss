@@ -1,0 +1,45 @@
+﻿// Content elements
+// ------------------------------------------------------------
+
+
+.form {
+    &--field {
+        margin-bottom: 1rem;
+    }
+    //
+    &--label {
+        display: block;
+        margin-bottom: .25rem;
+        font-family: $brand-text;
+        font-size: .875rem;
+        font-weight: 500;
+        color: $black;
+        text-transform: uppercase;
+    }
+    //
+    &--input {
+        input {
+            padding: .5rem;
+            width: 30rem;
+            font-family: $body-text;
+            font-size: 1.25rem;
+            color: black;
+            border: .0625rem solid darken(#f9fafb, 20%);
+            border-radius: .25rem;
+        }
+    }
+    //
+    &--textarea {
+        textarea {
+            padding: .5rem;
+            width: 30rem;
+            height: 15rem;
+            font-family: $body-text;
+            font-size: 1.25rem;
+            line-height: 1.25em;
+            color: black;
+            border: .0625rem solid darken(#f9fafb, 20%);
+            border-radius: .25rem;
+        }
+    }
+}

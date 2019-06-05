@@ -70,6 +70,16 @@
         }
     }
     //
+    &__sub-title {
+        margin: 0;
+        font-family: $brand-text;
+        font-size: 2.5rem;
+        font-weight: 900;
+        line-height: .875em;
+        text-transform: uppercase;
+        color: $white;
+    }
+    //
     h3,
     h4,
     h5 {
@@ -89,6 +99,18 @@
     //
     p {
         font-size: 1.4125rem;
+    }
+    //
+    //
+    //
+    &__submission--message {
+
+    }
+    //
+    //
+    //
+    &__form--wrapper {
+        padding-bottom: 3rem;
     }
     //
     //

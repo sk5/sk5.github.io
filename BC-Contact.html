@@ -4,45 +4,46 @@
     </div>
 
     {% if contact.sent %}
-    <div class="contact-form-block contact-send">
+    <div class="content__submission--message contact-form-block contact-send">
+        <h2 class="content__sub-title">Thank you!</h2>
         <p class="contact-sent centered-message">Your message has been sent and we'll get back to you soon!</p>
     </div>
     {% else %}
-    <div class="page-content {{ page.category }}-content">
-        <form method="post" action="/contact" class="contact-form">
-            <div class="contact-form-block contact-name">
-                <label class="contact-label" for="name-input">Name</label>
-                <div class="input-holder">
+    <div class="content__form--wrapper page-content {{ page.category }}-content">
+        <form method="post" action="/contact" class="contact__form contact-form">
+            <div class="form--field contact-form-block contact-name">
+                <label class="form--label contact-label" for="name-input">Your name</label>
+                <div class="form--input input-holder">
                     {{ contact | contact_input: 'name', tabindex: 1 }}
                 </div>
             </div>
-            <div class="contact-form-block contact-email">
-                <label class="contact-label" for="email-input">Email</label>
-                <div class="input-holder">
+            <div class="form--field contact-form-block contact-email">
+                <label class="form--label contact-label" for="email-input">Your email address</label>
+                <div class="form--input">
                     {{ contact | contact_input: 'email', tabindex: 2 }}
                 </div>
             </div>
-            <div class="contact-form-block contact-subject">
-                <label class="contact-label" for="subject-input">Subject</label>
-                <div class="input-holder">
+            <div class="form--field contact-form-block contact-subject">
+                <label class="form--label contact-label" for="subject-input">Subject</label>
+                <div class="form--input">
                     {{ contact | contact_input: 'subject', tabindex: 3 }}
                 </div>
             </div>
-            <div class="contact-form-block contact-message">
-                <label class="contact-label" for="message-textarea">Message</label>
-                <div class="input-holder">
+            <div class="form--field contact-form-block contact-message">
+                <label class="form--label contact-label" for="message-textarea">Message</label>
+                <div class="form--textarea">
                     {{ contact | contact_input: 'message', tabindex: 4 }}
                 </div>
             </div>
-            <div class="contact-form-block contact-captcha">
-                <label class="contact-label" for="captcha-input">Spam check</label>
+            <div class="form--field contact-form-block contact-captcha">
+                <!--<label class="contact-label" for="captcha-input">Spam check</label>-->
                 <div class="input-holder captcha-holder">
                     {{ contact | contact_input: 'captcha', tabindex: 5 }} {{ contact.captcha }}
-                    <div class="captcha-instructions">Enter the characters from the image</div>
+                    <div class="captcha__instructions captcha-instructions">Enter the characters from the image</div>
                 </div>
             </div>
-            <div class="contact-form-block contact-send">
-                <button class="send-message-button button" type="submit" name="submit" title="Send message" tabindex="6">Send message</button>
+            <div class="submission--field contact-form-block contact-send">
+                <button class="send-message-button button positive large" type="submit" name="submit" title="Send message" tabindex="6">Send message</button>
             </div>
         </form>
     </div>
