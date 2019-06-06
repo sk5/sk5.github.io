@@ -78,10 +78,19 @@
         .navigation__list-item:last-of-type & {
             margin-right: 0;
         }
+        //
+        .navigation__cart--total {
+            vertical-align: top;
+            font-family: $body-text;
+            font-size: inherit;
+            font-weight: 700;
+            line-height: 1.125rem;
+            color: lighten($black, 20%);
+        }
     }
 }
 //
-.cart {
+/*.cart {
     // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
     // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
     @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
@@ -104,4 +113,4 @@
         text-decoration: none;
         color: $black;
     }
-}
+}*/

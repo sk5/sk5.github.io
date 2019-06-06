@@ -23,7 +23,7 @@
             //background-image: url(../images/ftr-heart-angle.svg);
             //background-size: 4%;
         //}
-    }*/        
+    }*/
     //
     &__list {
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
@@ -66,6 +66,10 @@
             &:after {
                 display: none;
             }
+        }
+        //
+        &:hover {
+            box-shadow: inset .0625rem -.0625rem 0 rgba($black, .1), inset 0 0 0 .125rem darken(#f9fafb, 40%);
         }
         //
         &--image {

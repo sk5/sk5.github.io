@@ -10,8 +10,8 @@
 <div class="product__page">
     <!-- Product Headings -->
     <div class="product__page--headings">
-        {% if product_status != blank %}<span class="product-status">{{ product_status }}</span>{% endif %}
         <h1 class="product--title has-dash">{{ product.name }}</h1>
+        {% if product_status != blank %}<span class="product-status">{{ product_status }}</span>{% endif %}
     </div>
 
     <!-- Product Images -->

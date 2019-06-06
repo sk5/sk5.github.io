@@ -201,7 +201,7 @@
         margin-bottom: .25rem;
         padding: 1rem;
         font-family: $brand-text;
-        font-size: 1rem;
+        font-size: 1.25rem;
         font-weight: 900;
         color: lighten($black, 10%);
         box-shadow: 0 .0625rem 0 rgba(black, .1);
@@ -211,7 +211,7 @@
     &__subtotal--amount,
     &__total--amount {
         font-family: $body-text;
-        font-size: 1rem;
+        font-size: 1.25rem;
         color: $black;
         //
         .currency_sign {

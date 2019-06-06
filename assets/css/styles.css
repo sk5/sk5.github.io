@@ -625,6 +625,9 @@ button {
     .feature__item:nth-child(4n):after,
     .products__item:nth-child(4n):after {
       display: none; }
+    .feature__item:hover,
+    .products__item:hover {
+      box-shadow: inset 0.0625rem -0.0625rem 0 rgba(48, 48, 48, 0.1), inset 0 0 0 0.125rem #7f94a9; }
     .feature__item--image,
     .products__item--image {
       position: relative;
@@ -919,24 +922,39 @@ button {
   .navigation__list-item:last-of-type .navigation__link, .navigation__list-item:last-of-type
   .navigation__list-item a {
     margin-right: 0; }
+  .navigation__link .navigation__cart--total,
+  .navigation__list-item a .navigation__cart--total {
+    vertical-align: top;
+    font-family: "Roboto", sans-serif;
+    font-size: inherit;
+    font-weight: 700;
+    line-height: 1.125rem;
+    color: #636363; }
 
-.cart {
-  display: flex;
-  align-items: center;
-  text-align: right; }
-  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-    .cart {
-      grid-column: 3;
-      grid-row: 1; } }
-  .cart__list-item {
-    display: inline-block; }
-  .cart__link {
-    font-family: "Raleway", sans-serif;
-    font-size: 1rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    color: #303030; }
-
+/*.cart {
+    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+        grid-column: 3;
+        grid-row: 1;
+    }
+    //
+    display: flex;
+    align-items: center;
+    text-align: right;
+    //
+    &__list-item {
+        display: inline-block;
+    }
+    //
+    &__link {
+        font-family: $brand-text;
+        font-size: 1rem;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $black;
+    }
+}*/
 .callouts {
   position: relative;
   padding-bottom: 4rem; }
@@ -1277,7 +1295,16 @@ button {
     position: relative;
     margin-bottom: 3rem;
     padding-top: 2rem;
-    padding-bottom: 2rem; }
+    padding-bottom: 2rem;
+    /*&:before {
+            content: "";
+            position: absolute;
+            right: -20vw;
+            bottom: 0;
+            left: -20vw;
+            height: .0625rem;
+            box-shadow: 0 .0625rem 0 darken(#f9fafb, 10%);
+        }*/ }
     @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
       .product__page--headings {
         grid-column: 1 / span 2;
@@ -1285,21 +1312,15 @@ button {
     .product__page--headings:before {
       content: "";
       position: absolute;
+      z-index: -1;
+      top: 0;
       right: -20vw;
       bottom: 0;
       left: -20vw;
-      height: .0625rem;
+      background: #303030;
+      background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.2/assets/images/polygon-background.svg"), linear-gradient(30deg, #dbfc35 0%, #ffa357 33%, #ff5a5a 66%, #ff57e7 100%);
+      background-size: cover;
       box-shadow: 0 0.0625rem 0 #dae1e7; }
-  .product-status {
-    display: inline-block;
-    margin-bottom: .5rem;
-    padding: .3125rem .75rem;
-    font-family: "Raleway", sans-serif;
-    font-weight: 700;
-    font-size: 95%;
-    color: #fff;
-    background: #ff5a5a;
-    border-radius: .125rem; }
   .product--title {
     margin: 0;
     font-family: "Raleway", sans-serif;
@@ -1307,7 +1328,17 @@ button {
     font-weight: 900;
     line-height: .875em;
     text-transform: uppercase;
-    color: #303030; }
+    color: #fff; }
+  .product-status {
+    display: inline-block;
+    margin-top: .5rem;
+    padding: .3125rem .75rem;
+    font-family: "Raleway", sans-serif;
+    font-weight: 700;
+    font-size: 95%;
+    color: #fff;
+    background: #ff5a5a;
+    border-radius: .125rem; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__images {
       grid-column: 1;
@@ -1706,14 +1737,14 @@ button {
   margin-bottom: .25rem;
   padding: 1rem;
   font-family: "Raleway", sans-serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
   font-weight: 900;
   color: #4a4a4a;
   box-shadow: 0 0.0625rem 0 rgba(0, 0, 0, 0.1); }
 
 .cart__items--count, .cart__subtotal--amount, .cart__total--amount {
   font-family: "Roboto", sans-serif;
-  font-size: 1rem;
+  font-size: 1.25rem;
   color: #303030; }
   .cart__items--count .currency_sign, .cart__subtotal--amount .currency_sign, .cart__total--amount .currency_sign {
     font-size: inherit; }

@@ -53,7 +53,7 @@
         padding-top: 2rem;
         padding-bottom: 2rem;
         //
-        &:before {
+        /*&:before {
             content: "";
             position: absolute;
             right: -20vw;
@@ -61,19 +61,21 @@
             left: -20vw;
             height: .0625rem;
             box-shadow: 0 .0625rem 0 darken(#f9fafb, 10%);
+        }*/
+        //
+        &:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: -20vw;
+            bottom: 0;
+            left: -20vw;
+            background: $black;
+            background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.2/assets/images/polygon-background.svg"), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
+            background-size: cover;
+            box-shadow: 0 0.0625rem 0 #dae1e7;
         }
-    }
-    //
-    &-status {
-        display: inline-block;
-        margin-bottom: .5rem;
-        padding: .3125rem .75rem;
-        font-family: $brand-text;
-        font-weight: 700;
-        font-size: 95%;
-        color: $white;
-        background: $red;
-        border-radius: .125rem;
     }
     //
     &--title {
@@ -83,7 +85,19 @@
         font-weight: 900;
         line-height: .875em;
         text-transform: uppercase;
-        color: $black;
+        color: $white;
+    }
+    //
+    &-status {
+        display: inline-block;
+        margin-top: .5rem;
+        padding: .3125rem .75rem;
+        font-family: $brand-text;
+        font-weight: 700;
+        font-size: 95%;
+        color: $white;
+        background: $red;
+        border-radius: .125rem;
     }
     //
     &__images {
