@@ -51,21 +51,29 @@ button {
     //
     &.flat {
         color: lighten($black, 20%);
+        text-shadow: none;
         background: transparent;
+        box-shadow: 0 0 0 .0625rem lighten($black, 20%);
         //
         &.negative {
             color: darken($red, 10%);
+            box-shadow: 0 0 0 .0625rem darken($red, 10%);
             //
             &:hover {
-                color: darken($red, 20%);
+                color: $white;
+                background: darken($red, 20%);
+                box-shadow: 0 0 0 .0625rem darken($red, 20%);
             }
         }
         //
         &.positive {
-            color: darken($green, 10%);
+            color: darken($green, 20%);
+            box-shadow: 0 0 0 .0625rem darken($green, 10%);
             //
             &:hover {
-                color: darken($green, 20%);
+                color: $white;
+                background: darken($green, 20%);
+                box-shadow: 0 0 0 .0625rem darken($green, 20%);
             }
         }
     }

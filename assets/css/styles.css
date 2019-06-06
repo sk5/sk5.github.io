@@ -492,15 +492,23 @@ button {
       background: #14cb9b; }
   .button.flat {
     color: #636363;
-    background: transparent; }
+    text-shadow: none;
+    background: transparent;
+    box-shadow: 0 0 0 0.0625rem #636363; }
     .button.flat.negative {
-      color: #ff2727; }
+      color: #ff2727;
+      box-shadow: 0 0 0 0.0625rem #ff2727; }
       .button.flat.negative:hover {
-        color: #f30000; }
+        color: #fff;
+        background: #f30000;
+        box-shadow: 0 0 0 0.0625rem #f30000; }
     .button.flat.positive {
-      color: #29e9b8; }
+      color: #14cb9b;
+      box-shadow: 0 0 0 0.0625rem #29e9b8; }
       .button.flat.positive:hover {
-        color: #14cb9b; }
+        color: #fff;
+        background: #14cb9b;
+        box-shadow: 0 0 0 0.0625rem #14cb9b; }
   .button.choose--product {
     margin: .3125rem;
     padding: .5rem;
@@ -1556,17 +1564,13 @@ button {
 .cart__page {
   position: relative;
   padding-bottom: 3rem;
-  min-height: 60vh; }
+  min-height: 50vh; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .cart__page {
       display: grid;
-      grid-template-columns: auto;
+      grid-template-columns: 50%;
       grid-template-rows: auto;
       grid-gap: 0; } }
-  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-    .cart__page {
-      grid-column: 1 / span 3;
-      grid-row: 2; } }
   .cart__page:before {
     content: "";
     position: absolute;
@@ -1575,24 +1579,27 @@ button {
     right: -20vw;
     bottom: 0;
     left: -20vw;
-    width: calc(100% + 40vw);
-    background: #f9fafb;
-    border-top: 0.0625rem solid #e1e6eb; }
+    background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.3/assets/images/polygon-background.svg"), linear-gradient(30deg, #dbfc35 0%, #ffa357 33%, #ff5a5a 66%, #ff57e7 100%);
+    background-size: cover; }
 
 .cart__header {
   position: relative;
-  margin-bottom: 3rem;
-  padding: 2rem 0; }
-  .cart__header:before {
-    content: "";
-    position: absolute;
-    z-index: -1;
-    top: 0;
-    right: -20vw;
-    bottom: 0;
-    left: -20vw;
-    background: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.3/assets/images/polygon-background.svg"), linear-gradient(30deg, #dbfc35 0%, #ffa357 33%, #ff5a5a 66%, #ff57e7 100%);
-    background-size: cover; }
+  padding: 2rem 0;
+  /*&:before {
+            content: "";
+            position: absolute;
+            z-index: -1;
+            top: 0;
+            right: -20vw;
+            bottom: 0;
+            left: -20vw;
+            background: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.3/assets/images/polygon-background.svg"), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
+            background-size: cover;
+        }*/ }
+  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+    .cart__header {
+      grid-column: 1 / span 2;
+      grid-row: 1; } }
 
 .cart__title {
   margin: 0;
@@ -1602,6 +1609,14 @@ button {
   line-height: .875em;
   text-transform: uppercase;
   color: #fff; }
+
+.cart__content {
+  margin-bottom: 3rem;
+  padding: 2rem;
+  min-height: 40vh;
+  background: #fff;
+  border-radius: .5rem;
+  box-shadow: 0 0 0 0.0625rem rgba(0, 0, 0, 0.3); }
 
 .cart--empty-message {
   font-family: "Roboto", sans-serif;
@@ -1614,15 +1629,21 @@ button {
   padding: 0;
   list-style: none; }
 
-@supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-  .cart__item {
-    display: grid;
-    grid-template-columns: 16rem auto;
-    grid-template-rows: auto;
-    grid-gap: 0; } }
+.cart__item {
+  margin-top: .3125rem;
+  margin-bottom: .3125rem;
+  padding: 1rem;
+  border-radius: .25rem;
+  box-shadow: 0 0 0 0.0625rem rgba(0, 0, 0, 0.15); }
+  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+    .cart__item {
+      display: grid;
+      grid-template-columns: 8rem auto;
+      grid-template-rows: auto;
+      grid-gap: 1rem; } }
 
 .cart__item--image {
-  width: 14rem; }
+  width: 8rem; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .cart__item--image {
       grid-column: 1;
@@ -1635,23 +1656,83 @@ button {
     grid-column: 2;
     grid-row: 1; } }
 
+.cart__item--details-name {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 900;
+  color: #303030; }
+
+.cart__item--details-option {
+  margin-bottom: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-size: .875rem;
+  font-weight: 700;
+  color: #303030; }
+
+.cart__item--details-price {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.5rem;
+  line-height: .875em;
+  color: #303030; }
+  .cart__item--details-price .currency_sign {
+    font-size: 1rem; }
+
 .cart__item--adjustments {
-  padding-top: 1rem;
-  padding-bottom: 1rem; }
+  padding-top: .5rem; }
+  .cart__item--adjustments .button {
+    margin-top: .25rem; }
 
 .cart__item--quantity-holder {
-  display: inline-block; }
+  display: inline-block;
+  vertical-align: top;
+  margin-right: 1rem;
+  width: 4rem; }
+  .cart__item--quantity-holder input {
+    vertical-align: top;
+    padding: .5rem;
+    width: 100%;
+    font-family: "Roboto", sans-serif;
+    font-size: 1.25rem;
+    color: black;
+    border: 0.0625rem solid #bcc7d2;
+    border-radius: .25rem; }
 
-.cart__item--remove {
-  display: inline-block; }
+.cart__totals {
+  margin-bottom: 2rem; }
+
+.cart__summary, .cart__subtotal, .cart__total {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: .25rem;
+  padding: 1rem;
+  font-family: "Raleway", sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #4a4a4a;
+  box-shadow: 0 0.0625rem 0 rgba(0, 0, 0, 0.1); }
+
+.cart__items--count, .cart__subtotal--amount, .cart__total--amount {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  color: #303030; }
+  .cart__items--count .currency_sign, .cart__subtotal--amount .currency_sign, .cart__total--amount .currency_sign {
+    font-size: inherit; }
 
 .cart__footer {
-  padding: 2rem;
-  background: white;
-  box-shadow: 0 0 0 0.0625rem #bcc7d2; }
+  margin-top: .125rem;
+  padding: 0;
+  background: white; }
 
-.cart__summary {
-  box-shadow: 0 .0625rem 0 #f9fafb; }
+.cart__keep--shopping {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  box-shadow: 0 -0.0625rem 0 #dae1e7; }
+  .cart__keep--shopping p {
+    margin-top: 0;
+    padding-left: 1rem;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.125rem;
+    color: #303030; }
 
 .form--field {
   margin-bottom: 1rem; }

@@ -1,11 +1,11 @@
 ﻿<div class="cart__page">
+    <div class="cart__header">
+        <h1 class="cart__title has-dash">{{ page.name }}</h1>
+    </div>
+
+    {% if cart.items != blank %}
+
     <div class="cart__content">
-        <div class="cart__header">
-            <h1 class="cart__title has-dash">{{ page.name }}</h1>
-        </div>
-
-        {% if cart.items != blank %}
-
         <form method="post" action="/cart" id="cart-form" class="cart-form">
             <ul class="cart__items">
                 {% for item in cart.items %}
@@ -16,15 +16,16 @@
                     </a>
                     <div class="cart__item--details">
                         <div class="cart__item--details-name">{{ item.product.name }}</div>
-                        <div class="cart__item--details-price">{{ item.unit_price | money: theme.money_format }}</div>
                         {% unless item.product.has_default_option %}
                         <div class="cart__item--details-option">{{ item.option.name }}</div>
                         {% endunless %}
+                        <div class="cart__item--details-price">{{ item.unit_price | money: theme.money_format }}</div>
                         <div class="cart__item--adjustments">
                             <div class="cart__item--quantity-holder" data-item-id="{{ item.id }}">
                                 {{ item | item_quantity_input, 'option-quantity', 'option-quantity' }}
                             </div>
-                            <a class="cart__item--remove cart-item-remove" title="Remove item" href="#"><svg class="cart-remove-icon" width="11" height="11" xmlns="http://www.w3.org/2000/svg"><g fill-rule="evenodd"><path d="M10.11 1.596l-8.484 8.485-.707-.707L9.404.89z" /><path d="M1.626.89l8.485 8.484-.707.707L.919 1.596z" /></g></svg></a>
+                            <a class="button negative cart-item-remove" title="Remove item" href="#">Remove</a>
+                            <!-- cart__item--remove -->
                         </div>
                     </div>
                 </li>
@@ -33,22 +34,36 @@
             <div class="cart__footer">
                 <div class="cart__totals">
                     <div class="cart__summary">
-                        Items <span class="cart__subtotal--amount">{{ cart.subtotal | money: theme.money_format }}</span>
+                        <span class="cart__footer--label">Items coming your way:</span>
+                        <span class="cart__items--count">{{ cart.item_count }}</span>
                     </div>
-                    <div class="cart__subtotal cart__total">
-                        Subtotal <span class="cart__subtotal--amount">{{ cart.total | money: theme.money_format }}</span>
+                    {% if cart.subtotal == cart.total %}
+                    <div class="cart__total">
+                        <span class="cart__footer--label">Your total:</span>
+                        <span class="cart__total--amount">{{ cart.total | money: theme.money_format }}</span>
                     </div>
+                    {% else %}
+                    <div class="cart__subtotal">
+                        <span class="cart__footer--label">Your subtotal:</span>
+                        <span class="cart__subtotal--amount">{{ cart.subtotal | money: theme.money_format }}</span>
+                    </div>
+                    <div class="cart__total">
+                        <span class="cart__footer--label">Your total:</span>
+                        <span class="cart__total--amount">{{ cart.total | money: theme.money_format }}</span>
+                    </div>
+                    {% endif %}
                 </div>
                 <button type="submit" name="checkout" title="Checkout" class="button positive large checkout-btn">Checkout</button>
-                <div>
+                <div class="cart__keep--shopping">
                     <p>Not done yet?</p>
-                    <a class="button flat positive continue-shopping" href="/products" title="Continue shopping">Continue Shopping</a>
+                    <a class="button flat positive continue-shopping" href="/products" title="Continue shopping">Keep Shopping</a>
                 </div>
             </div>
         </form>
     </div>
 
     {% else %}
+
     <div class="cart__content">
         <p class="cart--empty-message">
             Uhh, looks like either you haven't added anything to your cart or someone has run off with it!<br />
