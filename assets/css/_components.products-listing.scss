@@ -4,35 +4,23 @@
 
 .feature,
 .products {
-    /*&__design {
-        position: relative;
-        z-index: 1;
-        display: inline-block;
-        width: calc(30vh + 20rem);
-        height: 30vh;
-        //background: linear-gradient(to right, rgba($black, 0) 0%, rgba($black, 1) 30%, rgba($black, 1) 70%, rgba($black, 0) 100%);
-        //
-        //&:before {
-            //content: "";
-            //position: absolute;
-            //z-index: -2;
-            //top: 0;
-            //right: 50%;
-            //bottom: 0;
-            //width: 100vw;
-            //background-image: url(../images/ftr-heart-angle.svg);
-            //background-size: 4%;
-        //}
-    }*/
     //
     &__list {
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
         @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
             display: grid;
-            grid-template-columns: repeat(4, 1fr);
+            grid-template-columns: 1;
             grid-template-rows: auto; // 25rem;
             grid-gap: 0;
+            //
+            @media screen and (min-width: 46.875em) { // 750px
+                grid-template-columns: repeat(2, 1fr);
+            }
+            //
+            @media screen and (min-width: 68.75em) { // 1100px
+                grid-template-columns: repeat(4, 1fr);
+            }
         }
         //
         //margin-top: 4rem;
@@ -40,11 +28,15 @@
     //
     &__item {
         position: relative;
-        height: 27rem;
+        height: 37rem;
         //min-height: 34rem;
         text-decoration: none;
         background: $white;
         box-shadow: inset .0625rem -.0625rem 0 rgba($black, .1);
+        //
+        @media screen and (min-width: 46.875em) { // 750px
+            height: 27rem;
+        }
         //
         &:after {
             content: "";
@@ -77,8 +69,11 @@
             margin: 0;
             overflow: hidden;
             width: 100%;
-            height: 20rem;
-            //min-height: 26rem;
+            height: 30rem;
+            //
+            @media screen and (min-width: 46.875em) { // 750px
+                height: 20rem;
+            }
             //
             img {
                 position: absolute;
@@ -96,9 +91,7 @@
             align-items: center;
             width: 100%;
             height: 7rem;
-            //min-height: 8rem;
             text-align: center;
-            //background: $white; // #f9fafb;
         }
         //
         &--headers {
@@ -157,8 +150,12 @@
         display: flex;
         align-items: center;
         width: 100%;
-        height: 40rem;
+        height: 70vh;
         background: $black;
+        //
+        @media screen and (min-width: 40.625em) { // 650px
+            height: 40rem;
+        }
         //
         &:before {
             content: "";
@@ -175,11 +172,15 @@
         position: relative;
         margin: 0;
         font-family: $brand-text;
-        font-size: 5rem;
+        font-size: 4rem;
         line-height: .9375em;
         font-weight: 900;
         text-transform: uppercase;
         color: $white;
+        //
+        @media screen and (min-width: 40.625em) { // 650px
+            font-size: 5rem;
+        }
     }
     //
     &__title {
@@ -207,8 +208,9 @@
             z-index: -1;
             top: 0;
             right: -20vw;
+            bottom: 7rem;
             left: -20vw;
-            height: 27rem;
+            //height: 27rem;
             background: $black;
             background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.2/assets/images/polygon-background.svg"), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
             background-size: cover;
@@ -365,12 +367,12 @@
     &__list {
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+        /*@supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
             grid-template-rows: auto; // 25rem;
             grid-gap: 0;
-        }
+        }*/
     }
     //
     &__item {

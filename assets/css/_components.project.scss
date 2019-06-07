@@ -14,7 +14,15 @@
     //
     margin: 0 auto;
     padding: 0;
-    width: 80vw;
-    max-width: 100rem;
+    width: calc(100vw - 4rem);
     //background: $white;
+    //
+    @media screen and (min-width: 68.75em) { // 1100px
+        width: calc(100vw - 8rem);
+    }
+    //
+    @media screen and (min-width: 68.75em) { // 1100px
+        width: 80vw;
+        max-width: 100rem;
+    }
 }

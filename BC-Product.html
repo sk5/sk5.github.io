@@ -15,8 +15,9 @@
     </div>
 
     <!-- Product Images -->
-    <div class="product__images{% if product.images.size > 1 %} product-images-slideshow{% endif %}">
-        <ul class="product__slides slides">
+    <div class="product__images">
+        <!-- {% if product.images.size > 1 %} product-images-slideshow{% endif %} -->
+        <ul class="product__slides">
             {% for image in product.images %}
             <!--{% if forloop.index == 1 %}
             <li style="color:black;">First image</li>
