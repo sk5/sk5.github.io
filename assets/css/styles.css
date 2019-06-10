@@ -695,6 +695,9 @@ button {
     color: white;
     background: #ff5a5a;
     border-radius: .125rem; }
+    .feature__item--status.sale,
+    .products__item--status.sale {
+      background: #14cb9b; }
   .feature__item--name,
   .products__item--name {
     margin: 0;
@@ -719,7 +722,9 @@ button {
   position: relative;
   display: flex;
   align-items: center;
-  width: 100%;
+  overflow: hidden;
+  margin: 0 -20vw;
+  width: calc(100% + 40vw);
   height: 70vh;
   background: #303030; }
   @media screen and (min-width: 40.625em) {
@@ -728,15 +733,23 @@ button {
   .feature__highlight:before {
     content: "";
     position: absolute;
+    z-index: 1;
     top: 0;
     right: -20vw;
     bottom: 0;
     left: -20vw;
-    background: #303030; }
+    background: rgba(0, 0, 0, 0.5); }
+  .feature__highlight img {
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    left: 0;
+    width: 100%; }
 
 .feature__welcome {
   position: relative;
-  margin: 0;
+  z-index: 1;
+  margin: 0 20vw;
   font-family: "Raleway", sans-serif;
   font-size: 4rem;
   line-height: .9375em;
@@ -1406,6 +1419,8 @@ button {
     color: #fff;
     background: #ff5a5a;
     border-radius: .125rem; }
+    .product-status.sale {
+      background: #14cb9b; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__images {
       grid-column: 1;
@@ -1701,9 +1716,12 @@ button {
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .cart__page {
       display: grid;
-      grid-template-columns: 50%;
+      grid-template-columns: auto;
       grid-template-rows: auto;
-      grid-gap: 0; } }
+      grid-gap: 0; }
+      @media screen and (min-width: 62.5em) {
+        .cart__page {
+          grid-template-columns: 50%; } } }
   .cart__page:before {
     content: "";
     position: absolute;
@@ -1731,8 +1749,11 @@ button {
         }*/ }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .cart__header {
-      grid-column: 1 / span 2;
-      grid-row: 1; } }
+      grid-column: 1;
+      grid-row: 1; }
+      @media screen and (min-width: 62.5em) {
+        .cart__header {
+          grid-column: 1 / span 2; } } }
 
 .cart__title {
   margin: 0;

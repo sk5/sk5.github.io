@@ -1,4 +1,4 @@
-﻿{% if theme.image_sets.slideshow.size > 0 %}
+﻿<!--{% if theme.image_sets.slideshow.size > 0 %}
 <div class="flexslider home-slideshow">
     <ul class="slides">
         {% for image in theme.image_sets.slideshow %}
@@ -6,11 +6,15 @@
         {% endfor %}
     </ul>
 </div>
-{% endif %}
+{% endif %}-->
 
 <div class="feature__highlight">
-    <h1 class="feature__welcome">Runners<br/> giving back<br/> to runners</h1>
-    <img src="" />
+    <h1 class="feature__welcome">Runners<br /> giving back<br /> to runners</h1>
+    {% if theme.image_sets.slideshow.size > 0 %}
+    {% for image in theme.image_sets.slideshow %}
+    <img src="{{ image.url | constrain: 1800 }}" />
+    {% endfor %}
+    {% endif %}
 </div>
 
 {% if theme.featured_items > 0 %}
@@ -31,15 +35,17 @@
         {% endcase %}
         <a class="feature__item {{ theme.show_overlay }}" href="{{ product.url }}" title="View {{ product.name | escape }}">
             <!--<div class="feature__item--image"> class="product-list-item-container" -->
-            <figure class="feature__item--image"> <!-- product-list-image-container -->
+            <figure class="feature__item--image">
+                <!-- product-list-image-container -->
                 <img alt="Image of {{ product.name | escape }}" class="fade-in {% if product.image.height > product.image.width %}image-tall{% elsif product.image.height < product.image.width %}image-wide{% else %}image-square{% endif %}" src="{{ product.image | product_image_url | constrain: 1000, 1000 }}">
             </figure>
             <!--</div>-->
             <div class="feature__item--info">
                 <!-- product-list-item-info -->
                 <!--<div class="product-list-item-background"></div>-->
-                <div class="feature__item--headers"> <!-- product-list-item-info-headers -->
-                    {% if product_status != blank %}<div class="feature__item--status">{{ product_status }}</div>{% endif %} <!-- product-list-item-status -->
+                <div class="feature__item--headers">
+                    <!-- product-list-item-info-headers -->
+                    {% if product_status != blank %}<div class="feature__item--status {{ product_status }}">{{ product_status }}</div>{% endif %} <!-- product-list-item-status -->
                     <h3 class="feature__item--name">{{ product.name }}</h3> <!-- product-list-item-name -->
                     <div class="feature__item--price">{{ product.default_price | money: theme.money_format }}</div> <!-- product-list-item-price -->
                 </div>

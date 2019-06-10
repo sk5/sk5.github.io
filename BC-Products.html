@@ -43,7 +43,7 @@
             <div class="products__item--info">
                 <!--<div class="product-list-item-background"></div>-->
                 <div class="products__item--headers">
-                    {% if product_status != blank %}<div class="products__item--status">{{ product_status }}</div>{% endif %}
+                    {% if product_status != blank %}<div class="products__item--status {{ product_status }}">{{ product_status }}</div>{% endif %}
                     <h3 class="products__item--name">{{ product.name }}</h3>
                     <div class="products__item--price">{{ product.default_price | money: theme.money_format }}</div>
                 </div>

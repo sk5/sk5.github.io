@@ -113,6 +113,10 @@
             color: white;
             background: $red;
             border-radius: .125rem;
+            //
+            &.sale {
+                background: darken($green, 20%);
+            }
         }
         //
         &--name {
@@ -149,7 +153,9 @@
         position: relative;
         display: flex;
         align-items: center;
-        width: 100%;
+        overflow: hidden;
+        margin: 0 -20vw;
+        width: calc(100% + 40vw);
         height: 70vh;
         background: $black;
         //
@@ -160,17 +166,27 @@
         &:before {
             content: "";
             position: absolute;
+            z-index: 1;
             top: 0;
             right: -20vw;
             bottom: 0;
             left: -20vw;
-            background: $black;
+            background: rgba(black, .5);
+        }
+        //
+        img {
+            position: absolute;
+            z-index: 0;
+            right: 0;
+            left: 0;
+            width: 100%;
         }
     }
     //
     &__welcome {
         position: relative;
-        margin: 0;
+        z-index: 1;
+        margin: 0 20vw;
         font-family: $brand-text;
         font-size: 4rem;
         line-height: .9375em;

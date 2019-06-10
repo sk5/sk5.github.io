@@ -111,6 +111,10 @@
         color: $white;
         background: $red;
         border-radius: .125rem;
+        //
+        &.sale {
+            background: darken($green, 20%);
+        }
     }
     //
     &__images {
