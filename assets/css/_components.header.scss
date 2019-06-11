@@ -20,6 +20,10 @@
     //
     &--the {
         fill: $black;
+        //
+        .footer__navigation--link & {
+            fill: $white;
+        }
     }
     //
     &--r1 {
@@ -54,7 +58,7 @@
     //
     &:before {
         content: "";
-        position: absolute; 
+        position: absolute;
         top: 0;
         right: 100%;
         bottom: 0;
@@ -76,8 +80,12 @@
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
         @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-            grid-column: 1 / span 2;
+            grid-column: 1;
             grid-row: 1;
+            //
+            @media screen and (min-width: 46.875em) { // 750px
+                grid-column: 1 / span 2;
+            }
             //
             @media screen and (min-width: 62.5em) { // 1000px
                 grid-column: 2;
@@ -101,7 +109,7 @@
     //
     &__link {
         //display: inline-block;
-        width: calc(100% - 8rem);
+        width: calc(100% - 6rem);
         //
         @media screen and (min-width: 38.75em) { // 620px
             width: 20rem;

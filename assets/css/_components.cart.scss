@@ -84,6 +84,16 @@
         background: $white;
         border-radius: .5rem;
         box-shadow: 0 0 0 .0625rem rgba(black, .3);
+        //
+        //
+        .content__sub-title {
+            display: block;
+            margin-top: 0;
+            font-size: 2rem;
+            font-weight: 900;
+            line-height: .875em;
+            color: darken($orange, 20%);
+        }
     }
     //
     &--empty-message {

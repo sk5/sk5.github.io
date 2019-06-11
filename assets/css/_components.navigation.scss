@@ -27,7 +27,12 @@
             grid-template-columns: 25% auto 25%;
         }
     }
-    padding-bottom: 1.5rem;
+    //
+    padding-bottom: 1rem;
+    //
+    @media screen and (min-width: 46.875em) { // 750px
+        padding-bottom: 1.5rem;
+    }
     //
     @media screen and (min-width: 62.5em) { // 1000px
         padding-bottom: 0;
@@ -48,15 +53,26 @@
         //
         display: flex;
         align-items: center;
-        text-align: left;
+        margin-bottom: .5rem;
+        text-align: center;
+        //
+        @media screen and (min-width: 46.875em) { // 750px
+            margin-bottom: 0;
+            text-align: left;
+        }
     }
     //
     &__right {
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
         @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-            grid-column: 2;
-            grid-row: 2;
+            grid-column: 1;
+            grid-row: 3;
+            //
+            @media screen and (min-width: 46.875em) { // 750px
+                grid-column: 2;
+                grid-row: 2;
+            }
             //
             @media screen and (min-width: 62.5em) { // 1000px
                 grid-column: 3;
@@ -66,7 +82,11 @@
         //
         display: flex;
         align-items: center;
-        text-align: right;
+        text-align: center;
+        //
+        @media screen and (min-width: 46.875em) { // 750px
+            text-align: right;
+        }
     }
     //
     &__list-item {
@@ -77,6 +97,7 @@
     &__link,
     &__list-item a {
         transition: box-shadow .3s ease;
+        position: relative;
         display: inline-block;
         margin-right: .5rem;
         margin-left: .5rem;
@@ -87,11 +108,30 @@
         text-transform: uppercase;
         text-decoration: none;
         color: $black;
-        box-shadow: 0 .125rem 0 transparent;
+        box-shadow: 0 .0625rem 0 transparent;
+        //box-shadow: 0 .125rem 0 transparent;
+        //
+        &:before {
+            content: "";
+            transition: all .2s ease;
+            position: absolute;
+            right: 100%;
+            bottom: 0;
+            left: 0;
+            //width: 0;
+            height: .125rem;
+            background: $blue;
+        }
         //
         &:hover {
-            color: $red;
-            box-shadow: 0 .125rem 0 $blue;
+            color: darken($green, 20%);
+            box-shadow: 0 .0625rem 0 $blue;
+            //box-shadow: 0 .125rem 0 $blue;
+            &:before {
+                right: 0;
+                //width: 100%;
+                background: $purple;
+            }
         }
         //
         .navigation__list-item:first-of-type & {
@@ -100,6 +140,11 @@
         //
         .navigation__list-item:last-of-type & {
             margin-right: 0;
+        }
+        //
+        .navigation__list-item.selected a {
+            color: $red;
+            //box-shadow: 0 .0625rem 0 $blue;
         }
         //
         .navigation__cart--total {

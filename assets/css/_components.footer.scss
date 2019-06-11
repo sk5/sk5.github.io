@@ -21,6 +21,19 @@
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
         @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto; // 25rem;
+            grid-gap: 0;
+            //
+            @media screen and (min-width: 46.875em) { // 750px
+                grid-template-columns: 40% 30% 30%;
+            }
+        }
+        //
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
             grid-column: 1 / span 3;
             grid-row: 1;
         }
@@ -31,32 +44,82 @@
     }
     //
     &__navigation {
+        //
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        //
         margin: 0;
         padding: 0;
         //
         &--list-item {
-            display: inline-block;
+            display: block;
             list-style: none;
+            //
+            &:first-of-type {
+                margin-bottom: .5rem;
+                border-bottom: .0625rem solid $white;
+                //
+                //
+                .footer__navigation--link,
+                a {
+                    box-shadow: none;
+                    //
+                    &:hover {
+                        box-shadow: none;
+                        //
+                        &:before {
+                            display: none;
+                        }
+                    }
+                    //
+                    &:before {
+                        content: "";
+                        display: none;
+                    }
+                }
+            }
         }
         //
         &--link,
         a {
             transition: box-shadow .3s ease;
+            position: relative;
             display: inline-block;
-            margin-right: .5rem;
-            margin-left: .5rem;
-            padding: .5rem 0;
+            //margin-right: .5rem;
+            //margin-left: .5rem;
+            margin-bottom: .5rem;
+            padding: .25rem 0;
             font-family: $brand-text;
             font-size: 1rem;
             font-weight: 900;
             text-transform: uppercase;
             text-decoration: none;
             color: $white;
-            box-shadow: 0 .125rem 0 transparent;
+            box-shadow: 0 .0625rem 0 transparent;
+            //
+            &:before {
+                content: "";
+                transition: all .2s ease;
+                position: absolute;
+                right: 100%;
+                bottom: 0;
+                left: 0;
+                height: .125rem;
+                background: $blue;
+            }
             //
             &:hover {
-                color: $red;
-                box-shadow: 0 .125rem 0 $blue;
+                color: $green;
+                box-shadow: 0 .0625rem 0 $blue;
+                //
+                &:before {
+                    right: 0;
+                    background: $purple;
+                }
             }
             //
             .footer__navigation--list-item:first-of-type & {
@@ -66,7 +129,66 @@
             .footer__navigation--list-item:last-of-type & {
                 margin-right: 0;
             }
+            //
+            &.brand {
+                width: 10rem;
+                height: 2.25rem;
+            }
+            //
+            .footer__navigation--total {
+                vertical-align: top;
+                font-family: $body-text;
+                font-size: inherit;
+                font-weight: 700;
+                line-height: 1.125rem;
+                color: rgba($white, .5);
+            }
         }
+    }
+}
+//
+//
+//
+.social--links {
+    //
+    // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+    // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+        grid-column: 1;
+        grid-row: 2;
+        //
+        @media screen and (min-width: 46.875em) { // 750px
+            grid-column: 2;
+            grid-row: 1;
+        }
+    }
+    //
+    margin: 2.75rem 0 0 0;
+    padding-top: .5rem;
+    padding-left: 0;
+    border-top: .0625rem solid $white;
+}
+//
+.social--link {
+    display: block;
+    margin-bottom: .5rem;
+    padding: .25rem 0;
+    text-decoration: none;
+    //
+    svg {
+        fill: white;
+    }
+    //
+    span {
+        display: inline-block;
+        vertical-align: top;
+        padding-left: .5rem;
+        font-family: $brand-text;
+        font-size: 1rem;
+        font-weight: 900;
+        line-height: 1em;
+        text-transform: uppercase;
+        color: $yellow;
     }
 }
 //
@@ -76,36 +198,27 @@
     // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
     // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
     @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-        grid-column: 1 / span 3;
-        grid-row: 2;
+        grid-column: 1;
+        grid-row: 3;
+        //
+        @media screen and (min-width: 46.875em) { // 750px
+            grid-column: 1;
+            grid-row: 2;
+        }
     }
     //
     position: relative;
-    margin: 0 auto;
+    //margin: 0 auto;
     padding: .25rem 0;
-    width: 80vw;
-    background: darken($black, 20%);
-    //
-    &:before,
-    &:after {
-        content: "";
-        position: absolute;
-        top: 0;
-        bottom: 0;
-        width: 20vw;
-        background: darken($black, 20%);
-    }
-    //
-    &:before {
-        right: 100%;
-    }
-    //
-    &:after {
-        left: 100%;
-    }
+    //width: 80vw;
+    //background: darken($black, 20%);
 }
 //
 .credit__badge a {
-    font-size: .75rem;
-    color: $white;
+    font-family: $brand-text;
+    font-size: .625rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgba($white, .3);
 }
