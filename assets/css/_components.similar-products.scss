@@ -42,17 +42,32 @@
         //
         .product-list-item {
             overflow: hidden;
-            width: 12rem;
+            width: 100%;
             text-decoration: none;
             border-radius: .25rem;
             box-shadow: 0 0 0 .125rem $white;
             //
+            @media screen and (min-width: 43.75em) { // 700px
+                width: 12rem;
+            }
+            //
             figure {
+                position: relative;
                 margin: 0 0 -.25rem 0;
+                height: 100%;
             }
             //
             img {
-                width: 105%;
+                position: absolute;
+                top: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                height: 100%;
+                //
+                @media screen and (min-width: 43.75em) { // 700px
+                    width: 105%;
+                    height: auto;
+                }
             }
         }
         //
@@ -114,9 +129,13 @@
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
         @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
             display: grid;
-            grid-template-columns: 12rem 12rem 12rem 12rem auto;
+            grid-template-columns: 50% 50%;
             grid-template-rows: auto; // 25rem;
             grid-gap: 1rem;
+            //
+            @media screen and (min-width: 43.75em) { // 700px
+                grid-template-columns: 12rem 12rem 12rem 12rem auto;
+            }
         }
         //
     }

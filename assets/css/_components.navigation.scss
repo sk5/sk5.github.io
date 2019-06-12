@@ -142,18 +142,19 @@
             margin-right: 0;
         }
         //
-        .navigation__list-item.selected a {
-            color: $red;
-            //box-shadow: 0 .0625rem 0 $blue;
-        }
-        //
         .navigation__cart--total {
             vertical-align: top;
             font-family: $body-text;
             font-size: inherit;
             font-weight: 700;
-            line-height: 1.125rem;
+            line-height: 1.1875rem;
             color: lighten($black, 20%);
         }
     }
+}
+//
+//
+.navigation__list-item.selected a {
+    color: darken($blue, 20%);
+    box-shadow: 0 .0625rem 0 $blue;
 }

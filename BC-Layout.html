@@ -231,7 +231,7 @@
                         <li class="footer__navigation--list-item">{{ page | link_to }}</li>
                         {% endfor %}
                         <li class="footer__navigation--list-item"><a class="footer__navigation--link" href="/contact">Contact</a></li>
-                        <li class="footer__navigation--list-item"><a class="footer__navigation--link" href="/cart">Cart <span class="footer__navigation--total">({{ cart.item_count }})</span></a></li>
+                        <li class="footer__navigation--list-item"><a class="footer__navigation--link" href="/cart">Cart {% if cart.item_count > 0 %}<span class="footer__navigation--total">({{ cart.item_count }})</span>{% endif %}</a></li>
                         {% if theme.show_search %}
                         <li class="">
                             <a class="open-search" href="#" title="Open search">Search</a>
