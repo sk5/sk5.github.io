@@ -286,6 +286,10 @@
         font-size: 1.25rem;
         line-height: 125%;
         color: $black;
+        //
+        p:last-of-type {
+            font-size: .875rem;
+        }
     }
     //
     &--content {

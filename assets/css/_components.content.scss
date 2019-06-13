@@ -125,25 +125,41 @@
         color: $white;
     }
     //
+    h2,
     h3,
     h4,
     h5 {
         margin: 1em 0 .5em 0;
         font-family: $brand-text;
+        font-weight: 900;
+        text-transform: uppercase;
+    }
+    //
+    h2 {
+        font-size: 2.25rem;
+        color: darken($purple, 30%);
     }
     //
     h3 {
-        font-size: 2.25rem;
-        color: darken($red, 30%);
+        font-size: 2.125rem;
+        color: darken($blue, 30%);
     }
     //
     h4 {
         font-size: 2rem;
-        color: darken($red, 20%);
+        color: darken($purple, 20%);
     }
     //
-    p {
+    h5 {
+        font-size: 1.75rem;
+        color: darken($blue, 20%);
+    }
+    //
+    p,
+    ul,
+    li {
         font-size: 1.4125rem;
+        line-height: 125%;
     }
     //
     //
@@ -181,9 +197,13 @@
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
         @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
             display: grid;
-            grid-template-columns: repeat(3, 1fr);
+            grid-template-columns: auto;
             grid-template-rows: auto; // 25rem;
             grid-gap: 2rem;
+            //
+            @media screen and (min-width: 46.875em) { // 750px
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
         //
         margin: 0;
@@ -215,8 +235,13 @@
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
         @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-            grid-column: 2;
-            grid-row: 1;
+            grid-column: 1;
+            grid-row: 2;
+            //
+            @media screen and (min-width: 46.875em) { // 750px
+                grid-column: 2;
+                grid-row: 1;
+            }
         }
         //
         background: $blue;
@@ -227,8 +252,13 @@
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
         @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-            grid-column: 3;
-            grid-row: 1;
+            grid-column: 1;
+            grid-row: 3;
+            //
+            @media screen and (min-width: 46.875em) { // 750px
+                grid-column: 3;
+                grid-row: 1;
+            }
         }
         //
         background: $green;

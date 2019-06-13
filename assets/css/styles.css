@@ -1326,22 +1326,36 @@ button {
   text-transform: uppercase;
   color: #fff; }
 
+.content h2,
 .content h3,
 .content h4,
 .content h5 {
   margin: 1em 0 .5em 0;
-  font-family: "Raleway", sans-serif; }
+  font-family: "Raleway", sans-serif;
+  font-weight: 900;
+  text-transform: uppercase; }
+
+.content h2 {
+  font-size: 2.25rem;
+  color: #bd00a2; }
 
 .content h3 {
-  font-size: 2.25rem;
-  color: #c00000; }
+  font-size: 2.125rem;
+  color: #0061c0; }
 
 .content h4 {
   font-size: 2rem;
-  color: #f30000; }
+  color: #f000ce; }
 
-.content p {
-  font-size: 1.4125rem; }
+.content h5 {
+  font-size: 1.75rem;
+  color: #007af3; }
+
+.content p,
+.content ul,
+.content li {
+  font-size: 1.4125rem;
+  line-height: 125%; }
 
 .content__submission--message {
   font-family: "Roboto", sans-serif;
@@ -1367,9 +1381,12 @@ button {
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .content__charity-breakdown {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: auto;
       grid-template-rows: auto;
-      grid-gap: 2rem; } }
+      grid-gap: 2rem; }
+      @media screen and (min-width: 46.875em) {
+        .content__charity-breakdown {
+          grid-template-columns: repeat(3, 1fr); } } }
 
 .charity--example {
   padding: 4rem 2rem;
@@ -1389,15 +1406,23 @@ button {
     background: linear-gradient(30deg, #2794ff 0%, #0061c0 100%); }
     @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
       .charity--example:nth-child(2) {
-        grid-column: 2;
-        grid-row: 1; } }
+        grid-column: 1;
+        grid-row: 2; }
+        @media screen and (min-width: 46.875em) {
+          .charity--example:nth-child(2) {
+            grid-column: 2;
+            grid-row: 1; } } }
   .charity--example:nth-child(3) {
     background: #57eec7;
     background: linear-gradient(30deg, #29e9b8 0%, #109c78 100%); }
     @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
       .charity--example:nth-child(3) {
-        grid-column: 3;
-        grid-row: 1; } }
+        grid-column: 1;
+        grid-row: 3; }
+        @media screen and (min-width: 46.875em) {
+          .charity--example:nth-child(3) {
+            grid-column: 3;
+            grid-row: 1; } } }
   .charity--example strong {
     font-size: 1.75rem; }
   .charity--example span {
@@ -1636,6 +1661,8 @@ button {
     font-size: 1.25rem;
     line-height: 125%;
     color: #303030; }
+    .product--description p:last-of-type {
+      font-size: .875rem; }
   .product--content {
     height: 6rem; }
   .product__select {
@@ -2123,6 +2150,32 @@ button {
     font-size: 1.25rem;
     line-height: 125%;
     color: #303030; }
+  .custom-page h2,
+  .custom-page h3,
+  .custom-page h4,
+  .custom-page h5 {
+    margin: 1em 0 .5em 0;
+    font-family: "Raleway", sans-serif;
+    font-weight: 900;
+    line-height: 1em;
+    text-transform: uppercase; }
+  .custom-page h2 {
+    font-size: 2.25rem;
+    color: #bd00a2; }
+  .custom-page h3 {
+    font-size: 2.125rem;
+    color: #0061c0; }
+  .custom-page h4 {
+    font-size: 2rem;
+    color: #f000ce; }
+  .custom-page h5 {
+    font-size: 1.75rem;
+    color: #007af3; }
+  .custom-page p,
+  .custom-page ul,
+  .custom-page li {
+    font-size: 1.4125rem;
+    line-height: 125%; }
 
 .module__footer {
   background: #303030; }
