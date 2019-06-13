@@ -47,7 +47,7 @@
         }
         //
         &:hover {
-            box-shadow: inset .0625rem -.0625rem 0 rgba($black, .1), inset 0 -.125rem 0 0 darken(#f9fafb, 40%);
+            box-shadow: inset .0625rem -.0625rem 0 rgba($black, .1), inset 0 -.25rem 0 0 $orange;
             //
             img {
                 transform: scale(.9) translate(-50%, -50%);
@@ -70,7 +70,7 @@
             box-shadow: inset 0 -.0625rem 0 rgba($black, .1);
             //
             &:hover {
-                box-shadow: inset 0 -.0625rem 0 rgba($black, .1), inset 0 -.125rem 0 0 darken(#f9fafb, 40%);
+                box-shadow: inset 0 -.0625rem 0 rgba($black, .1), inset 0 -.25rem 0 0 $orange;
             }
         }
         //
@@ -209,19 +209,25 @@
             right: -20vw;
             bottom: 0;
             left: -20vw;
-            background: rgba(black, .5);
+            background: rgba(black, .3);
         }
         //
         img {
             position: absolute;
             z-index: 0;
+            top: 0;
             right: 0;
             left: 0;
-            height: 100%;
+            height: 120%;
             //
             @media screen and (min-width: 46.875em) { // 750px
                 width: 100%;
                 height: auto;
+            }
+            //
+            @media screen and (min-width: 56.25em) { // 900px
+                top: 50%;
+                transform: translateY(-40%);
             }
         }
     }
