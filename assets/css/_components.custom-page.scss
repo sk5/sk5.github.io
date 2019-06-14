@@ -55,6 +55,14 @@
             font-size: 1.25rem;
             line-height: 125%;
             color: $black;
+            //
+            @media screen and (min-width: 56.25em) { // 900px
+                padding-right: 20%;
+            }
+            //
+            @media screen and (min-width: 68.75em) { // 1100px
+                padding-right: 40%;
+            }
         }
         //
         h2,

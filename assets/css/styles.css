@@ -1395,8 +1395,20 @@ button {
   border-radius: .5rem;
   box-shadow: 0 0 0 0.0625rem rgba(0, 0, 0, 0.3); }
 
+.content__additional--contact {
+  margin-left: 1rem;
+  padding: 2rem;
+  height: 20rem;
+  background: #fff;
+  border-radius: .5rem;
+  box-shadow: 0 0 0 0.0625rem rgba(0, 0, 0, 0.3); }
+  .content__additional--contact h2,
+  .content__additional--contact h3,
+  .content__additional--contact h4 {
+    color: #5aadff; }
+
 .content__charity-breakdown {
-  margin: 0;
+  margin: 2rem 0 0 0;
   padding: 0;
   list-style: none; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
@@ -1404,52 +1416,41 @@ button {
       display: grid;
       grid-template-columns: auto;
       grid-template-rows: auto;
-      grid-gap: 2rem; }
-      @media screen and (min-width: 46.875em) {
+      grid-gap: 1rem; }
+      @media screen and (min-width: 62.5em) {
         .content__charity-breakdown {
-          grid-template-columns: repeat(3, 1fr); } } }
+          grid-template-columns: repeat(2, 1fr); } } }
 
-.charity--example {
-  padding: 4rem 2rem;
+.custom-page .charity--example {
+  padding: 2rem;
   font-family: "Raleway", sans-serif;
-  font-size: 1.4125rem;
+  font-size: 1.25rem;
   text-align: center;
-  color: white; }
-  .charity--example:nth-child(1) {
-    background: #ff57e7;
-    background: linear-gradient(30deg, #ff24e0 0%, #bd00a2 100%); }
-    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-      .charity--example:nth-child(1) {
-        grid-column: 1;
-        grid-row: 1; } }
-  .charity--example:nth-child(2) {
-    background: #5aadff;
-    background: linear-gradient(30deg, #2794ff 0%, #0061c0 100%); }
-    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-      .charity--example:nth-child(2) {
-        grid-column: 1;
-        grid-row: 2; }
-        @media screen and (min-width: 46.875em) {
-          .charity--example:nth-child(2) {
-            grid-column: 2;
-            grid-row: 1; } } }
-  .charity--example:nth-child(3) {
-    background: #57eec7;
-    background: linear-gradient(30deg, #29e9b8 0%, #109c78 100%); }
-    @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-      .charity--example:nth-child(3) {
-        grid-column: 1;
-        grid-row: 3; }
-        @media screen and (min-width: 46.875em) {
-          .charity--example:nth-child(3) {
-            grid-column: 3;
-            grid-row: 1; } } }
-  .charity--example strong {
-    font-size: 1.75rem; }
-  .charity--example span {
+  color: #303030;
+  border-radius: .25rem; }
+  .custom-page .charity--example:nth-child(1) {
+    background: #fff;
+    box-shadow: 0 0 0 0.125rem #ff57e7; }
+  .custom-page .charity--example:nth-child(2) {
+    background: #fff;
+    box-shadow: 0 0 0 0.125rem #5aadff; }
+  .custom-page .charity--example:nth-child(3) {
+    background: #fff;
+    box-shadow: 0 0 0 0.125rem #57eec7; }
+  .custom-page .charity--example:nth-child(4) {
+    background: #fff;
+    box-shadow: 0 0 0 0.125rem #dbfc35; }
+  .custom-page .charity--example:nth-child(5) {
+    background: #fff;
+    box-shadow: 0 0 0 0.125rem #ffa357; }
+  .custom-page .charity--example strong {
+    font-size: 1.75rem;
+    font-weight: 900;
+    text-transform: uppercase; }
+  .custom-page .charity--example span {
     display: block;
-    padding-top: 1rem;
-    padding-bottom: 1rem; }
+    padding-top: .5rem;
+    padding-bottom: .5rem; }
 
 .product {
   /*&:before {
@@ -2173,6 +2174,12 @@ button {
     font-size: 1.25rem;
     line-height: 125%;
     color: #303030; }
+    @media screen and (min-width: 56.25em) {
+      .custom-page-content {
+        padding-right: 20%; } }
+    @media screen and (min-width: 68.75em) {
+      .custom-page-content {
+        padding-right: 40%; } }
   .custom-page h2,
   .custom-page h3,
   .custom-page h4,
