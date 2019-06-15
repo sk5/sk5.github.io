@@ -290,6 +290,10 @@
         p:last-of-type {
             font-size: .875rem;
         }
+        //
+        p:only-child {
+            font-size: 1.25rem;
+        }
     }
     //
     &--content {

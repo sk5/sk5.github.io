@@ -108,7 +108,7 @@
         text-transform: uppercase;
         text-decoration: none;
         color: $black;
-        box-shadow: 0 .0625rem 0 transparent;
+        box-shadow: 0 .125rem 0 transparent;
         //box-shadow: 0 .125rem 0 transparent;
         //
         &:before {
@@ -125,12 +125,12 @@
         //
         &:hover {
             color: darken($green, 20%);
-            box-shadow: 0 .0625rem 0 $blue;
+            box-shadow: 0 .125rem 0 $purple;
             //box-shadow: 0 .125rem 0 $blue;
             &:before {
                 right: 0;
                 //width: 100%;
-                background: $purple;
+                background: $blue;
             }
         }
         //
