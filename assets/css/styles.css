@@ -2176,6 +2176,24 @@ button {
   .custom-page li {
     font-size: 1.4125rem;
     line-height: 125%; }
+  .custom-page .mission__hashtag {
+    display: inline-block;
+    padding: .75rem 1.5rem;
+    font-family: "Raleway", sans-serif;
+    font-size: 1.25rem;
+    font-weight: 900;
+    text-transform: uppercase;
+    color: #fff;
+    background: linear-gradient(30deg, #57eec7 0%, #dbfc35 33%, #ffa357 66%, #ff5a5a 100%); }
+  .custom-page .mission__heart {
+    display: block;
+    margin: 0;
+    width: 2rem;
+    height: 2rem; }
+    .custom-page .mission__heart svg {
+      width: 100%; }
+      .custom-page .mission__heart svg path {
+        fill: #ff5a5a; }
 
 .module__footer {
   background: #303030; }
