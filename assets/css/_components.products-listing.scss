@@ -206,16 +206,27 @@
             width: calc(100% + 40vw);
             height: 40rem;
         }
+        // Turn off for Your Inner Voice 1/13/2020
+        //&:before {
+            //content: "";
+            //position: absolute;
+            //z-index: 1;
+            //top: 0;
+            //right: -20vw;
+            //bottom: 0;
+            //left: -20vw;
+            //background: rgba(black, .3);
+        //}
         //
         &:before {
             content: "";
             position: absolute;
-            z-index: 1;
             top: 0;
-            right: -20vw;
+            right: 0;
             bottom: 0;
-            left: -20vw;
-            background: rgba(black, .3);
+            left: 0;
+            background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.4/assets/images/LightningPattern.jpg");
+            background-repeat: repeat;
         }
         //
         img {
@@ -238,25 +249,55 @@
         }
     }
     //
+    // GENERIC HOMEPAGE HEADER 1/13/2020
+    //&__welcome {
+        //position: relative;
+        //z-index: 1;
+        //margin: 0 4rem;
+        //font-family: $brand-text;
+        //font-size: 2.75rem;
+        //line-height: .9375em;
+        //font-weight: 900;
+        //text-transform: uppercase;
+        //color: $white;
+        //
+        //@media screen and (min-width: 40.625em) { // 650px
+        //    margin: 0 20vw;
+        //    font-size: 5rem;
+        //}
+        //
+        //strong {
+        //    font-weight: 900;
+        //    color: $yellow;
+        //}
+    //}
+    // Your Inner Voice 1/13/2020
     &__welcome {
         position: relative;
         z-index: 1;
         margin: 0 4rem;
-        font-family: $brand-text;
-        font-size: 2.75rem;
-        line-height: .9375em;
-        font-weight: 900;
-        text-transform: uppercase;
-        color: $white;
+        width: 24rem;
+        height: 12rem;
+        background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.4/assets/images/YourInnerVoice-Title.png");
+        background-repeat: no-repeat;
+        background-size: contain;
         //
         @media screen and (min-width: 40.625em) { // 650px
             margin: 0 20vw;
-            font-size: 5rem;
+            height: 20rem;
         }
-        //
-        strong {
-            font-weight: 900;
-            color: $yellow;
+        // 1/13/2020
+        .hidden {
+            position: absolute;
+            top: -99999px;
+            left: -99999px;
+            overflow: hidden;
+            height: .0625rem;
+            width: .0625rem;
+            clip: rect(.0625rem, .0625rem, .0625rem, .0625rem);
+            clip-path: inset(50%);
+            word-wrap: normal;
+            border: 0;
         }
     }
     //
