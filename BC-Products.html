@@ -25,9 +25,9 @@
     {% if products != blank %}
     <!-- Shirts -->
     <div class="products__list">
-        {% if page.full_url contains '/products' or page.full_url contains '/shirts' %}
+        {% if page.full_url contains '/products' or page.full_url contains '/pre-order' %}
         <!-- Above checks if the page is either all or shirts -->
-        {% for product in categories.shirts.products %}
+        {% for product in categories.pre-order.products %}
         {% assign product_status = '' %}
         {% case product.status %}
         {% when 'active' %}
@@ -46,6 +46,37 @@
             <div class="products__item--info">
                 <!--<div class="product-list-item-background"></div>-->
                 <div class="products__item--headers">
+                    <div class="products__item--status pre-order">Pre-Order</div>
+                    <h3 class="products__item--name">{{ product.name }}</h3>
+                    <div class="products__item--price">{{ product.default_price | money: theme.money_format }}</div>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+        <!-- -->
+        {% endif %}
+        <!-- END PRE-ORDER SECTION -->
+        {% if page.full_url contains '/products' or page.full_url contains '/tanks' %}
+        <!-- Above checks if the page is either all or shirts -->
+        {% for product in categories.tanks.products %}
+        {% assign product_status = '' %}
+        {% case product.status %}
+        {% when 'active' %}
+        {% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
+        {% when 'sold-out' %}
+        {% assign product_status = 'Sold out' %}
+        {% when 'coming-soon' %}
+        {% assign product_status = 'Coming soon' %}
+        {% endcase %}
+        <a style="{% for category in product.categories %}{% if category.name contains 'Pre-Order' %}display:none;{% endif %}{% endfor %}" class="products__item {{ theme.show_overlay }}" href="{{ product.url }}" title="View {{ product.name | escape }}">
+            <!--<div class="product-list-item-container">-->
+            <figure class="products__item--image">
+                <img alt="Image of {{ product.name | escape }}" class="fade-in product-list-image {% if product.image.height > product.image.width %}image-tall{% elsif product.image.height < product.image.width %}image-wide{% else %}image-square{% endif %}" src="{{ product.image | product_image_url | constrain: 1000, 1000 }}">
+            </figure>
+            <!--</div>-->
+            <div class="products__item--info">
+                <!--<div class="product-list-item-background"></div>-->
+                <div class="products__item--headers">
                     {% if product_status != blank %}<div class="products__item--status {{ product_status }}">{{ product_status }}</div>{% endif %}
                     <h3 class="products__item--name">{{ product.name }}</h3>
                     <div class="products__item--price">{{ product.default_price | money: theme.money_format }}</div>
@@ -53,6 +84,38 @@
             </div>
         </a>
         {% endfor %}
+        <!-- -->
+        {% endif %}
+        <!-- -->
+        {% if page.full_url contains '/products' or page.full_url contains '/shirts' %}
+            <!-- Above checks if the page is either all or shirts -->
+            {% for product in categories.shirts.products %}
+                {% assign product_status = '' %}
+                {% case product.status %}
+                    {% when 'active' %}
+                    {% if product.on_sale %}{% assign product_status = 'On sale' %}{% endif %}
+                    {% when 'sold-out' %}
+                    {% assign product_status = 'Sold out' %}
+                    {% when 'coming-soon' %}
+                    {% assign product_status = 'Coming soon' %}
+                {% endcase %}
+                <!-- GET THE CATEGORIES -->
+                <a style="{% for category in product.categories %}{% if category.name contains 'Pre-Order' %}display:none;{% endif %}{% endfor %}" class="products__item {{ theme.show_overlay }}" href="{{ product.url }}" title="View {{ product.name | escape }}">
+                    <!--<div class="product-list-item-container">-->
+                    <figure class="products__item--image">
+                        <img alt="Image of {{ product.name | escape }}" class="fade-in product-list-image {% if product.image.height > product.image.width %}image-tall{% elsif product.image.height < product.image.width %}image-wide{% else %}image-square{% endif %}" src="{{ product.image | product_image_url | constrain: 1000, 1000 }}">
+                    </figure>
+                    <!--</div>-->
+                    <div class="products__item--info">
+                        <!--<div class="product-list-item-background"></div>-->
+                        <div class="products__item--headers">
+                            {% if product_status != blank %}<div class="products__item--status {{ product_status }}">{{ product_status }}</div>{% endif %}
+                            <h3 class="products__item--name">{{ product.name }}</h3>
+                            <div class="products__item--price">{{ product.default_price | money: theme.money_format }}</div>
+                        </div>
+                    </div>
+                </a>
+            {% endfor %}
         <!-- -->
         {% endif %}
         <!-- -->
@@ -69,7 +132,7 @@
         {% when 'coming-soon' %}
         {% assign product_status = 'Coming soon' %}
         {% endcase %}
-        <a class="products__item {{ theme.show_overlay }}" href="{{ product.url }}" title="View {{ product.name | escape }}">
+        <a style="{% for category in product.categories %}{% if category.name contains 'Pre-Order' %}display:none;{% endif %}{% endfor %}" class="products__item {{ theme.show_overlay }}" href="{{ product.url }}" title="View {{ product.name | escape }}">
             <!--<div class="product-list-item-container">-->
             <figure class="products__item--image">
                 <img alt="Image of {{ product.name | escape }}" class="fade-in product-list-image {% if product.image.height > product.image.width %}image-tall{% elsif product.image.height < product.image.width %}image-wide{% else %}image-square{% endif %}" src="{{ product.image | product_image_url | constrain: 1000, 1000 }}">

@@ -103,6 +103,13 @@
             line-height: 125%;
         }
         //
+        .mission__list {
+            margin-right: 0;
+            margin-left: 0;
+            padding: 0;
+            list-style: none;
+        }
+        //
         .mission__hashtag {
             display: inline-block;
             padding: .75rem 1.5rem;
@@ -111,7 +118,7 @@
             font-weight: 900;
             text-transform: uppercase;
             color: $white;
-            background: linear-gradient(30deg, $green 0%, $yellow 33%, $orange 66%, $red 100%);
+            background: linear-gradient(30deg, $purple 10%, $red 90%);
         }
         //
         .mission__heart {
@@ -124,8 +131,130 @@
                 width: 100%;
                 //
                 path {
-                    fill: $red; 
+                    fill: $red;
                 }
+            }
+        }
+        //
+        .mission__giving {
+            position: relative;
+            display: inline-block;
+            margin-top: 3rem;
+            padding: 1rem;
+            background: linear-gradient(30deg, darken($blue, 15%) 10%, darken($purple, 15%) 90%);
+            border-radius: 10rem;
+            //
+            &:before {
+                content: "";
+                position: absolute;
+                top: -2.5rem;
+                right: 0;
+                left: 0;
+                height: .0625rem;
+                background: darken(#f9fafb, 30%);
+            }
+            //
+            .button {
+                position: relative;
+                //
+                &:after {
+                    content: "";
+                    position: absolute;
+                    top: -1rem;
+                    right: -1rem;
+                    bottom: -1rem;
+                    left: -1rem;
+                }
+            }
+        }
+        //
+        .charity--example {
+            //font-family: $brand-text;
+            font-size: 1.25rem;
+            text-align: left;
+            color: $black;
+            //
+            h3 {
+                position: relative;
+                margin-bottom: .5rem;
+                padding-bottom: .5rem;
+                font-size: 1.75rem;
+                font-weight: 900;
+                text-transform: uppercase;
+                //
+                //
+                &:before {
+                    content: "";
+                    position: absolute;
+                    z-index: -1;
+                    right: 0;
+                    bottom: 0;
+                    left: 0;
+                    height: .0625rem;
+                    background: linear-gradient(30deg, $green 0%, white 100%);
+                }
+            }
+            //
+            span {
+                display: block;
+                padding-top: .5rem;
+                padding-bottom: .5rem;
+            }
+        }
+    }
+}
+//
+//
+//
+.give {
+    &__campaigns {
+        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
+        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
+        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto; // 25rem;
+            grid-gap: 1rem;
+            //
+            @media screen and (min-width: 62.5em) { // 1000px
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    }
+    //
+    &__block {
+        padding: 2rem;
+        background: darken($blue, 10%);
+        //
+        &.weekly {
+            background: darken($purple, 10%);
+        }
+        //
+        &.donation {
+            background: darken($green, 20%);
+        }
+        //
+        &.giveaway {
+            background: darken($blue, 15%);
+        }
+        //
+        &.entry {
+            background: darken($orange, 20%);
+        }
+        //
+        h3 {
+            margin: 0 0 .75em 0;
+            padding-bottom: .75em;
+            color: $white;
+            border-bottom: .0625rem solid rgba($white, .7);
+        }
+        //
+        p,
+        a {
+            color: $white;
+            //
+            &:last-of-type {
+                margin-bottom: 0;
             }
         }
     }

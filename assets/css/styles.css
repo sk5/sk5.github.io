@@ -1,10 +1,4 @@
-﻿/*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
-/**
- * 1. Set default font family to sans-serif.
- * 2. Prevent iOS and IE text size adjust after device orientation change,
- *    without disabling user zoom.
- */
-html {
+﻿html {
   font-family: sans-serif;
   /* 1 */
   -ms-text-size-adjust: 100%;
@@ -12,20 +6,9 @@ html {
   -webkit-text-size-adjust: 100%;
   /* 2 */ }
 
-/**
- * Remove default margin.
- */
 body {
   margin: 0; }
 
-/* HTML5 display definitions
-   ========================================================================== */
-/**
- * Correct `block` display not defined for any HTML5 element in IE 8/9.
- * Correct `block` display not defined for `details` or `summary` in IE 10/11
- * and Firefox.
- * Correct `block` display not defined for `main` in IE 11.
- */
 article,
 aside,
 details,
@@ -41,10 +24,6 @@ section,
 summary {
   display: block; }
 
-/**
- * 1. Correct `inline-block` display not defined in IE 8/9.
- * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
- */
 audio,
 canvas,
 progress,
@@ -54,83 +33,42 @@ video {
   vertical-align: baseline;
   /* 2 */ }
 
-/**
- * Prevent modern browsers from displaying `audio` without controls.
- * Remove excess height in iOS 5 devices.
- */
 audio:not([controls]) {
   display: none;
   height: 0; }
 
-/**
- * Address `[hidden]` styling not present in IE 8/9/10.
- * Hide the `template` element in IE 8/9/10/11, Safari, and Firefox < 22.
- */
 [hidden],
 template {
   display: none; }
 
-/* Links
-   ========================================================================== */
-/**
- * Remove the gray background color from active links in IE 10.
- */
 a {
   background-color: transparent; }
 
-/**
- * Improve readability of focused elements when they are also in an
- * active/hover state.
- */
 a:active,
 a:hover {
   outline: 0; }
 
-/* Text-level semantics
-   ========================================================================== */
-/**
- * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
- */
 abbr[title] {
   border-bottom: 1px dotted; }
 
-/**
- * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
- */
 b,
 strong {
   font-weight: bold; }
 
-/**
- * Address styling not present in Safari and Chrome.
- */
 dfn {
   font-style: italic; }
 
-/**
- * Address variable `h1` font-size and margin within `section` and `article`
- * contexts in Firefox 4+, Safari, and Chrome.
- */
 h1 {
   font-size: 2em;
   margin: 0.67em 0; }
 
-/**
- * Address styling not present in IE 8/9.
- */
 mark {
   background: #ff0;
   color: #000; }
 
-/**
- * Address inconsistent and variable font size in all browsers.
- */
 small {
   font-size: 80%; }
 
-/**
- * Prevent `sub` and `sup` affecting `line-height` in all browsers.
- */
 sub,
 sup {
   font-size: 75%;
@@ -144,38 +82,19 @@ sup {
 sub {
   bottom: -0.25em; }
 
-/* Embedded content
-   ========================================================================== */
-/**
- * Remove border when inside `a` element in IE 8/9/10.
- */
 img {
   border: 0; }
 
-/**
- * Correct overflow not hidden in IE 9/10/11.
- */
 svg:not(:root) {
   overflow: hidden; }
 
-/* Grouping content
-   ========================================================================== */
-/**
- * Address margin not present in IE 8/9 and Safari.
- */
 figure {
   margin: 1em 40px; }
 
-/**
- * Address differences between Firefox and other browsers.
- */
 hr {
   box-sizing: content-box;
   height: 0; }
 
-/**
- * Contain overflow in all browsers.
- */
 pre {
   overflow: auto; }
 
@@ -189,18 +108,6 @@ samp {
   font-family: monospace, monospace;
   font-size: 1em; }
 
-/* Forms
-   ========================================================================== */
-/**
- * Known limitation: by default, Chrome and Safari on OS X allow very limited
- * styling of `select`, unless a `border` property is set.
- */
-/**
- * 1. Correct color not being inherited.
- *    Known issue: affects color of disabled elements.
- * 2. Correct font properties not being inherited.
- * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
- */
 button,
 input,
 optgroup,
@@ -213,29 +120,13 @@ textarea {
   margin: 0;
   /* 3 */ }
 
-/**
- * Address `overflow` set to `hidden` in IE 8/9/10/11.
- */
 button {
   overflow: visible; }
 
-/**
- * Address inconsistent `text-transform` inheritance for `button` and `select`.
- * All other form control elements do not inherit `text-transform` values.
- * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
- * Correct `select` style inheritance in Firefox.
- */
 button,
 select {
   text-transform: none; }
 
-/**
- * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
- *    and `video` controls.
- * 2. Correct inability to style clickable `input` types in iOS.
- * 3. Improve usability and consistency of cursor style between image-type
- *    `input` and others.
- */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -245,35 +136,18 @@ input[type="submit"] {
   cursor: pointer;
   /* 3 */ }
 
-/**
- * Re-set default cursor for disabled elements.
- */
 button[disabled],
 html input[disabled] {
   cursor: default; }
 
-/**
- * Remove inner padding and border in Firefox 4+.
- */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   border: 0;
   padding: 0; }
 
-/**
- * Address Firefox 4+ setting `line-height` on `input` using `!important` in
- * the UA stylesheet.
- */
 input {
   line-height: normal; }
 
-/**
- * It's recommended that you don't attempt to style these elements.
- * Firefox's implementation doesn't respect box-sizing, padding, or width.
- *
- * 1. Address box sizing set to `content-box` in IE 8/9/10.
- * 2. Remove excess padding in IE 8/9/10.
- */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -281,70 +155,37 @@ input[type="radio"] {
   padding: 0;
   /* 2 */ }
 
-/**
- * Fix the cursor style for Chrome's increment/decrement buttons. For certain
- * `font-size` values of the `input`, it causes the cursor style of the
- * decrement button to change from `default` to `text`.
- */
 input[type="number"]::-webkit-inner-spin-button,
 input[type="number"]::-webkit-outer-spin-button {
   height: auto; }
 
-/**
- * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
- * 2. Address `box-sizing` set to `border-box` in Safari and Chrome.
- */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* 1 */
   box-sizing: content-box;
   /* 2 */ }
 
-/**
- * Remove inner padding and search cancel button in Safari and Chrome on OS X.
- * Safari (but not Chrome) clips the cancel button when the search input has
- * padding (and `textfield` appearance).
- */
 input[type="search"]::-webkit-search-cancel-button,
 input[type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
 
-/**
- * Define consistent border, margin, and padding.
- */
 fieldset {
   border: 1px solid #c0c0c0;
   margin: 0 2px;
   padding: 0.35em 0.625em 0.75em; }
 
-/**
- * 1. Correct `color` not being inherited in IE 8/9/10/11.
- * 2. Remove padding so people aren't caught out if they zero out fieldsets.
- */
 legend {
   border: 0;
   /* 1 */
   padding: 0;
   /* 2 */ }
 
-/**
- * Remove default vertical scrollbar in IE 8/9/10/11.
- */
 textarea {
   overflow: auto; }
 
-/**
- * Don't inherit the `font-weight` (applied by a rule above).
- * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
- */
 optgroup {
   font-weight: bold; }
 
-/* Tables
-   ========================================================================== */
-/**
- * Remove most spacing between table cells.
- */
 table {
   border-collapse: collapse;
   border-spacing: 0; }
@@ -502,7 +343,7 @@ button {
   font-weight: 900;
   line-height: 1em;
   color: white;
-  text-shadow: 0 0 0.125rem rgba(0, 0, 0, 0.2);
+  text-shadow: 0 0 0.25rem rgba(0, 0, 0, 0.4);
   text-transform: uppercase;
   text-decoration: none;
   border: none;
@@ -594,12 +435,53 @@ button {
     .button.choose--product:hover .product__size--label.denim,
     .button.choose--product.selected .product__size--label.denim {
       box-shadow: 0 0 0 .25rem #404C57; }
+  .product__size--label.envy {
+    background: #60C17E;
+    box-shadow: 0 0 0 0 #60C17E; }
+    .button.choose--product:hover .product__size--label.envy,
+    .button.choose--product.selected .product__size--label.envy {
+      box-shadow: 0 0 0 .25rem #60C17E; }
   .product__size--label.indigo {
     background: #576873;
     box-shadow: 0 0 0 0 #576873; }
     .button.choose--product:hover .product__size--label.indigo,
     .button.choose--product.selected .product__size--label.indigo {
       box-shadow: 0 0 0 .25rem #576873; }
+  .product__size--label.white {
+    color: #303030;
+    background: #fff;
+    box-shadow: 0 0 0 0.0625rem #303030; }
+    .button.choose--product:hover .product__size--label.white,
+    .button.choose--product.selected .product__size--label.white {
+      box-shadow: 0 0 0 0.25rem #303030; }
+  .product__size--label.boston {
+    color: #154DB9;
+    background: #F4DD00;
+    box-shadow: 0 0 0 0 #F4DD00; }
+    .button.choose--product:hover .product__size--label.boston,
+    .button.choose--product.selected .product__size--label.boston {
+      box-shadow: 0 0 0 .25rem #F4DD00; }
+  .product__size--label.chicago {
+    color: #FC3919;
+    background: #fff;
+    box-shadow: 0 0 0 .0625rem #064ED8; }
+    .button.choose--product:hover .product__size--label.chicago,
+    .button.choose--product.selected .product__size--label.chicago {
+      box-shadow: 0 0 0 .25rem #064ED8; }
+  .product__size--label.original {
+    color: #303030;
+    background: #fff;
+    box-shadow: 0 0 0 0.0625rem #303030; }
+    .button.choose--product:hover .product__size--label.original,
+    .button.choose--product.selected .product__size--label.original {
+      box-shadow: 0 0 0 0.25rem #303030; }
+  .product__size--label.york {
+    color: #FEB204;
+    background: #2843B9;
+    box-shadow: 0 0 0 0 #2843B9; }
+    .button.choose--product:hover .product__size--label.york,
+    .button.choose--product.selected .product__size--label.york {
+      box-shadow: 0 0 0 .25rem #2843B9; }
 
 .product__color--label {
   display: inline-block;
@@ -627,6 +509,8 @@ button {
 .feature__item,
 .products__item {
   position: relative;
+  padding-right: .0625rem;
+  padding-left: .0625rem;
   height: 30rem;
   text-decoration: none;
   background: #fff;
@@ -659,13 +543,13 @@ button {
     width: .0625rem;
     height: 100%;
     background: white; }
-  .feature__item:nth-child(1), .feature__item:nth-child(5n),
+  .feature__item:nth-child(1), .feature__item:nth-child(4n+1),
   .products__item:nth-child(1),
-  .products__item:nth-child(5n) {
+  .products__item:nth-child(4n+1) {
     box-shadow: inset 0 -0.0625rem 0 rgba(48, 48, 48, 0.1); }
-    .feature__item:nth-child(1):hover, .feature__item:nth-child(5n):hover,
+    .feature__item:nth-child(1):hover, .feature__item:nth-child(4n+1):hover,
     .products__item:nth-child(1):hover,
-    .products__item:nth-child(5n):hover {
+    .products__item:nth-child(4n+1):hover {
       box-shadow: inset 0 -0.0625rem 0 rgba(48, 48, 48, 0.1), inset 0 -0.25rem 0 0 #ffa357; }
   .feature__item:nth-child(4n):after,
   .products__item:nth-child(4n):after {
@@ -737,6 +621,9 @@ button {
     .feature__item--status.sale,
     .products__item--status.sale {
       background: #14cb9b; }
+    .feature__item--status.pre-order,
+    .products__item--status.pre-order {
+      background: #bd00a2; }
   .feature__item--name,
   .products__item--name {
     margin: 0;
@@ -1395,62 +1282,45 @@ button {
   border-radius: .5rem;
   box-shadow: 0 0 0 0.0625rem rgba(0, 0, 0, 0.3); }
 
+.content__additional--contact p, .content__phone--contact p {
+  font-size: 1.4125rem;
+  line-height: 125%; }
+
 .content__additional--contact {
-  margin-left: 1rem;
+  margin-bottom: 3rem;
   padding: 2rem;
-  height: 20rem;
+  height: 25rem;
   background: #fff;
   border-radius: .5rem;
   box-shadow: 0 0 0 0.0625rem rgba(0, 0, 0, 0.3); }
+  @media screen and (min-width: 62.5em) {
+    .content__additional--contact {
+      margin-left: 3rem; } }
   .content__additional--contact h2,
   .content__additional--contact h3,
   .content__additional--contact h4 {
+    margin-bottom: .5em;
     color: #5aadff; }
 
+.content__phone--contact {
+  margin-top: 2rem;
+  padding-top: 2rem;
+  border-top: 0.0625rem solid #9daebe; }
+
 .content__charity-breakdown {
-  margin: 2rem 0 0 0;
+  /*@supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+            display: grid;
+            grid-template-columns: auto;
+            grid-template-rows: auto; // 25rem;
+            grid-gap: 1rem;
+            //
+            @media screen and (min-width: 62.5em) { // 1000px
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }*/
+  margin: 2rem 0;
   padding: 0;
   list-style: none; }
-  @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-    .content__charity-breakdown {
-      display: grid;
-      grid-template-columns: auto;
-      grid-template-rows: auto;
-      grid-gap: 1rem; }
-      @media screen and (min-width: 62.5em) {
-        .content__charity-breakdown {
-          grid-template-columns: repeat(2, 1fr); } } }
-
-.custom-page .charity--example {
-  padding: 2rem;
-  font-family: "Raleway", sans-serif;
-  font-size: 1.25rem;
-  text-align: center;
-  color: #303030;
-  border-radius: .25rem; }
-  .custom-page .charity--example:nth-child(1) {
-    background: #fff;
-    box-shadow: 0 0 0 0.125rem #ff57e7; }
-  .custom-page .charity--example:nth-child(2) {
-    background: #fff;
-    box-shadow: 0 0 0 0.125rem #5aadff; }
-  .custom-page .charity--example:nth-child(3) {
-    background: #fff;
-    box-shadow: 0 0 0 0.125rem #57eec7; }
-  .custom-page .charity--example:nth-child(4) {
-    background: #fff;
-    box-shadow: 0 0 0 0.125rem #dbfc35; }
-  .custom-page .charity--example:nth-child(5) {
-    background: #fff;
-    box-shadow: 0 0 0 0.125rem #ffa357; }
-  .custom-page .charity--example strong {
-    font-size: 1.75rem;
-    font-weight: 900;
-    text-transform: uppercase; }
-  .custom-page .charity--example span {
-    display: block;
-    padding-top: .5rem;
-    padding-bottom: .5rem; }
 
 .product {
   /*&:before {
@@ -1585,6 +1455,8 @@ button {
     border-radius: .125rem; }
     .product-status.sale {
       background: #14cb9b; }
+    .product-status.pre-order {
+      background: #bd00a2; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__images {
       grid-column: 1;
@@ -1642,8 +1514,11 @@ button {
   .product__thumbnail {
     display: inline-block;
     padding: .125rem;
-    width: 5rem;
+    width: 3.75rem;
     box-shadow: 0 0 0 0.0625rem #fff; }
+    @media screen and (min-width: 46.875em) {
+      .product__thumbnail {
+        width: 5rem; } }
   .product__thumbnail--link {
     position: relative;
     display: block; }
@@ -1667,6 +1542,8 @@ button {
       height: .1875rem;
       background: #ff5a5a;
       border-radius: 0 0 1rem 1rem; }
+    .product__thumbnail--link img {
+      display: block; }
   @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
     .product__details {
       grid-column: 2;
@@ -1683,10 +1560,30 @@ button {
     font-size: 1.25rem;
     line-height: 125%;
     color: #303030; }
+    .product--description p:first-of-type {
+      margin-top: 0;
+      font-size: 1.25rem; }
     .product--description p:last-of-type {
       font-size: .875rem; }
     .product--description p:only-child {
       font-size: 1.25rem; }
+    .product--description__title {
+      position: relative;
+      margin-bottom: .5rem;
+      padding-bottom: .5rem;
+      font-family: "Raleway", sans-serif;
+      font-size: .875rem;
+      font-weight: 700;
+      text-transform: uppercase; }
+      .product--description__title:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: .0625rem;
+        background: linear-gradient(30deg, #ffa357 0%, #ff5a5a 33%, #ff57e7 66%, #5aadff 100%); }
   .product--content {
     height: 6rem; }
   .product__select {
@@ -1795,6 +1692,41 @@ button {
   display: inline-block;
   font-size: 1rem;
   color: #565656; }
+
+.pre-order--title {
+  margin: 0;
+  font-family: "Raleway", sans-serif;
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: .875em;
+  text-transform: uppercase;
+  color: #f000ce; }
+  .pre-order--title-label {
+    display: block;
+    margin-bottom: .25rem;
+    font-size: .875rem;
+    font-weight: 700;
+    line-height: .875em;
+    color: #a4008c; }
+
+.pre-order--info {
+  margin-top: 1rem;
+  margin-bottom: 2.5rem;
+  padding: 1rem;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  color: #303030;
+  background: rgba(219, 252, 53, 0.3);
+  box-shadow: 0 0 0 0.0625rem rgba(219, 252, 53, 0.5);
+  border-radius: .25rem; }
+  .pre-order--info strong {
+    padding-right: .125rem; }
+  .pre-order--info__details {
+    margin-bottom: 0;
+    font-size: .75rem;
+    text-transform: none; }
 
 .similar__products--wrapper {
   position: relative;
@@ -2206,6 +2138,11 @@ button {
   .custom-page li {
     font-size: 1.4125rem;
     line-height: 125%; }
+  .custom-page .mission__list {
+    margin-right: 0;
+    margin-left: 0;
+    padding: 0;
+    list-style: none; }
   .custom-page .mission__hashtag {
     display: inline-block;
     padding: .75rem 1.5rem;
@@ -2214,7 +2151,7 @@ button {
     font-weight: 900;
     text-transform: uppercase;
     color: #fff;
-    background: linear-gradient(30deg, #57eec7 0%, #dbfc35 33%, #ffa357 66%, #ff5a5a 100%); }
+    background: linear-gradient(30deg, #ff57e7 10%, #ff5a5a 90%); }
   .custom-page .mission__heart {
     display: block;
     margin: 0;
@@ -2224,6 +2161,87 @@ button {
       width: 100%; }
       .custom-page .mission__heart svg path {
         fill: #ff5a5a; }
+  .custom-page .mission__giving {
+    position: relative;
+    display: inline-block;
+    margin-top: 3rem;
+    padding: 1rem;
+    background: linear-gradient(30deg, #0e87ff 10%, #ff0bdc 90%);
+    border-radius: 10rem; }
+    .custom-page .mission__giving:before {
+      content: "";
+      position: absolute;
+      top: -2.5rem;
+      right: 0;
+      left: 0;
+      height: .0625rem;
+      background: #9daebe; }
+    .custom-page .mission__giving .button {
+      position: relative; }
+      .custom-page .mission__giving .button:after {
+        content: "";
+        position: absolute;
+        top: -1rem;
+        right: -1rem;
+        bottom: -1rem;
+        left: -1rem; }
+  .custom-page .charity--example {
+    font-size: 1.25rem;
+    text-align: left;
+    color: #303030; }
+    .custom-page .charity--example h3 {
+      position: relative;
+      margin-bottom: .5rem;
+      padding-bottom: .5rem;
+      font-size: 1.75rem;
+      font-weight: 900;
+      text-transform: uppercase; }
+      .custom-page .charity--example h3:before {
+        content: "";
+        position: absolute;
+        z-index: -1;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: .0625rem;
+        background: linear-gradient(30deg, #57eec7 0%, white 100%); }
+    .custom-page .charity--example span {
+      display: block;
+      padding-top: .5rem;
+      padding-bottom: .5rem; }
+
+@supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+  .give__campaigns {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+    grid-gap: 1rem; }
+    @media screen and (min-width: 62.5em) {
+      .give__campaigns {
+        grid-template-columns: repeat(2, 1fr); } } }
+
+.give__block {
+  padding: 2rem;
+  background: #2794ff; }
+  .give__block.weekly {
+    background: #ff24e0; }
+  .give__block.donation {
+    background: #14cb9b; }
+  .give__block.giveaway {
+    background: #0e87ff; }
+  .give__block.entry {
+    background: #f06d00; }
+  .give__block h3 {
+    margin: 0 0 .75em 0;
+    padding-bottom: .75em;
+    color: #fff;
+    border-bottom: 0.0625rem solid rgba(255, 255, 255, 0.7); }
+  .give__block p,
+  .give__block a {
+    color: #fff; }
+    .give__block p:last-of-type,
+    .give__block a:last-of-type {
+      margin-bottom: 0; }
 
 .module__footer {
   background: #303030; }

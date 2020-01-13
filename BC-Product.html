@@ -11,6 +11,12 @@
     <!-- Product Headings -->
     <div class="product__page--headings">
         <h1 class="product--title has-dash">{{ product.name }}</h1>
+        {% for category in product.categories %}
+        <!-- PRE-ORDER -- GET QUANTITY -->
+        {% if category.name == 'Pre-Order' %}
+        <span class="product-status pre-order">Pre-Order</span>
+        {% endif %}
+        {% endfor %}
         {% if product_status != blank %}<span class="product-status {{ product_status }}">{{ product_status }}</span>{% endif %}
     </div>
 
@@ -40,14 +46,54 @@
     </div>
 
     <div class="product__info">
+        {% for category in product.categories %}
+            <!-- PRE-ORDER -- GET QUANTITY -->
+            {% if category.name == 'Pre-Order' %}
+                <h2 class="pre-order--title">
+                    <span class="pre-order--title-label">Available for</span>
+                    Pre-Order
+                </h2>
+            {% endif %}
+            <!-- PRE-ORDER -- GET QUANTITY -->
+            {% if category.name == 'Pre-Order' %}
+                {% for option in product.options %}
+                    <!--<span class="option-sold-test" data-sold="{{ option.sold }}">.</span>
+                    <span class="total-sold></span>-->
+                    <input onblur="findTotal()" class="option-sold" type="text" name="0" hidden value="{{ option.sold }}" />
+                {% endfor %}
+                <input type="text" name="total" id="total" hidden value="0" />
+                <!--{{ product.created_at }}-->
+                <!--<p>Pre-Orders that hit their minimum will be shipped within 3-4 weeks</p>-->
+                <div class="pre-order--info">
+                    <div style="display:inline-block;padding-right:.25rem;" class="pre-order--sold"></div>
+                    <span>/</span>
+                    <div style="display:inline-block;padding-left:.25rem;" class="pre-order--time"></div>
+                    {% for category in product.categories %}
+                        {% if category.name == 'Shirts' %}
+                            <p class="pre-order--info__details">Pre-orders for this shirt are open for two weeks. If it meets the 6 shirt minimum, it will ship to you about two weeks after the pre-order ends.</p>
+                        {% endif %}
+                        {% if category.name == 'Tanks' %}
+                            <p class="pre-order--info__details">Pre-orders for this tank are open for two weeks. If it meets the 6 tank minimum, it will ship to you about two weeks after the pre-order ends.</p>
+                        {% endif %}
+                        {% if category.name == 'Stickers' %}
+                            <p class="pre-order--info__details">Pre-orders for this sticker are open for two weeks. If it meets the 6 sticker minimum, it will ship to you about two weeks after the pre-order ends.</p>
+                        {% endif %}
+                    {% endfor %}
+                    <p class="pre-order--info__details">If an item does not meet the order minimum you will be fully refunded.</p>
+                </div>
+            {% endif %}
+        <!-- END PRE-ORDER -- QUANTITY CHECK -->
+        {% endfor %}
         {% if product.description != blank %}
-        <div class="product--description">
-            {{ product.description | paragraphs }}
-        </div>
+            <h2 class="product--description__title">Description</h2>
+            <div class="product--description">
+                {{ product.description | paragraphs }}
+            </div>
         {% endif %}
 
         <!-- Product Details -->
         <div class="product__details">
+            <!-- IF ACTIVE -->
             {% if product.status == 'active' %}
             {% if theme.show_inventory_bars %}
             <div class="product__inventory">
@@ -56,8 +102,8 @@
                     {% for option in product.options %}
                     <li class="inventory__box{% if option.quantity < 2 %} sold-out{% endif %}">
                         <!--{% if option.quantity < 2 %}
-                    <div>Only 1 left</div>
-                    {% endif %}-->
+                        <div>Only 1 left</div>
+                        {% endif %}-->
                         {% unless product.has_default_option %}<div class="inventory__name">{{ option.name }}</div>{% endunless %}
                         <!--<div class="bar">-->
                         <!-- style="width:{{ option.inventory }}%;" -->
@@ -77,17 +123,37 @@
                 {% else %}
                 <div class="product__select">
                     <!--
+                      {% for category in product.categories %}
+                        {% if category.name == 'Shirts' %}
+                          <div>Your content</div>
+                        {% endif %}
+                      {% endfor %}
+                    -->
+                    <!-- -->
+                    <!-- TESTING -->
                     {% for category in product.categories %}
-                      {% if category.name == 'Shirts' %}
-                        <div>Your content</div>
-                      {% endif %}
-                    {% endfor %}
-                -->
-                    {% for category in categories.active %}
                     {% if category.name == 'Shirts' %}
                     <label class="product__select-label" for="option">Choose a shirt size and color</label>
                     {% endif %}
+                    {% if category.name == 'Tanks' %}
+                    <label class="product__select-label" for="option">Choose a tank size and color</label>
+                    {% endif %}
+                    {% if category.name == 'Stickers' %}
+                    <label class="product__select-label" for="option">Choose a sticker</label>
+                    {% endif %}
                     {% endfor %}
+                    <!-- END TESTING -->
+                    <!-- OLD VERSION WAS NOT WORKING -->
+                    <!--
+                      {% for category in categories.active %}
+                      {% if category.name == 'Shirts' %}
+                      <label class="product__select-label" for="option">Choose a shirt size and color</label>
+                      {% endif %}
+                      {% if category.name == 'Stickers' %}
+                      <label class="product__select-label" for="option">Choose a sticker</label>
+                      {% endif %}
+                      {% endfor %}
+                    -->
                     <select id="product-options" name="[cart][add][id]" aria-label="Select option">
                         {% for option in product.options %}
                         <option value="{{ option.id }}" data-option-price="{{ option.price }}" {% if option.sold_out %} disabled="disabled" {% endif %}>{{ option.name }}{% if option.price != product.default_price %} - {{ option.price | money: theme.money_format }}{% endif %} {% if option.sold_out %}(Sold out){% endif %}</option>
@@ -156,20 +222,20 @@
         //
         //div.innerHTML += '<button class="button choose--product product__options--wrapper" id="' + listvalue[i] + '">' + listarray[i] + ' and ' + color + '</button>';
         div.innerHTML += '<button type="button" name="choose" class="button choose--product product__options--wrapper" id="' + listvalue[i] + '"><span class="product__size--label ' + color.toLowerCase() + '">' + size + '</span><span class="product__color--label">' + color + '</span></button>';
-        console.log("" + size + "and color" + color.toLowerCase() + "");
+        //console.log("" + size + "and color" + color.toLowerCase() + "");
     }
     //
     //
     //
     var productButtons = document.getElementsByClassName("choose--product"); // target all buttons into a element array/collection
     var productButtonsCount = productButtons.length; // cache the length
-    console.log(productButtonsCount);
+    //console.log(productButtonsCount);
     for (var k = 0; k < productButtonsCount; k++) { // reset the counter; check if its smaller than the array length; add itself
         productButtons[k].onclick = function (e) { // assign a function to the onclick event
             //
             var productValue = this.getAttribute("id"); // alert the id attribute of the element clicked
             var currentButton = document.getElementById(productValue);
-            document.getElementById('product-options').value = productValue;            
+            document.getElementById('product-options').value = productValue;
             //
             var productButtons = document.getElementsByClassName("choose--product");
             //
@@ -181,4 +247,135 @@
             currentButton.className += (" selected");
         };
     }
+    //
+    //
+    // SOLD COUNT GENERATION
+    var hiddenInputs = document.getElementsByClassName("option-sold");
+    //console.log(hiddenInputs.length + " times");
+    // Added -1 because it was loops 1 time too many and I couldn't sort out why
+    // --
+    for (var i = 0; i <= hiddenInputs.length - 1; i++) {
+        console.log(hiddenInputs.name = (i + 1));
+        hiddenInputs[i].name = (i + 1);
+    }
+    //
+    var inputs = document.getElementsByClassName("option-sold"),
+        result = document.getElementById('total'),
+        sum = 0;
+    //
+    for(var i=0; i<inputs.length; i++) {
+        var ip = inputs[i];
+
+        if (ip.name && ip.name.indexOf("total") < 0) {
+            sum += parseInt(ip.value) || 0;
+        }
+
+    }
+    document.getElementById("total").value = sum;
+    if (sum > 5) {
+        document.getElementsByClassName('pre-order--sold')[0].innerHTML = "<strong>Pre-Order minimum met!</strong>";
+    } else {
+        document.getElementsByClassName('pre-order--sold')[0].innerHTML = "<strong>" + sum + "</strong> sold";
+    }
+    //result.value = sum;
+
+    /* ALL THE CODE I DO NOT NEED
+    // var text = "{{ product.created_at }}";
+    // var textModified = text.Split(' ')[0];
+    // console.log(textModified);
+    //
+    //
+    //
+    // GET TODAY'S DATE TO COMPARE AGAINST DATE CREATED
+    // var today = new Date();
+    // var dd = String(today.getDate()).padStart(2, '0');
+    // var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+    // var yyyy = today.getFullYear();
+    // GET TODAY'S DATE INTO SAME FORMAT AS DATE CREATED
+    // today = yyyy + '/' + mm + '/' + dd;
+    //console.log(today);
+    // GET DATE POSTED -- DON'T THINK THIS DOES ANYTHING NOW
+    // var datePosted = new Date();
+    // datePosted = yearCreated + '/' + monthCreated + '/' + dayCreated;
+    //
+    //var dateDeadline = new Date();
+    //dateDeadline = yearCreated + '/' + monthCreated + '/' + dayDeadline;
+    //var dateDeadline = new Date(datePosted.getTime() + 14 * 86400000);
+    //console.log(dateDeadline);
+    //console.log(datePosted);
+    // DO MATH TO SORT OUT NUMBER OF DAYS LEFT
+    //var daysLeft = dayDeadline - dd;
+    //var monthSub = today - datePosted;
+    //console.log(monthSub);
+    //console.log("Pre-Orders close in " + daysLeft + " days");
+    //
+    //var deadline = new Date(yyyy, monthCreated, dayDeadline) //Month is 0-11 in JavaScript
+    //if (mm == monthCreated && dd < dayDeadline) {
+        //console.log("Days to go");
+    //} else {
+        //console.log("Over deadline");
+    //}
+    //if Christmas has passed already
+    //deadline.setFullYear(deadline.getFullYear()+1) //calculate next year's Christmas
+    //
+    //
+    //
+    END OF CODE I DO NOT NEED */
+    //
+    //
+    //
+    // SPLIT DATE CREATED INTO A DATE JS CAN UNDERSTAND
+    // There were other items, but I only produced vars for what I needed
+    var dateCreated = "{{ product.created_at }}";
+    var dateSplit = dateCreated.replace(' ', '-').split('-');
+    var yearCreated = dateSplit[0];
+    var dayCreated = dateSplit[1];
+    var monthCreated = dateSplit[2];
+    //
+    //Set 1 day in milliseconds
+    var one_day = 1000*60*60*24
+    //
+    //Calculate difference between the two dates, and convert to days
+    var currentTime = new Date();
+    var month = currentTime.getMonth() + 1;
+    var day = currentTime.getDate();
+    var year = currentTime.getFullYear();
+    var currentDate = month + "/" + day + "/" + year;
+    var createdDate = monthCreated + '/' + dayCreated + '/' + yearCreated;
+    //
+    // Function to calculate days left between pre-order deadline and today
+    // To get the pre-order deadline, I am taking the first date (createdDate) and adding 14 days * 86400000ms)
+    function DateDiff(date1, date2) {
+        // Establish the pre-order date and subtract it from the current date
+        var datediff = new Date(date1).getTime() + (14 * one_day) - new Date(date2).getTime();
+        return (datediff / (24 * 60 * 60 * 1000));
+    }
+    //
+    // Show the results of DateDiff to make sure the math is right
+    console.log("You have " + DateDiff(createdDate, currentDate) + " left");
+    //
+    // If the number of days left if 0
+    // The DateDiff function makes the "createdDate the deadline date
+    if (DateDiff(createdDate, currentDate) < 1) {
+        document.getElementsByClassName('pre-order--time')[0].innerHTML = "Pre-Order closed";
+    // If the number of days left is 1
+    } else if (DateDiff(createdDate, currentDate) < 2) {
+        document.getElementsByClassName('pre-order--time')[0].innerHTML = "<strong>Final day!</strong>";
+    // If the number of days is more than 1
+    } else {
+        document.getElementsByClassName('pre-order--time')[0].innerHTML = "<strong>" + DateDiff(createdDate, currentDate) + "</strong> days left";
+    }
+    //
+    //
+    //
+    //function findTotal(){
+    //var arr = document.getElementsByClassName('option-sold');
+    //var tot=0;
+    //for(var i=0;i<arr.length;i++){
+    //if(parseInt(arr[i].attr("data-sold")))
+    //tot += parseInt(arr[i].attr("data-sold"));
+    //}
+    //console.log(tot);
+    //document.getElementsByClassName('total-sold').innerHTML = tot;
+    //}
 </script>

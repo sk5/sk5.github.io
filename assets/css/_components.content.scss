@@ -192,19 +192,38 @@
     //
     //
     //
+    &__additional--contact,
+    &__phone--contact {
+        p {
+            font-size: 1.4125rem;
+            line-height: 125%;
+        }
+    }
+    //
     &__additional--contact {
-        margin-left: 1rem;
+        margin-bottom: 3rem;
         padding: 2rem;
-        height: 20rem;
+        height: 25rem;
         background: $white;
         border-radius: .5rem;
         box-shadow: 0 0 0 .0625rem rgba(black, .3);
         //
+        @media screen and (min-width: 62.5em) { // 1000px
+            margin-left: 3rem;
+        }
+        //
         h2,
         h3,
         h4 {
+            margin-bottom: .5em;
             color: $blue;
         }
+    }
+    //
+    &__phone--contact {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: .0625rem solid darken(#f9fafb, 30%);
     }
     //
     //
@@ -212,7 +231,7 @@
     &__charity-breakdown {
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-        @supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
+        /*@supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
             display: grid;
             grid-template-columns: auto;
             grid-template-rows: auto; // 25rem;
@@ -221,61 +240,10 @@
             @media screen and (min-width: 62.5em) { // 1000px
                 grid-template-columns: repeat(2, 1fr);
             }
-        }
+        }*/
         //
-        margin: 2rem 0 0 0;
+        margin: 2rem 0;
         padding: 0;
         list-style: none;
-    }
-}
-//
-.custom-page .charity--example {
-    padding: 2rem;
-    font-family: $brand-text;
-    font-size: 1.25rem;
-    text-align: center;
-    color: $black;
-    border-radius: .25rem;
-    //
-    &:nth-child(1) {
-        background: $white;
-        //background: linear-gradient(30deg, darken($purple, 10%) 0%, darken($purple, 30%) 100%);
-        box-shadow: 0 0 0 .125rem $purple;
-    }
-    //
-    &:nth-child(2) {
-        background: $white;
-        //background: linear-gradient(30deg, darken($purple, 10%) 0%, darken($purple, 30%) 100%);
-        box-shadow: 0 0 0 .125rem $blue;
-    }
-    //
-    &:nth-child(3) {
-        background: $white;
-        //background: linear-gradient(30deg, darken($purple, 10%) 0%, darken($purple, 30%) 100%);
-        box-shadow: 0 0 0 .125rem $green;
-    }
-    //
-    &:nth-child(4) {
-        background: $white;
-        //background: linear-gradient(30deg, darken($purple, 10%) 0%, darken($purple, 30%) 100%);
-        box-shadow: 0 0 0 .125rem $yellow;
-    }
-    //
-    &:nth-child(5) {
-        background: $white;
-        //background: linear-gradient(30deg, darken($purple, 10%) 0%, darken($purple, 30%) 100%);
-        box-shadow: 0 0 0 .125rem $orange;
-    }
-    //
-    strong {
-        font-size: 1.75rem;
-        font-weight: 900;
-        text-transform: uppercase;
-    }
-    //
-    span {
-        display: block;
-        padding-top: .5rem;
-        padding-bottom: .5rem;
     }
 }

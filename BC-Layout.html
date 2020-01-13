@@ -174,40 +174,48 @@
             <!--END FOR-->
             {% endfor %}
             {% endcapture %}
-            {% endfor %}
-            <!--3-->
-            {% endif %}
-            <!--2-->
-            {% endif %}
-
-            <div class="similar__products--wrapper">
-                {% if product_divs != blank %}
-                <div class="all-similar-products">{{ product_divs }}</div>
-                <div class="similar__products">
-                    <div class="similar__products--header">
-                        <div class="similar__products--title">Check these out</div>
-                        <!--{% if product.previous_product != blank or product.next_product != blank %}
-                        <ul class="prev-next-products">
+            
+            {% if category.products.size > 1 %}
+                <div class="similar__products--wrapper">
+                    {% if product_divs != blank %}
+                        <div class="all-similar-products">{{ product_divs }}</div>
+                        <div class="similar__products">
+                            <div class="similar__products--header">
+                                <div class="similar__products--title">Check these out</div>
+                                <!--{% if product.previous_product != blank or product.next_product != blank %}
+                                <ul class="prev-next-products">
+                                    {% if product.previous_product != blank %}
+                                    <li>{{ product.previous_product | link_to: "Previous product" }}</li>{% endif %}
+                                    {% if product.next_product != blank %}
+                                    <li>{{ product.next_product | link_to: "Next product" }}</li>{% endif %}
+                                </ul>
+                                {% endif %}-->
+                            </div>
+                            <!-- Needs "similar-product-list -->
+                            <div class="product-list similar-product-list similar__product--list"></div>
+                            <!-- TRYING TO HIDE SIMILAR PRODUCTS WHEN THERE ARE NO OTHER SIMILAR PRODUCTS
+                            {{ product.categories }}
+                            {{ categories.shirts.products | size }}
+                            -->
+                        </div>
+                    {% endif %}
+                    <!--{% if product.previous_product != blank or product.next_product != blank %}
+                        <ul class="prev-next-products {% if product_divs != blank %}with-related{% endif %}">
                             {% if product.previous_product != blank %}
                             <li>{{ product.previous_product | link_to: "Previous product" }}</li>{% endif %}
                             {% if product.next_product != blank %}
                             <li>{{ product.next_product | link_to: "Next product" }}</li>{% endif %}
                         </ul>
-                        {% endif %}-->
-                    </div>
-                    <!-- Needs "similar-product-list -->
-                    <div class="product-list similar-product-list similar__product--list"></div>
+                    {% endif %}-->
                 </div>
-                {% endif %}
-                <!--{% if product.previous_product != blank or product.next_product != blank %}
-                <ul class="prev-next-products {% if product_divs != blank %}with-related{% endif %}">
-                    {% if product.previous_product != blank %}
-                    <li>{{ product.previous_product | link_to: "Previous product" }}</li>{% endif %}
-                    {% if product.next_product != blank %}
-                    <li>{{ product.next_product | link_to: "Next product" }}</li>{% endif %}
-                </ul>
-                {% endif %}-->
-            </div>
+            {% endif %}
+
+            {% endfor %}
+            <!--3-->
+            {% endif %}
+            <!--2-->
+            {% endif %}
+            <!-- -->
             <!--1-->
             {% endif %}
         </div>
@@ -217,8 +225,8 @@
                 <nav class="footer-nav" id="footer">
                     <ul class="footer__navigation">
                         <li class="footer__navigation--list-item">
-                            <a class="footer__navigation--link brand" href="/">
-                                <svg class="ftr__logo" id="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 21.6">
+                            <a class="footer__navigation--link brand" title="Back to For The Run home page" href="/">
+                                <svg class="ftr__logo" alt="For The Run Logo" id="Logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 144 21.6">
                                     <path class="ftr__logo--f" id="footer-F" d="M2.9 2c0-.3.2-.5.5-.5h11.2c.3 0 .5.2.5.5v3c0 .3-.2.5-.5.5H7.1v3.9h6.2c.3 0 .5.2.5.5v3c0 .3-.2.5-.5.5H7.1V20c0 .3-.2.5-.5.5H3.4c-.3 0-.5-.2-.5-.5V2z" fill="#ffa357" />
                                     <path class="ftr__logo--heart" id="footer-Heart" d="M25.8 1.2c5.4 0 9.8 4.4 9.8 9.8s-4.3 9.8-9.8 9.8S16 16.5 16 11s4.4-9.8 9.8-9.8zm0 15.2c3 0 5.4-2.4 5.4-5.4 0-3-2.4-5.5-5.4-5.5-3 0-5.4 2.5-5.4 5.5s2.4 5.4 5.4 5.4z" />
                                     <path class="ftr__logo--o" id="footer-O" d="M25.8 14.4l2.5-2.5c.3-.3.5-.8.5-1.3 0-1-.8-1.8-1.8-1.8-.5 0-.9.2-1.3.5-.2-.3-.7-.5-1.2-.5-1 0-1.8.8-1.8 1.8 0 .5.2.9.5 1.3l2.6 2.5z" />
@@ -230,9 +238,9 @@
                                 </svg>
                             </a>
                         </li>
-                        <li class="footer__navigation--list-item"><a class="footer__navigation--link" href="/products">{{ pages.products.name }}</a></li>
-                        <li class="footer__navigation--list-item"><a class="footer__navigation--link" href="/contact">Contact</a></li>
-                        <li class="footer__navigation--list-item"><a class="footer__navigation--link" href="/cart">Cart {% if cart.item_count > 0 %}<span class="footer__navigation--total">({{ cart.item_count }})</span>{% endif %}</a></li>
+                        <li class="footer__navigation--list-item"><a class="footer__navigation--link" title="Products page" href="/products">{{ pages.products.name }}</a></li>
+                        <li class="footer__navigation--list-item"><a class="footer__navigation--link" title="Contact page" href="/contact">Contact</a></li>
+                        <li class="footer__navigation--list-item"><a class="footer__navigation--link" title="View your cart" href="/cart">Cart {% if cart.item_count > 0 %}<span class="footer__navigation--total">({{ cart.item_count }})</span>{% endif %}</a></li>
                         {% for page in pages.all %}
                         <li class="footer__navigation--list-item">{{ page | link_to }}</li>
                         {% endfor %}
@@ -246,9 +254,9 @@
                         </li>
                         {% endif %}
                     </ul>
-                    {% if store.website != blank %}
-                    <a href="{{ store.website }}" class="button back-to-site">Back to site</a>
-                    {% endif %}
+                    <!--{% if store.website != blank %}
+                        <a href="{{ store.website }}" class="button back-to-site">Back to site</a>
+                    {% endif %}-->
                 </nav>
                 {% if theme.twitter_url != blank or theme.facebook_url != blank or theme.instagram_url != blank or theme.tumblr_url != blank or theme.pinterest_url != blank %}
                 <ul class="social--links">
