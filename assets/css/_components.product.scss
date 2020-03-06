@@ -66,16 +66,6 @@
         padding-top: 2rem;
         padding-bottom: 2rem;
         //
-        /*&:before {
-            content: "";
-            position: absolute;
-            right: -20vw;
-            bottom: 0;
-            left: -20vw;
-            height: .0625rem;
-            box-shadow: 0 .0625rem 0 darken(#f9fafb, 10%);
-        }*/
-        //
         &:before {
             content: "";
             position: absolute;
@@ -266,19 +256,6 @@
         }
     }
     //
-    /*&:before {
-        content: "";
-        position: absolute;
-        z-index: -1;
-        top: 0;
-        right: -20vw;
-        left: -20vw;
-        height: 10rem;
-        background: $black;
-        background-image: url(../images/polygon-background.svg), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
-        background-size: cover;
-    }*/
-    //
     &--image-wrapper {
         // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
         // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
@@ -345,45 +322,6 @@
     &__select {
         margin-bottom: 2rem;
     }
-    //
-    /*&--color {
-        float: left;
-        margin-right: 1rem;
-        margin-bottom: 1rem;
-        width: 40%;
-    }*/
-    //
-    /*&--sizing {
-        float: left;
-        width: 40%;
-    }
-    //
-    &--quantity {
-        margin-bottom: 1rem;
-        width: 20%;
-    }*/
-    //
-    /*&--select-color,
-    &--select-size,
-    &--select-quantity {
-        padding: .25rem .5rem;
-        width: 100%;
-        color: $black;
-        font-size: 1rem;
-        border: .125rem solid $black;
-    }*/
-    //
-    /*.form--label {
-        display: block;
-        margin-bottom: .25rem;
-        padding-right: 1rem;
-        padding-left: 1rem;
-        font-family: $brand-text;
-        font-size: .75rem;
-        font-weight: 700;
-        text-transform: uppercase;
-        color: $black;
-    }*/
     //
     //
     //

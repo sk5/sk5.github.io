@@ -47,48 +47,48 @@
 
     <div class="product__info">
         {% for category in product.categories %}
-            <!-- PRE-ORDER -- GET QUANTITY -->
-            {% if category.name == 'Pre-Order' %}
-                <h2 class="pre-order--title">
-                    <span class="pre-order--title-label">Available for</span>
-                    Pre-Order
-                </h2>
+        <!-- PRE-ORDER -- GET QUANTITY -->
+        {% if category.name == 'Pre-Order' %}
+        <h2 class="pre-order--title">
+            <span class="pre-order--title-label">Available for</span>
+            Pre-Order
+        </h2>
+        {% endif %}
+        <!-- PRE-ORDER -- GET QUANTITY -->
+        {% if category.name == 'Pre-Order' %}
+        {% for option in product.options %}
+        <!--<span class="option-sold-test" data-sold="{{ option.sold }}">.</span>
+        <span class="total-sold></span>-->
+        <input onblur="findTotal()" class="option-sold" type="text" name="0" hidden value="{{ option.sold }}" />
+        {% endfor %}
+        <input type="text" name="total" id="total" hidden value="0" />
+        <!--{{ product.created_at }}-->
+        <!--<p>Pre-Orders that hit their minimum will be shipped within 3-4 weeks</p>-->
+        <div class="pre-order--info">
+            <div style="display:inline-block;padding-right:.25rem;" class="pre-order--sold"></div>
+            <span>/</span>
+            <div style="display:inline-block;padding-left:.25rem;" class="pre-order--time"></div>
+            {% for category in product.categories %}
+            {% if category.name == 'Shirts' %}
+            <p class="pre-order--info__details">Pre-orders for this shirt are open for two weeks. If it meets the 6 shirt minimum, it will ship to you about two weeks after the pre-order ends.</p>
             {% endif %}
-            <!-- PRE-ORDER -- GET QUANTITY -->
-            {% if category.name == 'Pre-Order' %}
-                {% for option in product.options %}
-                    <!--<span class="option-sold-test" data-sold="{{ option.sold }}">.</span>
-                    <span class="total-sold></span>-->
-                    <input onblur="findTotal()" class="option-sold" type="text" name="0" hidden value="{{ option.sold }}" />
-                {% endfor %}
-                <input type="text" name="total" id="total" hidden value="0" />
-                <!--{{ product.created_at }}-->
-                <!--<p>Pre-Orders that hit their minimum will be shipped within 3-4 weeks</p>-->
-                <div class="pre-order--info">
-                    <div style="display:inline-block;padding-right:.25rem;" class="pre-order--sold"></div>
-                    <span>/</span>
-                    <div style="display:inline-block;padding-left:.25rem;" class="pre-order--time"></div>
-                    {% for category in product.categories %}
-                        {% if category.name == 'Shirts' %}
-                            <p class="pre-order--info__details">Pre-orders for this shirt are open for two weeks. If it meets the 6 shirt minimum, it will ship to you about two weeks after the pre-order ends.</p>
-                        {% endif %}
-                        {% if category.name == 'Tanks' %}
-                            <p class="pre-order--info__details">Pre-orders for this tank are open for two weeks. If it meets the 6 tank minimum, it will ship to you about two weeks after the pre-order ends.</p>
-                        {% endif %}
-                        {% if category.name == 'Stickers' %}
-                            <p class="pre-order--info__details">Pre-orders for this sticker are open for two weeks. If it meets the 6 sticker minimum, it will ship to you about two weeks after the pre-order ends.</p>
-                        {% endif %}
-                    {% endfor %}
-                    <p class="pre-order--info__details">If an item does not meet the order minimum you will be fully refunded.</p>
-                </div>
+            {% if category.name == 'Tanks' %}
+            <p class="pre-order--info__details">Pre-orders for this tank are open for two weeks. If it meets the 6 tank minimum, it will ship to you about two weeks after the pre-order ends.</p>
             {% endif %}
+            {% if category.name == 'Stickers' %}
+            <p class="pre-order--info__details">Pre-orders for this sticker are open for two weeks. If it meets the 6 sticker minimum, it will ship to you about two weeks after the pre-order ends.</p>
+            {% endif %}
+            {% endfor %}
+            <p class="pre-order--info__details">If an item does not meet the order minimum you will be fully refunded.</p>
+        </div>
+        {% endif %}
         <!-- END PRE-ORDER -- QUANTITY CHECK -->
         {% endfor %}
         {% if product.description != blank %}
-            <h2 class="product--description__title">Description</h2>
-            <div class="product--description">
-                {{ product.description | paragraphs }}
-            </div>
+        <h2 class="product--description__title">Description</h2>
+        <div class="product--description">
+            {{ product.description | paragraphs }}
+        </div>
         {% endif %}
 
         <!-- Product Details -->
@@ -170,6 +170,10 @@
                 </div>
             </form>
             {% endif %}
+
+            <div style="display:none;" id="testing">
+
+            </div>
 
             {% if theme.show_facebook or theme.show_twitter or theme.show_pinterest %}
             <ul class="social-buttons">
@@ -341,6 +345,7 @@
     var month = currentTime.getMonth() + 1;
     var day = currentTime.getDate();
     var year = currentTime.getFullYear();
+    var hour = currentTime.getHours();
     var currentDate = month + "/" + day + "/" + year;
     var createdDate = monthCreated + '/' + dayCreated + '/' + yearCreated;
     //
@@ -372,6 +377,8 @@
     //
     if (window.location.href.indexOf("testing") > -1) {
         console.log("your url contains testing");
+        document.getElementById('testing').style.display = 'block';
+        document.getElementById('testing').innerHTML = "<span>" + createdDate + " // " + currentDate + " // {{ product.created_at }}</span>";
     }
     //
     //

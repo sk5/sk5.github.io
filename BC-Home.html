@@ -9,12 +9,15 @@
 {% endif %}-->
 
 <div class="feature__highlight">
-    <h1 class="feature__welcome">Runners<br /> <strong>giving back</strong><br /> to runners</h1>
-    {% if theme.image_sets.slideshow.size > 0 %}
+    <!--<h1 class="feature__welcome">Runners<br /> <strong>giving back</strong><br /> to runners</h1>-->
+    <h1 class="feature__welcome"><span class="hidden">Your Inner Voice Collection</span></h1>
+    <p class="feature__blurb">Pre-Orders Begin January 17th</p>
+    <!-- Turned off for Your Inner Voice 1/13/2020
+        {% if theme.image_sets.slideshow.size > 0 %}
     {% for image in theme.image_sets.slideshow %}
     <img src="{{ image.url | constrain: 1800 }}" />
     {% endfor %}
-    {% endif %}
+    {% endif %}-->
 </div>
 
 {% if theme.featured_items > 0 %}
@@ -47,9 +50,9 @@
                     <!-- product-list-item-info-headers -->
                     {% if product_status != blank %}<div class="feature__item--status {{ product_status }}">{{ product_status }}</div>{% endif %} <!-- product-list-item-status -->
                     {% for category in product.categories %}
-                        {% if category.name contains 'Pre-Order' %}
-                            <div class="feature__item--status pre-order">Pre-Order</div>
-                        {% endif %}
+                    {% if category.name contains 'Pre-Order' %}
+                    <div class="feature__item--status pre-order">Pre-Order</div>
+                    {% endif %}
                     {% endfor %}
                     <h3 class="feature__item--name">{{ product.name }}</h3> <!-- product-list-item-name -->
                     <div class="feature__item--price">{{ product.default_price | money: theme.money_format }}</div> <!-- product-list-item-price -->

@@ -229,19 +229,6 @@
     //
     //
     &__charity-breakdown {
-        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
-        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-        /*@supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-            display: grid;
-            grid-template-columns: auto;
-            grid-template-rows: auto; // 25rem;
-            grid-gap: 1rem;
-            //
-            @media screen and (min-width: 62.5em) { // 1000px
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }*/
-        //
         margin: 2rem 0;
         padding: 0;
         list-style: none;

@@ -197,6 +197,28 @@ button {
     //
     // STICKERS -- MARATHON
     //
+    &.angeles {
+        color: #fff;
+        background: #002859;
+        box-shadow: 0 0 0 .0625em #C3D831;
+        //
+        .button.choose--product:hover &,
+        .button.choose--product.selected & {
+            box-shadow: 0 0 0 .25rem #C3D831;
+        }
+    }
+    //
+    &.austin {
+        color: #B4BD00;
+        background: #1F1C1D;
+        box-shadow: 0 0 0 .0625rem #4D9B44;
+        //
+        .button.choose--product:hover &,
+        .button.choose--product.selected & {
+            box-shadow: 0 0 0 .25rem #4D9B44;
+        }
+    }
+    //
     &.boston {
         color: #154DB9;
         background: #F4DD00;
@@ -219,6 +241,50 @@ button {
         }
     }
     //
+    &.cim {
+        color: #F05F32;
+        background: #fff;
+        box-shadow: 0 0 0 .0625rem #0D4F67;
+        //
+        .button.choose--product:hover &,
+        .button.choose--product.selected & {
+            box-shadow: 0 0 0 .25rem #0D4F67;
+        }
+    }
+    //
+    &.houston {
+        color: #fff;
+        background: #00AEEF;
+        box-shadow: 0 0 0 .0625rem #E51937;
+        //
+        .button.choose--product:hover &,
+        .button.choose--product.selected & {
+            box-shadow: 0 0 0 .25rem #E51937;
+        }
+    }
+    //
+    &.indianapolis {
+        color: #F6921E;
+        background: #fff;
+        box-shadow: 0 0 0 .0625rem #23488B;
+        //
+        .button.choose--product:hover &,
+        .button.choose--product.selected & {
+            box-shadow: 0 0 0 .25rem #23488B;
+        }
+    }
+    //
+    &.marine {
+        color: #000;
+        background: #FED130;
+        box-shadow: 0 0 0 .0625rem #B0151B;
+        //
+        .button.choose--product:hover &,
+        .button.choose--product.selected & {
+            box-shadow: 0 0 0 .25rem #B0151B;
+        }
+    }
+    //
     &.original {
         color: $black;
         background: #fff;
@@ -227,6 +293,17 @@ button {
         .button.choose--product:hover &,
         .button.choose--product.selected & {
             box-shadow: 0 0 0 .25rem $black;
+        }
+    }
+    //
+    &.pittsburgh {
+        color: $black;
+        background: #FDC619;
+        box-shadow: 0 0 0 .0625rem #313131;
+        //
+        .button.choose--product:hover &,
+        .button.choose--product.selected & {
+            box-shadow: 0 0 0 .25rem #313131;
         }
     }
     //
@@ -239,6 +316,11 @@ button {
         .button.choose--product.selected & {
             box-shadow: 0 0 0 .25rem #2843B9;
         }
+    }
+    //
+    &[class*="sold"] {
+        opacity: .3;
+        cursor: default;
     }
 }
 //

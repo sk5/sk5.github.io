@@ -115,10 +115,6 @@
                     height: 100%;
                 }
                 //
-                /*@media screen and (min-width: 46.875em) { // 750px
-                    width: auto;
-                    height: 100%;
-                }*/
             }
         }
         //
@@ -194,7 +190,9 @@
     &__highlight {
         position: relative;
         display: flex;
-        align-items: center;
+        flex-direction: column; // 1/13/2020
+        align-items: flex-start; // center 1/13/2020
+        justify-content: center;
         overflow: hidden;
         margin: 0 -4rem;
         width: calc(100% + 8rem);
@@ -206,18 +204,42 @@
             width: calc(100% + 40vw);
             height: 40rem;
         }
-        // Turn off for Your Inner Voice 1/13/2020
+        // Turned off for Your Inner Voice 1/13/2020
         //&:before {
-            //content: "";
-            //position: absolute;
-            //z-index: 1;
-            //top: 0;
-            //right: -20vw;
-            //bottom: 0;
-            //left: -20vw;
-            //background: rgba(black, .3);
+        //content: "";
+        //position: absolute;
+        //z-index: 1;
+        //top: 0;
+        //right: -20vw;
+        //bottom: 0;
+        //left: -20vw;
+        //background: rgba(black, .3);
+        //}
+        // Your Inner Voice style
+        //&:before {
+        //    content: "";
+        //    position: absolute;
+        //    top: 0;
+        //    right: 0;
+        //    bottom: 0;
+        //    left: 0;
+        //    transform: scale(1.5);
+        //    //width: 300%;
+        //    //height: 300%;
+        //    background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.5/assets/images/Lightning-Pattern.svg");
+        //    background-repeat: repeat;
         //}
         //
+        // Your Inner Voice style
+        //&:after {
+        //    content: "";
+        //    position: absolute;
+        //    top: 0;
+        //    right: 0;
+        //    bottom: 0;
+        //    left: 0;
+        //    background: linear-gradient(30deg, rgba(black, .9) 30%, rgba(darken($purple, 60%), .9) 90%);
+        //}
         &:before {
             content: "";
             position: absolute;
@@ -225,7 +247,10 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.4/assets/images/LightningPattern.jpg");
+            transform: scale(1.5);
+            //width: 300%;
+            //height: 300%;
+            background: #2d2d2d;
             background-repeat: repeat;
         }
         //
@@ -251,25 +276,25 @@
     //
     // GENERIC HOMEPAGE HEADER 1/13/2020
     //&__welcome {
-        //position: relative;
-        //z-index: 1;
-        //margin: 0 4rem;
-        //font-family: $brand-text;
-        //font-size: 2.75rem;
-        //line-height: .9375em;
-        //font-weight: 900;
-        //text-transform: uppercase;
-        //color: $white;
-        //
-        //@media screen and (min-width: 40.625em) { // 650px
-        //    margin: 0 20vw;
-        //    font-size: 5rem;
-        //}
-        //
-        //strong {
-        //    font-weight: 900;
-        //    color: $yellow;
-        //}
+    //position: relative;
+    //z-index: 1;
+    //margin: 0 4rem;
+    //font-family: $brand-text;
+    //font-size: 2.75rem;
+    //line-height: .9375em;
+    //font-weight: 900;
+    //text-transform: uppercase;
+    //color: $white;
+    //
+    //@media screen and (min-width: 40.625em) { // 650px
+    //    margin: 0 20vw;
+    //    font-size: 5rem;
+    //}
+    //
+    //strong {
+    //    font-weight: 900;
+    //    color: $yellow;
+    //}
     //}
     // Your Inner Voice 1/13/2020
     &__welcome {
@@ -278,7 +303,8 @@
         margin: 0 4rem;
         width: 24rem;
         height: 12rem;
-        background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.4/assets/images/YourInnerVoice-Title.png");
+        // background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.4/assets/images/YourInnerVoice-Title.png"); -- Your Inner Voice
+        background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.6/assets/images/Pittsburgh-Collection-Logo.png");
         background-repeat: no-repeat;
         background-size: contain;
         //
@@ -298,6 +324,22 @@
             clip-path: inset(50%);
             word-wrap: normal;
             border: 0;
+        }
+    }
+    //
+    &__blurb {
+        position: relative;
+        z-index: 1;
+        margin: 2rem 4rem 0 4rem;
+        font-family: $brand-text;
+        font-weight: 900;
+        line-height: .875em;
+        text-transform: uppercase;
+        color: $yellow;
+        //
+        @media screen and (min-width: 40.625em) { // 650px
+            margin: 2rem 20vw 0 20vw;
+            //height: 20rem;
         }
     }
     //
@@ -398,19 +440,6 @@
             background: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.3/assets/images/polygon-background.svg"), linear-gradient(30deg, $yellow 0%, $orange 33%, $red 66%, $purple 100%);
             background-size: cover;
         }
-        //
-        /*&:after {
-            content: "";
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            right: -20vw;
-            bottom: 0;
-            left: -20vw;
-            background: transparent;
-            background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.3/assets/images/polygon-background.svg");
-            background-size: cover;
-        }*/
     }
     //
     &__title {
@@ -479,7 +508,6 @@
     //
     //
     //
-    //
     &__list--wrapper {
         position: relative;
         z-index: 0;
@@ -491,17 +519,6 @@
     }
     //
     //
-    //
-    &__list {
-        // CSS GRID: Target browsers that support the `display: grid` and `grid-template-columns` (maybe only using repeat?) properties.
-        // These properties are exclusive to browsers that support the `display: grid` and `grid-template-columns` properties.
-        /*@supports (display: grid) and (grid-template-columns: repeat(2, 1fr)) {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            grid-template-rows: auto; // 25rem;
-            grid-gap: 0;
-        }*/
-    }
     //
     &__item {
         //
