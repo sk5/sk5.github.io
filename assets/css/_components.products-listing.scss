@@ -240,6 +240,8 @@
         //    left: 0;
         //    background: linear-gradient(30deg, rgba(black, .9) 30%, rgba(darken($purple, 60%), .9) 90%);
         //}
+        //
+        // Pittsburgh Collection - 3/6/2020
         &:before {
             content: "";
             position: absolute;
@@ -251,6 +253,16 @@
             //width: 300%;
             //height: 300%;
             background: #2d2d2d;
+            background-repeat: repeat;
+        }
+        //
+        &:after {
+            content: "";
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.7/assets/images/Pittsburgh-Bridge.png");
             background-repeat: repeat;
         }
         //
@@ -302,7 +314,7 @@
         z-index: 1;
         margin: 0 4rem;
         width: 24rem;
-        height: 12rem;
+        height: 9rem;
         // background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.4/assets/images/YourInnerVoice-Title.png"); -- Your Inner Voice
         background-image: url("https://cdn.jsdelivr.net/gh/sk5/sk5.github.io@v1.6/assets/images/Pittsburgh-Collection-Logo.png");
         background-repeat: no-repeat;
@@ -310,7 +322,7 @@
         //
         @media screen and (min-width: 40.625em) { // 650px
             margin: 0 20vw;
-            height: 20rem;
+            height: 10rem;
         }
         // 1/13/2020
         .hidden {
@@ -335,7 +347,7 @@
         font-weight: 900;
         line-height: .875em;
         text-transform: uppercase;
-        color: $yellow;
+        color: #fff;
         //
         @media screen and (min-width: 40.625em) { // 650px
             margin: 2rem 20vw 0 20vw;
